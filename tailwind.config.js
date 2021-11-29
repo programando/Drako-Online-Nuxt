@@ -13,6 +13,12 @@ module.exports = {
      fontFamily: {
       monserrat: 'Montserrat',
       open     : 'Open+Sans+Condensed',
+      },
+
+      colors: {
+        rojo: '#ED1C24',
+        azul: '#102542',
+        
       }
       
     },
