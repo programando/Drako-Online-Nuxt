@@ -3,11 +3,11 @@
     <button class="hidden xl:flex">
       <img class="mt-4 hidden xl:flex " src="arrow-izquierda.png" alt="">
     </button>
-    <Producto />
-    <Producto />
-    <Producto />
-    <Producto />
-    <Producto />
+    <Producto src="productos/1.jpg"/>
+    <Producto src="productos/2.jpg"/>
+    <Producto src="productos/3.jpg"/>
+    <Producto src="productos/4.jpg"/>
+    <Producto src="productos/5.jpg"/>
     <button class="hidden xl:flex">
       <img class="mt-4 hidden xl:flex" src="arrow-derecha.png" alt="">
     </button>

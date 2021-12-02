@@ -1,35 +1,35 @@
 <template>
   <div v-swiper="swiperOption" class="lg:w-5/6 xl:4/6 ml-auto relative h-max-screen" >
     <div class="swiper-wrapper">
-      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider5.jpg')">
+      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider/slider5.jpg')">
         <div class=" px-20 py-48">
           <h2 class="text-white uppercase font-bold text-3xl lg:text-5xl">Black Friday</h2>
           <p class="text-white text-lg lg:text-2xl mt-4 lg:ml-6">Hasta 50% de descuento</p>
           <button class="text-white text-lg lg:text-2xl border px-4 py-2 rounded mt-2 bg-azul border-azul lg:ml-12">Ir a la Tienda</button>
         </div>
       </div>
-      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider1.jpeg')">
+      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider/slider1.jpeg')">
         <div class=" px-20 py-48">
           <h2 class="text-white uppercase font-bold text-3xl lg:text-5xl">Black Friday</h2>
           <p class="text-white text-lg lg:text-2xl mt-4 lg:ml-6">Hasta 50% de descuento</p>
           <button class="text-white text-lg lg:text-2xl border px-4 py-2 rounded mt-2 bg-azul border-azul lg:ml-12">Ir a la Tienda</button>
         </div>
       </div>
-      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider3.jpg')">
+      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider/slider3.jpg')">
         <div class=" px-20 py-48">
           <h2 class="text-white uppercase font-bold text-3xl lg:text-5xl">Black Friday</h2>
           <p class="text-white text-lg lg:text-2xl mt-4 lg:ml-6">Hasta 50% de descuento</p>
           <button class="text-white text-lg lg:text-2xl border px-4 py-2 rounded mt-2 bg-azul border-azul lg:ml-12">Ir a la Tienda</button>
         </div>
       </div>
-      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider2.jpg')">
+      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider/slider2.jpg')">
         <div class=" px-20 py-48">
           <h2 class="text-white uppercase font-bold text-3xl lg:text-5xl">Black Friday</h2>
           <p class="text-white text-lg lg:text-2xl mt-4 lg:ml-6">Hasta 50% de descuento</p>
           <button class="text-white text-lg lg:text-2xl border px-4 py-2 rounded mt-2 bg-azul border-azul lg:ml-12">Ir a la Tienda</button>
         </div>
       </div>
-      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider4.jpeg')">
+      <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider/slider4.jpeg')">
         <div class=" px-20 py-48">
           <h2 class="text-white uppercase font-bold text-3xl lg:text-5xl">Black Friday</h2>
           <p class="text-white text-lg lg:text-2xl mt-4 lg:ml-6">Hasta 50% de descuento</p>
