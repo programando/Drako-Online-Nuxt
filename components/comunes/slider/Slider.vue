@@ -1,5 +1,5 @@
 <template>
-  <div v-swiper="swiperOption" class="lg:w-5/6 xl:4/6 ml-auto relative h-max-screen" >
+  <div v-swiper="swiperOption" class="lg:w-6/6 xl:6/6 ml-auto relative h-max-screen" >
     <div class="swiper-wrapper">
       <div class="swiper-slide bg-no-repeat bg-cover bg-center" style="background-image: url('slider/slider5.jpg')">
         <div class=" px-20 py-48">
@@ -60,7 +60,7 @@ export default {
         loop: true,
         speed: 400,
         autoplay: {
-          delay: 3000,
+          delay: 4000,
           disableOnInteraction: false
         },
         loopFillGroupWithBlank: true,

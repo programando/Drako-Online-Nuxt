@@ -1,8 +1,7 @@
 <template>
-  <div class="px-4 py-1 text-white lg:text-lg" :class="fondo">
+  <div class="px-4 py-1 text-white lg:text-lg rounded" :class="fondo">
     <nuxt-link to="#">
-      <div class="flex items-center space-x-2">
-        <img class="h-6 xl:h-7" :src="src" alt="icono">
+      <div class="flex items-center space-x-2 ">
         <p>{{title}}</p>
       </div>
     </nuxt-link>  
@@ -16,7 +15,7 @@ export default {
     title: String,
     to: String,
     fondo: String,
-    src: String
+    
   },
 
 }

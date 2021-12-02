@@ -34,6 +34,7 @@
           <button
             class="bg-rojo w-40 mt-4 2xl:-mt-10 rounded py-3 px-4 text-white text-sm lg:text-base 2xl:text-lg 2xl:w-40"
           >
+
             Buscar en Drako
           </button>
         </div>
@@ -50,6 +51,7 @@
         <Categorias />
         <Categorias />
         <Categorias />
+        
       </div>
     </div>
     
