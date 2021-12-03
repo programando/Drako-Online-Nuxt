@@ -11,12 +11,21 @@
       </button>
     </div>
     <div v-if="menu" class="bg-rojo md:hidden absolute z-20 w-full">
-      <LinksResponsive title="Nosotros" />
-      <LinksResponsive title="Contacto" />
-      <LinksResponsive title="Iniciar Sesión" />
+      <nuxt-link to="#" class="flex px-4 py-2" >
+        <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'users']" class="text-white h-10 w-10 -mr-2" />
+        <LinksResponsive title="Nosotros" />
+      </nuxt-link>
+      <nuxt-link to="#" class="flex px-4 py-2" >
+        <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'address-book']" class="text-white h-10 w-12 -mr-2 ml-1" />
+        <LinksResponsive title="Contacto" />
+      </nuxt-link>
+      <nuxt-link to="#" class="flex px-4 py-2" >
+        <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'lock']" class="text-white h-10 w-12 -mr-2 ml-1" />
+        <LinksResponsive title="Iniciar Sesión" />
+      </nuxt-link>      
       <div class="px-4 py-2">
         <nuxt-link to="#">
-          <img class="h-10" src="store-responsive.svg" alt="logo" />
+          <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'shopping-cart']" class="text-white h-10 w-10 -mr-2" />
         </nuxt-link>
       </div>
     </div>
