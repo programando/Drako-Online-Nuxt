@@ -7,11 +7,11 @@
     <div
       class="text-center lg:text-left px-10 mt-8 text-lg font-bold xl:px-32 lg:text-2xl"
     >
-      <h2 class="lg:ml-14 xl:ml-32 2xl:ml-48">Productos mas comprados</h2>
+      <h2 class="">Productos mas comprados</h2>
       <ListaProductos />
-      <div class="border-b-2 mx-10 my-10"></div>
+      <div class="border-b-2 my-10"></div>
     </div>
-    <div
+    <!-- <div
       class="lg:text-left px-4 sm:px-8 mt-8 xl:px-10 bg-azul lg:mx-40 rounded"
     >
       <div
@@ -39,23 +39,25 @@
           </button>
         </div>
       </div>
-    </div>
-    <div class="mt-8 flex justify-center lg:justify-start lg:ml-24 xl:ml-56 2xl:ml-80 ">
+    </div> -->
+    <div
+      class="text-center lg:text-left px-10 mt-8 text-lg font-bold xl:px-32 lg:text-2xl"
+    >
       <h2 class="text-lg md:text-2xl font-bold">Categorias</h2>
     </div>
     <div class="flex justify-center">
-      <div class="grid col-span-1 mx-8  lg:grid-cols-2 xl:grid-cols-3 justify-center mt-10">
+      <div
+        class="grid col-span-1 mx-8 lg:grid-cols-2 xl:grid-cols-3 justify-center mt-10"
+      >
         <Categorias />
         <Categorias />
         <Categorias />
         <Categorias />
         <Categorias />
         <Categorias />
-        
       </div>
     </div>
-    
-   
+    <Footer />
   </div>
 </template>
 
@@ -64,14 +66,16 @@ import Header from "../components/Header.vue";
 import Slider from "../components/comunes/slider/Slider.vue";
 import ListaProductos from "../components/ListaProductos.vue";
 import SelectRespuesto from "../components/comunes/SelectRespuesto.vue";
-import Categorias from "../components/Categorias.vue"
+import Categorias from "../components/Categorias.vue";
+import Footer from "../components/comunes/Footer.vue"
 export default {
   components: {
     Header,
     Slider,
     ListaProductos,
     SelectRespuesto,
-    Categorias
+    Categorias,
+    Footer
   },
 };
 </script>
