@@ -1,7 +1,7 @@
 <template>
-  <footer class="bg-azul mt-4 grid grid-cols-1 justify-center xl:grid-cols-5 xl:py-10">
+  <footer class="bg-azul grid grid-cols-1 justify-center xl:grid-cols-5 xl:py-10">
       <div class="pt-10 pb-4 px-4 flex justify-center items-center space-x-2 sm:block sm:mx-auto">
-        <img class="h-12 sm:h-16 sm:w-full" src="logo.jpg" alt="logo" />
+        <img class="h-12 sm:h-16 sm:w-full rounded" src="logo.png" alt="logo" />
         <p class="text-white text-xl sm:mt-2">Santander de Quilichao</p>
       </div>
       <div class="xl:col-span-3">

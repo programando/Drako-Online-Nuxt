@@ -1,6 +1,6 @@
 <template>
   <div class="px-4 py-2 text-white">
-    <nuxt-link to="#">
+    <nuxt-link :to="to">
       {{title}}
     </nuxt-link>  
   </div>

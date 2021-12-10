@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <Header />
     <client-only>
       <Slider />
@@ -45,7 +45,7 @@
     >
       <h2 class="text-lg md:text-2xl font-bold">Categorias</h2>
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center mb-4">
       <div
         class="grid col-span-1 mx-8 lg:grid-cols-2 xl:grid-cols-3 justify-center mt-10"
       >
@@ -58,6 +58,9 @@
       </div>
     </div>
     <Footer />
+    <div class=" contenedor-principal sticky">
+      <WsContact/>
+    </div>
   </div>
 </template>
 
@@ -67,7 +70,8 @@ import Slider from "../components/comunes/slider/Slider.vue";
 import ListaProductos from "../components/ListaProductos.vue";
 import SelectRespuesto from "../components/comunes/SelectRespuesto.vue";
 import Categorias from "../components/Categorias.vue";
-import Footer from "../components/comunes/Footer.vue"
+import Footer from "../components/comunes/Footer.vue";
+import WsContact from "../components/comunes/WsContact.vue"
 export default {
   components: {
     Header,
@@ -75,7 +79,15 @@ export default {
     ListaProductos,
     SelectRespuesto,
     Categorias,
-    Footer
+    Footer,
+    WsContact
   },
 };
 </script>
+
+<style scoped>
+.contenedor-principal {
+  bottom: 20px;
+  right: 0px;
+}
+</style>
