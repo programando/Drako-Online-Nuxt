@@ -39,7 +39,7 @@
         <img class="h-5 mt-2 -mr-7 z-20" src="search.svg" alt="busqueda" />
         <input class="w-40 lg:w-80 xl:w-96 px-10  focus:outline-none border-r-1" type="text" />
       </div>
-      <div class="hidden md:flex md:items-center">
+      <div class="hidden md:flex md:items-center space-x-4">
         <div class="flex items-center">
           <nuxt-link to="#" >
             <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'users']" class="text-white h-10 w-10 -mr-2" />
