@@ -3,7 +3,7 @@
     <!-- Header Responsive -->
     <div class="bg-rojo py-2 px-4 flex justify-between md:hidden">
       <div class="">
-        <img class="h-10" src="logo.png" alt="">
+        <img class="h-10" src="logo.jpg" alt="">
       </div>
       
       <button @click="menu = !menu">
@@ -33,7 +33,7 @@
     <!-- Header full Screen -->
     <div class="bg-rojo hidden md:flex md:justify-between px-4 py-2  lg:px-8 ">
       <div class="p-1">
-        <img class="h-10 lg:h-14" src="logo.png" alt="">
+        <img class="h-10 lg:h-14" src="logo.jpg" alt="">
       </div>
       <div class="flex py-2 mt-2">
         <img class="h-5 mt-2 -mr-7 z-20" src="search.svg" alt="busqueda" />

@@ -2,15 +2,28 @@
   <div>
     <Header />
     <div
-      class="py-40 md:py-56 lg:py-60 bg-no-repeat bg-cover bg-center h-3/4"
-      style="background-image: url('slider/slider5.jpg')"
+      class="py-6 lg:py-14"
     >
-      <div class="bg-azul flex justify-start w-44 lg:w-56">
-        <button
-          class="uppercase text-white text-lg py-4 px-4 font-semibold lg:text-2xl"
-        >
-          Contacto
-        </button>
+      <div class="">
+        <div class="flex justify-center mt-4">
+          <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'id-card-alt']" class="text-azul h-10 w-10 z-20 -mr-10" />
+          <InputBasic holder="Nombre"/>
+        </div>
+        <div class="flex justify-center mt-4">
+          <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'building']" class="text-azul h-10 w-10 z-20 -mr-10" />
+          <InputBasic holder="Empresa"/>
+        </div>
+        <div class="flex justify-center mt-4">
+          <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'phone-square']" class="text-azul h-10 w-10 z-20 -mr-10" />
+          <InputBasic holder="Telefono"/>
+        </div>
+        <div class="flex justify-center mt-4">
+          <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'envelope-square']" class="text-azul h-10 w-10 z-20 -mr-10" />
+          <InputBasic holder="Contacto"/>
+        </div>
+        <div class="flex justify-center mt-4">
+          <button class="border bg-azul text-white py-2 px-4 rounded text-xl w-32 -ml-4">Enviar</button>
+        </div>
       </div>
     </div>
     <div
@@ -62,11 +75,13 @@
 <script>
 import Header from "../components/Header.vue";
 import Footer from "../components/comunes/Footer.vue";
+import InputBasic from "../components/htmlControl/InputBasic.vue"
 export default {
   name: "nosotros",
   components: {
     Header,
     Footer,
+    InputBasic
   },
 };
 </script>
