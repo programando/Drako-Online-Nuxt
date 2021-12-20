@@ -1,67 +1,67 @@
 <template>
   <div class="sticky top-0 z-50">
     <!-- Header Responsive -->
-    <div class="bg-rojo py-2 px-4 flex justify-between md:hidden">
+    <div class="flex justify-between px-4 py-2 bg-rojo md:hidden">
       <div class="">
-        <img class="h-10" src="logo.jpg" alt="">
+        <img class="h-32" src="logo.jpg" alt="">
       </div>
       
       <button @click="menu = !menu">
         <img class="h-8" src="icon-burger.svg" alt="icon" />
       </button>
     </div>
-    <div v-if="menu" class="bg-rojo md:hidden absolute z-20 w-full">
+    <div v-if="menu" class="absolute z-20 w-full bg-rojo md:hidden">
       <nuxt-link to="#" class="flex px-4 py-2" >
-        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'users']" class="text-white h-10 w-10 -mr-2" />
+        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'users']" class="w-10 h-10 -mr-2 text-white" />
         <LinksResponsive title="Nosotros" to="/nosotros" />
       </nuxt-link>
       <nuxt-link to="#" class="flex px-4 py-2" >
-        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'address-book']" class="text-white h-10 w-12 -mr-2 ml-1" />
+        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'address-book']" class="w-12 h-10 ml-1 -mr-2 text-white" />
         <LinksResponsive title="Contacto" to="/contacto" />
       </nuxt-link>
       <nuxt-link to="#" class="flex px-4 py-2" >
-        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'lock']" class="text-white h-10 w-12 -mr-2 ml-1" />
+        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'lock']" class="w-12 h-10 ml-1 -mr-2 text-white" />
         <LinksResponsive title="Iniciar Sesión" to="/inicioSeccion"/>
       </nuxt-link>      
       <div class="px-4 py-2">
         <nuxt-link to="#">
-          <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'shopping-cart']" class="text-white h-10 w-10 -mr-2" />
+          <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'shopping-cart']" class="w-10 h-10 -mr-2 text-white" />
         </nuxt-link>
       </div>
     </div>
 
     <!-- Header full Screen -->
-    <div class="bg-rojo hidden md:flex md:justify-between px-4 py-2  lg:px-8 ">
+    <div class="hidden px-4 py-2 bg-rojo md:flex md:justify-between lg:px-8 ">
       <div class="p-1">
         <img class="h-10 lg:h-14" src="logo.jpg" alt="">
       </div>
       <div class="flex py-2 mt-2">
-        <img class="h-5 mt-2 -mr-7 z-20" src="search.svg" alt="busqueda" />
-        <input class="w-40 lg:w-80 xl:w-96 px-10  focus:outline-none border-r-1" type="text" />
+        <img class="z-20 h-5 mt-2 -mr-7" src="search.svg" alt="busqueda" />
+        <input class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1" type="text" />
       </div>
-      <div class="hidden md:flex md:items-center space-x-4">
+      <div class="hidden space-x-4 md:flex md:items-center">
         <div class="flex items-center">
           <nuxt-link to="#" >
-            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'users']" class="text-white h-10 w-10 -mr-2" />
+            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'users']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
           <LinksHome title="Nosotros" to="/nosotros"/>
         </div>
         <div class="flex items-center">
           <nuxt-link to="#" >
-            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'address-book']" class="text-white h-10 w-10 -mr-2" />
+            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'address-book']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
           <LinksHome title="Contacto" to="/contacto"/>
         </div>
-        <div class="flex items-center bg-azul rounded px-2">
+        <div class="flex items-center px-2 rounded bg-azul">
           <nuxt-link to="#" >
-            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'lock']" class="text-white h-10 w-10 -mr-2" />
+            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'lock']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
           <LinksHome title="Iniciar Sesión" to="/inicioSeccion"/>
         </div>
         
         <div class="px-4 py-2 rounded">
           <nuxt-link to="#">
-            <font-awesome-icon style="font-size: 25px;" :icon="['fas', 'shopping-cart']" class="text-white h-10 w-10 -mr-2" />
+            <font-awesome-icon style="font-size: 25px;" :icon="['fas', 'shopping-cart']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
         </div>
       </div>
