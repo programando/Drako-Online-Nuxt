@@ -1,10 +1,10 @@
 <template>
-  <div class="absolute cursor-pointer contenedor-principal ">
+  <div class="absolute cursor-pointer contenedor-principal z-40 ">
     <a
       class="flex items-center contenedor"
       href="https://api.whatsapp.com/send?phone=573152701964"
     >
-      <img class="z-20 h-14 imagen" src="whatsapp2.svg" alt="" />
+      <img class="z-40 h-14 imagen" src="whatsapp2.svg" alt="" />
       <div
         class="z-10 py-1 text-sm text-white bg-green-600 rounded-full cursor-pointer px-14 boton "
       >
@@ -23,7 +23,7 @@ export default {
 
 <style>
 .contenedor {
-  height: 50px;
+  height: 25px;
   width: 265px;
   transition: width 0.8s;
 }

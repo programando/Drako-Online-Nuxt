@@ -5,7 +5,7 @@
       <Slider />
     </client-only>
     <div
-      class="text-center lg:text-left px-10 mt-8 text-lg font-bold xl:px-32 lg:text-2xl"
+      class="text-center lg:text-left px-10 mt-4 text-lg font-bold xl:px-32 lg:text-2xl"
     >
       <h2 class="">Productos mas comprados</h2>
       <ListaProductos />

@@ -43,7 +43,7 @@
         </div>
       </div>
     
-    <div v-swiper="swiperOption" class="lg:w-6/6 relative hidden xl:block">
+    <div v-swiper="swiperOption" class="lg:w-6/6 relative hidden xl:block -mt-2">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="flex justify-center">
@@ -85,7 +85,7 @@
             <img class="w-4/6 2xl:h-48" src="productos/5.jpg" alt="" />
           </div>
 
-          <div class="flex justify-center">
+          <div class="flex justify-center z-10">
             <p>Producto</p>
           </div>
         </div>

@@ -2,8 +2,8 @@
   <div>
     <Header />
     <div
-      class="py-40 md:py-56 lg:py-80 xl:py-96 bg-no-repeat bg-cover"
-      style="background-image: url('nosotros.jpg')"
+      class="py-40 md:py-56 lg:py-80 xl:py-80 bg-no-repeat bg-cover"
+      style="background-image: url('nosotros2.jpg')"
     >
       <div class="bg-azul flex justify-start w-44 lg:w-56">
         <button
