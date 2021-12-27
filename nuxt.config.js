@@ -18,13 +18,18 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap' },
     ],
+  },
+   server: {
+    port: 3000 
+  },
+   
   env: {
       URL_BASE      : process.env.URL_BASE,
       URL_API       : process.env.URL_API,
       URL_WEB       : process.env.URL_WEB,
       URL_RESET_PASS: process.env.URL_RESET_PASS,
     }, 
-  },
+   
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
