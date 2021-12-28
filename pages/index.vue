@@ -1,38 +1,39 @@
 <template>
   <div class="relative">
     <Header />
-    <client-only>
+      
       <Slider />
-    </client-only>
+      
+    
     <div
-      class="text-center lg:text-left px-10 mt-4 text-lg font-bold xl:px-32 lg:text-2xl"
+      class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-32 lg:text-2xl"
     >
       <h2 class="">Productos mas comprados</h2>
       <ListaProductos />
-      <div class="border-b-2 my-10"></div>
+      <div class="my-10 border-b-2"></div>
     </div>
     <!-- <div
-      class="lg:text-left px-4 sm:px-8 mt-8 xl:px-10 bg-azul lg:mx-40 rounded"
+      class="px-4 mt-8 rounded lg:text-left sm:px-8 xl:px-10 bg-azul lg:mx-40"
     >
       <div
-        class="flex space-x-6 items-center justify-center pt-2 lg:justify-start"
+        class="flex items-center justify-center pt-2 space-x-6 lg:justify-start"
       >
         <img class="h-8 sm:h-10 lg:pl-10" src="car.png" alt="carro" />
-        <p class="text-white text-center sm:text-base lg:text-lg">
+        <p class="text-center text-white sm:text-base lg:text-lg">
           Selecciona tu vehículo para encontrar los respuestos exactos
         </p>
       </div>
       <div
-        class="text-center py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6"
+        class="grid grid-cols-1 py-4 text-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6"
       >
         <SelectRespuesto text="Tipo" />
         <SelectRespuesto text="Año" />
         <SelectRespuesto text="Marca" />
         <SelectRespuesto text="Cilindraje" />
         <SelectRespuesto text="Modelo" />
-        <div class="2xl:flex justify-start">
+        <div class="justify-start 2xl:flex">
           <button
-            class="bg-rojo w-40 mt-4 2xl:-mt-10 rounded py-3 px-4 text-white text-sm lg:text-base 2xl:text-lg 2xl:w-40"
+            class="w-40 px-4 py-3 mt-4 text-sm text-white rounded bg-rojo 2xl:-mt-10 lg:text-base 2xl:text-lg 2xl:w-40"
           >
 
             Buscar en Drako
@@ -41,13 +42,13 @@
       </div>
     </div> -->
     <div
-      class="text-center lg:text-left px-10 mt-8 text-lg font-bold xl:px-32 lg:text-2xl"
+      class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 lg:text-2xl"
     >
-      <h2 class="text-lg md:text-2xl font-bold">Categorias</h2>
+      <h2 class="text-lg font-bold md:text-2xl">Categorias</h2>
     </div>
     <div class="flex justify-center mb-4">
       <div
-        class="grid col-span-1 mx-8 lg:grid-cols-2 xl:grid-cols-3 justify-center mt-10"
+        class="grid justify-center col-span-1 mx-8 mt-10 lg:grid-cols-2 xl:grid-cols-3"
       >
         <Categorias />
         <Categorias />
@@ -58,7 +59,7 @@
       </div>
     </div>
     <Footer />
-    <div class=" contenedor-principal sticky">
+    <div class="sticky contenedor-principal">
       <WsContact/>
     </div>
   </div>
