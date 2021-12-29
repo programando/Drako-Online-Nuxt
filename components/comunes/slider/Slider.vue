@@ -1,32 +1,108 @@
 <template>
   <div
     v-swiper="swiperOption"
-    class="relative w-5/6 ml-auto lg:w-full"
+    class="relative w-full ml-auto"
     :loadtheme="false"
   >
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div
-          class="py-64 bg-center bg-cover"
-          style="background-image: url('slider/slider1.jpeg')"
+          class="py-48 bg-center bg-cover"
+          style="background-image: url('slider/slider4.jpeg')"
         >
-          <h1>Hola</h1>
+          <div class="px-16">
+            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
+              Black Friday
+            </h2>
+            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
+              Hasta 50% de descuento
+            </h3>
+            <button
+              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
+            >
+              Ir a la tienda
+            </button>
+          </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div
-          class="py-64 bg-center bg-cover"
+          class="py-48 bg-center bg-cover"
           style="background-image: url('slider/slider2.jpg')"
         >
-          <h1>Hola</h1>
+          <div class="px-16">
+            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
+              Black Friday
+            </h2>
+            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
+              Hasta 50% de descuento
+            </h3>
+            <button
+              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
+            >
+              Ir a la tienda
+            </button>
+          </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div
-          class="py-64 bg-center bg-cover"
+          class="py-48 bg-center bg-cover"
           style="background-image: url('slider/slider3.jpg')"
         >
-          <h1>Hola</h1>
+          <div class="px-16">
+            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
+              Black Friday
+            </h2>
+            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
+              Hasta 50% de descuento
+            </h3>
+            <button
+              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
+            >
+              Ir a la tienda
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div
+          class="py-48 bg-center bg-cover"
+          style="background-image: url('slider/slider1.jpeg')"
+        >
+          <div class="px-16">
+            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
+              Black Friday
+            </h2>
+            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
+              Hasta 50% de descuento
+            </h3>
+            <button
+              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
+            >
+              Ir a la tienda
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div
+          class="py-48 bg-center bg-cover"
+          style="background-image: url('slider/slider5.jpg')"
+        >
+          <div class="px-16">
+            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
+              Black Friday
+            </h2>
+            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
+              Hasta 50% de descuento
+            </h3>
+            <button
+              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
+            >
+              Ir a la tienda
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -50,6 +126,9 @@ export default {
         spaceBetween: -10,
         slidesPerGroup: 1,
         loop: true,
+        autoplay: {
+          delay: 3000
+        },
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",

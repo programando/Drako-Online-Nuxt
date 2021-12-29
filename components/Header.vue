@@ -2,9 +2,11 @@
   <div class="sticky top-0 z-50">
     <!-- Header Responsive -->
     <div class="flex justify-between px-4 py-2 bg-rojo md:hidden">
-      <div class="">
+      <nuxt-link to="/">
         <img class="h-14" src="logo.jpg" alt="">
-      </div>
+      </nuxt-link>
+        
+      
       
       <button @click="menu = !menu">
         <img class="h-8" src="icon-burger.svg" alt="icon" />
@@ -31,10 +33,10 @@
     </div>
 
     <!-- Header full Screen -->
-    <div class="hidden px-4  bg-rojo md:flex md:justify-between lg:px-8 ">
-      <div class="">
+    <div class="hidden px-4 bg-rojo md:flex md:justify-between lg:px-8 ">
+      <nuxt-link to="/">
         <img class="h-14 lg:h-20" src="logo.jpg" alt="">
-      </div>
+      </nuxt-link>
       <div class="flex py-4 mt-2">
         <img class="z-20 h-5 mt-2 -mr-7" src="search.svg" alt="busqueda" />
         <input class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1" type="text" />
