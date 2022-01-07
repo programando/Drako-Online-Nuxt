@@ -66,7 +66,7 @@
           <p
             class="mt-4 mr-4 text-xl font-semibold text-right text-gray-600 lg:text-2xl"
           >
-            Más de 20 años en vocación de servicios.
+            Más de 20 años en vocación de Servicios.
           </p>
         </div>
         <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
@@ -78,7 +78,7 @@
           <p
             class="mt-4 mr-4 text-xl font-semibold text-right text-gray-600 lg:text-2xl"
           >
-            Más de 20 años en vocación de servicios.
+            Más de 20 años en vocación de Servicios.
           </p>
         </div>
         <div v-bind:class="{ hidden: openTab !== 3, block: openTab === 3 }">
@@ -90,7 +90,7 @@
           <p
             class="mt-4 mr-4 text-xl font-semibold text-right text-gray-600 lg:text-2xl"
           >
-            Más de 20 años en vocación de servicios.
+            Más de 20 años en vocación de Servicios.
           </p>
         </div>
       </div>
