@@ -8,7 +8,7 @@
       <div class="swiper-slide">
         <div
           class="py-48 bg-center bg-cover"
-          style="background-image: url('slider/slider4.jpeg')"
+          style="background-image: url('slider/1.png')"
         >
           <div class="px-16">
             <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
@@ -28,7 +28,7 @@
       <div class="swiper-slide">
         <div
           class="py-48 bg-center bg-cover"
-          style="background-image: url('slider/slider2.jpg')"
+          style="background-image: url('slider/3.png')"
         >
           <div class="px-16">
             <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
@@ -48,7 +48,7 @@
       <div class="swiper-slide">
         <div
           class="py-48 bg-center bg-cover"
-          style="background-image: url('slider/slider3.jpg')"
+          style="background-image: url('slider/4.png')"
         >
           <div class="px-16">
             <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
@@ -68,27 +68,7 @@
       <div class="swiper-slide">
         <div
           class="py-48 bg-center bg-cover"
-          style="background-image: url('slider/slider1.jpeg')"
-        >
-          <div class="px-16">
-            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
-              Black Friday
-            </h2>
-            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
-              Hasta 50% de descuento
-            </h3>
-            <button
-              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
-            >
-              Ir a la tienda
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div
-          class="py-48 bg-center bg-cover"
-          style="background-image: url('slider/slider5.jpg')"
+          style="background-image: url('slider/7.png')"
         >
           <div class="px-16">
             <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
