@@ -14,6 +14,10 @@
     </div>
     <div v-if="menu" class="absolute z-20 w-full bg-rojo md:hidden">
       <nuxt-link to="#" class="flex px-4 py-2" >
+        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'store']" class="w-12 h-10 ml-1 -mr-2 text-white" />
+        <LinksResponsive title="Producto" to="/productos"/>
+      </nuxt-link>  
+      <nuxt-link to="#" class="flex px-4 py-2" >
         <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'users']" class="w-10 h-10 -mr-2 text-white" />
         <LinksResponsive title="Nosotros" to="/nosotros" />
       </nuxt-link>
@@ -21,10 +25,7 @@
         <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'address-book']" class="w-12 h-10 ml-1 -mr-2 text-white" />
         <LinksResponsive title="Contacto" to="/contacto" />
       </nuxt-link>
-      <!-- <nuxt-link to="#" class="flex px-4 py-2" >
-        <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'lock']" class="w-12 h-10 ml-1 -mr-2 text-white" />
-        <LinksResponsive title="Iniciar Sesión" to="/inicioSeccion"/>
-      </nuxt-link>       -->
+          
       <!-- <div class="px-4 py-2">
         <nuxt-link to="#">
           <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'shopping-cart']" class="w-10 h-10 -mr-2 text-white" />
@@ -43,6 +44,12 @@
       </div>
       <div class="hidden space-x-4 md:flex md:items-center">
         <div class="flex items-center">
+          <div class="flex items-center px-2 rounded ">
+          <nuxt-link to="#" >
+            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'store']" class="w-10 h-10 -mr-2 text-white" />
+          </nuxt-link>
+          <LinksHome title="Productos" to="/productos"/>
+        </div>
           <nuxt-link to="#" >
             <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'users']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
@@ -54,12 +61,7 @@
           </nuxt-link>
           <LinksHome title="Contacto" to="/contacto"/>
         </div>
-        <!-- <div class="flex items-center px-2 rounded bg-azul">
-          <nuxt-link to="#" >
-            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'lock']" class="w-10 h-10 -mr-2 text-white" />
-          </nuxt-link>
-          <LinksHome title="Iniciar Sesión" to="/inicioSeccion"/>
-        </div> -->
+        
         
         <!-- <div class="px-4 py-2 rounded">
           <nuxt-link to="#">
