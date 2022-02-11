@@ -39,13 +39,13 @@ export default {
         {
           id: 1,
           name: "Kit aceite para motor",
-          price: 600.0,
+          price: 600.000,
           img: "https://placebear.com/200/300",
         },
         {
           id: 2,
           name: "Kit aceite para motor",
-          price: 600.0,
+          price: 600.000,
           img: "https://placebear.com/200/300",
         },
         {
@@ -57,19 +57,19 @@ export default {
         {
           id: 4,
           name: "Kit aceite para motor",
-          price: 600.0,
+          price: 600.000,
           img: "https://placebear.com/200/300",
         },
         {
           id: 5,
           name: "Kit aceite para motor",
-          price: 600.0,
+          price: 600.000,
           img: "https://placebear.com/200/300",
         },
         {
           id: 6,
           name: "Kit aceite para motor",
-          price: 600.0,
+          price: 600.000,
           img: "https://placebear.com/200/300",
         },
       ],
