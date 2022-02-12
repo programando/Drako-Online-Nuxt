@@ -14,7 +14,7 @@
             <img class="" src="/productos/1.jpg" alt="" />
           </div>
 
-          <p class="text-center">{{ producto.name }}</p>
+          <p class="text-center ">{{ producto.name }}</p>
           <p class="font-semibold text-center">{{ producto.price }}</p>
         </div>
       </div>
@@ -38,19 +38,19 @@ export default {
       productos: [
         {
           id: 1,
-          name: "Kit aceite para motor",
+          name: "PROROYAL TAPA VÁLVULAS A VÁLVULA MANGUERA FLUJO AIRE  ",
           price: 600.000,
           img: "https://placebear.com/200/300",
         },
         {
           id: 2,
-          name: "Kit aceite para motor",
+          name: "KIT CLUTCH VOLKWAGEN GOLF CROSS FOX GOL POLO 1.6L  <2015 / SEAT IBIZA CORDOBA 1.6L GOL MN (200MM- 28 ESTR",
           price: 600.000,
           img: "https://placebear.com/200/300",
         },
         {
           id: 3,
-          name: "Kit aceite para motor",
+          name: "PASTILLA DEL MAZDA 3 04/07 PF MAZDA 3-5 05.. / FORD ECO SPORT 12.. - ESCAPE 13..15 4X2- FOCUS II 05..07 / VOLVO C70-S40-V50 05... / MEGANE 05 (10257)",
           price: 600.0,
           img: "https://placebear.com/200/300",
         },
@@ -62,13 +62,13 @@ export default {
         },
         {
           id: 5,
-          name: "Kit aceite para motor",
+          name: "CAMPANA FRENO RENAULT SYMBOL - CLIO 1.6 (ABS) - R19 - SANDERO - MEGANE - SYMBOL 09... / NISSAN MICRA 03..10 - NOTE 05...",
           price: 600.000,
           img: "https://placebear.com/200/300",
         },
         {
           id: 6,
-          name: "Kit aceite para motor",
+          name: "RETEN 40*52*7 POLEA NISSAN SENTRA 16 VALVULAS MONZA, CORSA ACTIVE TRAS VOLKWAGEN GOLF",
           price: 600.000,
           img: "https://placebear.com/200/300",
         },
