@@ -7,16 +7,34 @@
       </div>
 
       <div
-        class="grid grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-8 lg:grid-cols-4 2xl:grid-cols-5"
+        class="grid justify-center grid-cols-1 py-10 space-x-2 sm:grid-cols-2 md:col-span-3 lg:col-span-8 lg:grid-cols-4 2xl:grid-cols-5 xl:space-x-4"
       >
-        <div class="" v-for="producto in productos" :key="producto.id">
-          <div class="relative flex justify-center">
-            <p v-if="producto.oferta" class="absolute left-0 top-4">Oferta</p>
-            <img class="" src="/productos/1.jpg" alt="" />
-          </div>
-          <p class="text-center ">{{ producto.name }}</p>
-          <p class="font-semibold text-center" :class="{'line-through': producto.oferta }">{{ producto.price }} $</p>
-          <p v-if="producto.oferta" class="font-semibold text-center">{{ producto.priceOferta }} $</p>
+        <div
+          class="w-11/12 p-4 mx-auto mt-4 cursor-pointer hover:border hover:shadow-lg"
+          v-for="producto in productos"
+          :key="producto.id"
+        >
+          <nuxt-link to="/">
+            <div class="relative flex justify-center">
+              <p
+                v-if="producto.oferta"
+                class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white bg-red-800 rounded-sm top-2"
+              >
+                Oferta
+              </p>
+              <img class="" src="/productos/1.jpg" alt="" />
+            </div>
+            <p class="text-gray-700 text-start">{{ producto.name }}</p>
+            <p
+              class="mt-4 font-semibold"
+              :class="{ 'line-through': producto.oferta }"
+            >
+              {{ producto.price }} $
+            </p>
+            <p v-if="producto.oferta" class="font-semibold">
+              {{ producto.priceOferta }} $
+            </p>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -34,7 +52,7 @@ export default {
   components: {
     Header,
     FiltroProducto,
-    Footer
+    Footer,
   },
 
   data() {
@@ -43,19 +61,18 @@ export default {
         {
           id: 1,
           name: "PROROYAL TAPA VÁLVULAS A VÁLVULA MANGUERA FLUJO AIRE",
-          price: 600.000,
+          price: 600.0,
           img: "https://placebear.com/200/300",
           oferta: true,
-          priceOferta: 500.000
-          
+          priceOferta: 500.0,
         },
         {
           id: 2,
           name: "KIT CLUTCH VOLKWAGEN GOLF CROSS FOX GOL POLO 1.6L",
-          price: 600.000,
+          price: 600.0,
           img: "https://placebear.com/200/300",
           oferta: false,
-          priceOferta: 500.000
+          priceOferta: 500.0,
         },
         {
           id: 3,
@@ -63,31 +80,47 @@ export default {
           price: 600.0,
           img: "https://placebear.com/200/300",
           oferta: true,
-          priceOferta: 500.000
+          priceOferta: 500.0,
         },
         {
           id: 4,
           name: "Kit aceite para motor",
-          price: 600.000,
+          price: 600.0,
           img: "https://placebear.com/200/300",
           oferta: false,
-          priceOferta: 500.000
+          priceOferta: 500.0,
         },
         {
           id: 5,
           name: "CAMPANA FRENO RENAULT SYMBOL - CLIO 1.6 (ABS) - R19 - SANDERO",
-          price: 600.000,
+          price: 600.0,
           img: "https://placebear.com/200/300",
           oferta: true,
-          priceOferta: 500.000
+          priceOferta: 500.0,
         },
         {
           id: 6,
           name: "RETEN 40*52*7 POLEA NISSAN SENTRA 16 VALVULAS MONZA",
-          price: 600.000,
+          price: 600.0,
           img: "https://placebear.com/200/300",
           oferta: true,
-          priceOferta: 500.000  
+          priceOferta: 500.0,
+        },
+        {
+          id: 7,
+          name: "RETEN 40*52*7 POLEA NISSAN SENTRA 16 VALVULAS MONZA",
+          price: 600.0,
+          img: "https://placebear.com/200/300",
+          oferta: true,
+          priceOferta: 500.0,
+        },
+        {
+          id: 8,
+          name: "RETEN 40*52*7 POLEA NISSAN SENTRA 16 VALVULAS MONZA",
+          price: 600.0,
+          img: "https://placebear.com/200/300",
+          oferta: true,
+          priceOferta: 500.0,
         },
       ],
     };
