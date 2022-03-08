@@ -14,7 +14,7 @@
           v-for="producto in productos"
           :key="producto.id"
         >
-          <nuxt-link to="/">
+          <nuxt-link :to="producto.src">
             <div class="relative flex justify-center">
               <p
                 v-if="producto.oferta"
@@ -65,6 +65,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: true,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
         {
           id: 2,
@@ -73,6 +74,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: false,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
         {
           id: 3,
@@ -81,6 +83,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: true,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
         {
           id: 4,
@@ -89,6 +92,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: false,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
         {
           id: 5,
@@ -97,6 +101,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: true,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
         {
           id: 6,
@@ -105,6 +110,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: true,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
         {
           id: 7,
@@ -113,6 +119,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: true,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
         {
           id: 8,
@@ -121,6 +128,7 @@ export default {
           img: "https://placebear.com/200/300",
           oferta: true,
           priceOferta: 500.0,
+          src:"/productosDetalles"
         },
       ],
     };
