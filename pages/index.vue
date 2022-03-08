@@ -72,7 +72,8 @@ import ListaProductos from "../components/ListaProductos.vue";
 import SelectRespuesto from "../components/comunes/SelectRespuesto.vue";
 import Categorias from "../components/Categorias.vue";
 import Footer from "../components/comunes/Footer.vue";
-import WsContact from "../components/comunes/WsContact.vue"
+import WsContact from "../components/comunes/WsContact.vue";
+import Productos from "@/models/Productos";
 export default {
   components: {
     Header,
@@ -83,6 +84,14 @@ export default {
     Footer,
     WsContact
   },
+
+  mounted() {
+      Productos.listaGeneral()
+           .then( response => {
+                      console.log ( response.data);
+             })
+      }
+  
 };
 </script>
 

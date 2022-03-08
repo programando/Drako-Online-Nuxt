@@ -8,11 +8,11 @@
       <div class="swiper-slide">
         <div
           class="py-48 bg-center bg-cover"
-          style="background-image: url('slider/slider1.jpeg')"
+          style="background-image: url('slider/slider1.jpg')"
         >
           <div class="px-16">
             <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
-              Black Friday
+              Black Friday 1
             </h2>
             <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
               Hasta 50% de descuento
