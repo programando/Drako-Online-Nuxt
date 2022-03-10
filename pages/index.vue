@@ -85,12 +85,7 @@ export default {
     WsContact
   },
 
-  mounted() {
-      Productos.listaGeneral()
-           .then( response => {
-                      console.log ( response.data);
-             })
-      }
+  
   
 };
 </script>

@@ -12,27 +12,27 @@
         <div
           class="w-11/12 p-4 mx-auto mt-4 cursor-pointer hover:border hover:shadow-lg"
           v-for="producto in productos"
-          :key="producto.id"
+          :key="producto.idproducto"
         >
-          <nuxt-link :to="producto.src">
+          <nuxt-link to="/">
             <div class="relative flex justify-center">
               <p
-                v-if="producto.oferta"
+                v-if="producto.precio_oferta"
                 class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white bg-red-800 rounded-sm top-2"
               >
                 Oferta
               </p>
               <img class="" src="/productos/1.jpg" alt="" />
             </div>
-            <p class="text-gray-700 text-start">{{ producto.name }}</p>
+            <p class="text-gray-700 text-start">{{ producto.nombre_impreso }}</p>
             <p
               class="mt-4 font-semibold"
-              :class="{ 'line-through': producto.oferta }"
+              :class="{ 'line-through': producto.precio_oferta }"
             >
-              {{ producto.price }} $
+              {{ producto.precio_base }} $
             </p>
-            <p v-if="producto.oferta" class="font-semibold">
-              {{ producto.priceOferta }} $
+            <p v-if="producto.precio_oferta" class="font-semibold">
+              {{ producto.precio_oferta }} $
             </p>
           </nuxt-link>
         </div>
@@ -46,6 +46,7 @@
 import Header from "../components/Header.vue";
 import Footer from "../components/comunes/Footer.vue";
 import FiltroProducto from "../components/productos/FiltroProducto.vue";
+import Productos from "@/models/Productos";
 
 export default {
   name: "Productos",
@@ -133,6 +134,15 @@ export default {
       ],
     };
   },
+
+  mounted() {
+      Productos.listaGeneral()
+           .then( response => {
+                      console.log ( response.data.data);
+                      this.productos = response.data.data
+                      
+             })
+      }
 };
 </script>
 
