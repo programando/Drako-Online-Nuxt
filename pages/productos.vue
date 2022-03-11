@@ -11,8 +11,7 @@
       >
         <div
           class="w-11/12 p-4 mx-auto mt-4 cursor-pointer hover:border hover:shadow-lg"
-          v-for="producto in productos"
-          :key="producto.idproducto"
+          v-for="(producto) in productos" :key="producto.idproducto" 
         >
           <nuxt-link to="/">
             <div class="relative flex justify-center">
@@ -22,9 +21,10 @@
               >
                 Oferta
               </p>
-              <img class="" src="/productos/1.jpg" alt="" />
+              <img class="" v-for="imagen in producto.imagenes.slice(0,1)" :key="imagen.idregistro"  alt="" :src='imagen._240x240' />
+                          
             </div>
-            <p class="text-gray-700 text-start">{{ producto.nombre_impreso }}</p>
+            <p class="text-gray-700 text-start">{{ producto.nombre_impreso}}</p>
             <p
               class="mt-4 font-semibold"
               :class="{ 'line-through': producto.precio_oferta }"
@@ -59,78 +59,7 @@ export default {
   data() {
     return {
       productos: [
-        {
-          id: 1,
-          name: "PROROYAL TAPA VÁLVULAS A VÁLVULA MANGUERA FLUJO AIRE",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: true,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
-        {
-          id: 2,
-          name: "KIT CLUTCH VOLKWAGEN GOLF CROSS FOX GOL POLO 1.6L",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: false,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
-        {
-          id: 3,
-          name: "PASTILLA DEL MAZDA 3 04/07 PF MAZDA 3-5 05.. / FORD ECO SPORT",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: true,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
-        {
-          id: 4,
-          name: "Kit aceite para motor",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: false,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
-        {
-          id: 5,
-          name: "CAMPANA FRENO RENAULT SYMBOL - CLIO 1.6 (ABS) - R19 - SANDERO",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: true,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
-        {
-          id: 6,
-          name: "RETEN 40*52*7 POLEA NISSAN SENTRA 16 VALVULAS MONZA",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: true,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
-        {
-          id: 7,
-          name: "RETEN 40*52*7 POLEA NISSAN SENTRA 16 VALVULAS MONZA",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: true,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
-        {
-          id: 8,
-          name: "RETEN 40*52*7 POLEA NISSAN SENTRA 16 VALVULAS MONZA",
-          price: 600.0,
-          img: "https://placebear.com/200/300",
-          oferta: true,
-          priceOferta: 500.0,
-          src:"/productosDetalles"
-        },
+
       ],
     };
   },
@@ -138,9 +67,9 @@ export default {
   mounted() {
       Productos.listaGeneral()
            .then( response => {
-                      console.log ( response.data.data);
+                      //console.log ( response.data.data);
                       this.productos = response.data.data
-                      
+                //console.log( this.productos );
              })
       }
 };
