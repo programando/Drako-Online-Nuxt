@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="lg:fixed">
     <h2>Tipo de respuesto</h2>
     <input
       class="px-4 py-2 mt-2 border rounded-md focus:outline-none"

@@ -2,15 +2,15 @@
   <div>
     <Header />
     <div class="grid md:grid-cols-3 lg:grid-cols-10">
-      <div class="flex justify-center px-8 py-10 lg:col-span-2">
+      <div class="flex justify-center px-8 py-10 lg:col-span-3 2xl:col-span-2">
         <FiltroProducto />
       </div>
 
       <div
-        class="grid justify-center grid-cols-1 py-10 space-x-2 sm:grid-cols-2 md:col-span-3 lg:col-span-8 lg:grid-cols-4 2xl:grid-cols-5 xl:space-x-4"
+        class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4"
       >
         <div
-          class="w-11/12 p-4 mx-auto mt-4 cursor-pointer hover:border hover:shadow-lg"
+          class="p-4 mx-auto border border-white cursor-pointer w-72 hover:border hover:shadow-xl"
           v-for="(producto) in productos" :key="producto.idproducto" 
         >
           <nuxt-link to="/">
@@ -21,10 +21,10 @@
               >
                 Oferta
               </p>
-              <img class="" v-for="imagen in producto.imagenes.slice(0,1)" :key="imagen.idregistro"  alt="" :src='imagen._240x240' />
+              <img class="h-44" v-for="imagen in producto.imagenes.slice(0,1)" :key="imagen.idregistro"  alt="" :src='imagen._240x240' />
                           
             </div>
-            <p class="text-gray-700 text-start">{{ producto.nombre_impreso}}</p>
+            <p class="h-16 text-gray-700 text-start">{{ producto.nombre_impreso}}</p>
             <p
               class="mt-4 font-semibold"
               :class="{ 'line-through': producto.precio_oferta }"
@@ -34,8 +34,19 @@
             <p v-if="producto.precio_oferta" class="font-semibold">
               {{ producto.precio_oferta }} $
             </p>
+            <div class="flex items-center space-x-4">
+            <div class="flex mt-2">
+              <button class="px-2 py-1 border">-</button>
+              <p class="px-2 py-1 border">1</p>
+              <button class="px-2 py-1 border">+</button>
+            </div>
+            <div class="">
+              <button class="px-4 py-2 text-sm text-white rounded-lg bg-rojo">Agregar al carro</button>
+            </div>
+          </div>
           </nuxt-link>
         </div>
+       
       </div>
     </div>
     <Footer />
@@ -58,9 +69,8 @@ export default {
 
   data() {
     return {
-      productos: [
-
-      ],
+      productos: [],
+      
     };
   },
 

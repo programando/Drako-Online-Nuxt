@@ -39,8 +39,8 @@
         <img class="h-14 lg:h-20" src="/logo.jpg" alt="">
       </nuxt-link>
       <div class="flex py-4 mt-2">
-        <img class="z-20 h-5 mt-2 -mr-7" src="search.svg" alt="busqueda" />
-        <input class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1" type="text" />
+        <img class="z-20 h-5 mt-2 -mr-7" src="/search.svg" alt="busqueda" />
+        <input class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1" type="text" placeholder="Buscar producto" />
       </div>
       <div class="hidden space-x-4 md:flex md:items-center">
         <div class="flex items-center">
