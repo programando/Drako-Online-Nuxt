@@ -10,43 +10,63 @@
         class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4"
       >
         <div
-          class="p-4 mx-auto border border-white cursor-pointer w-72 hover:border hover:shadow-xl mb-24"
-          v-for="(producto) in productos" :key="producto.idproducto" 
+          class="p-4 mx-auto mb-24 border border-white cursor-pointer w-72 hover:border hover:shadow-xl"
+          v-for="producto in productos"
+          :key="producto.idproducto"
         >
-          <nuxt-link to="/">
-            <div class="relative flex justify-center">
-              <p
-                v-if="producto.precio_oferta"
-                class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white bg-rojo rounded-sm top-2"
-              >
-                Oferta
-              </p>
-              <img class="h-44" v-for="imagen in producto.imagenes.slice(0,1)" :key="imagen.idregistro"  alt="" :src='imagen._240x240' />
-                          
-            </div>
-            <p class="h-16 text-gray-700 text-start">{{ producto.nombre_impreso}}</p>
+          <div class="relative flex justify-center">
+            <p
+              v-if="producto.precio_oferta"
+              class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2"
+            >
+              Oferta
+            </p>
+            <nuxt-link to="/">
+              <img
+                class="h-44"
+                v-for="imagen in producto.imagenes.slice(0, 1)"
+                :key="imagen.idregistro"
+                alt=""
+                :src="imagen._240x240"
+              />
+            </nuxt-link>
+          </div>
+          <p class="h-16 text-gray-700 text-start">
+            {{ producto.nombre_impreso }}
+          </p>
+          <div class="h-12">
             <p
               class="mt-4 font-semibold"
-              :class="{ 'line-through': producto.precio_oferta | NumeroEntero }"
+              :class="{
+                'line-through': producto.precio_oferta | NumeroEntero,
+              }"
             >
-              {{ producto.precio_base | NumeroEntero }} 
+              {{ producto.precio_base | NumeroEntero }}
             </p>
             <p v-if="producto.precio_oferta" class="font-semibold">
-              {{ producto.precio_oferta | NumeroEntero}} 
+              {{ producto.precio_oferta | NumeroEntero }}
             </p>
-            <div class="flex items-center space-x-4">
+          </div>
+
+          <div class="flex items-center space-x-4">
             <div class="flex mt-2">
-              <button class="px-2 py-1 border">-</button>
-              <p class="px-2 py-1 border">1</p>
-              <button class="px-2 py-1 border">+</button>
+              <button class="px-2 py-1 border" >
+                -
+              </button>
+              <p class="px-2 py-1 border">0</p>
+              <button class="px-2 py-1 border" >
+                +
+              </button>
             </div>
             <div class="">
-               <button class="px-4 py-2 text-sm text-white rounded-lg bg-rojo">Comprar</button>
+              <button
+                class="px-4 py-2 text-white rounded-lg bg-azul"
+              >
+                Comprar
+              </button>
             </div>
           </div>
-          </nuxt-link>
         </div>
-       
       </div>
     </div>
     <Footer />
@@ -70,18 +90,28 @@ export default {
   data() {
     return {
       productos: [],
-      
+      cantidad: 0,
     };
   },
 
   mounted() {
-      Productos.listaGeneral()
-           .then( response => {
-                      //console.log ( response.data.data);
-                      this.productos = response.data.data
-                //console.log( this.productos );
-             })
-      }
+    Productos.listaGeneral().then((response) => {
+      //console.log ( response.data.data);
+      this.productos = response.data.data;
+      //console.log( this.productos );
+    });
+  },
+
+  computed: {
+    aumentarCantidad() {
+      console.log("click")
+      this.cantidad = this.cantidad + 1
+    },
+    disminuirCantidad() {
+      console.log("click")
+      this.cantidad = this.cantidad + 1
+    }
+  },
 };
 </script>
 

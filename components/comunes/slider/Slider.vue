@@ -7,14 +7,11 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div
-          class="py-48 bg-center bg-cover"
+          class="bg-center bg-cover py-80"
           style="background-image: url('slider/SLIDE1.png')"
         >
         <div class="lg:flex lg:justify-between">
           <div class="px-16 ">
-            <h2 class="text-3xl font-bold text-white uppercase md:text-4xl">
-              Black Friday 1
-            </h2>
             <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
               Hasta 50% de descuento
             </h3>
@@ -34,14 +31,11 @@
       </div>
       <div class="swiper-slide">
         <div
-          class="py-48 bg-center bg-cover"
+          class="bg-center bg-cover py-80"
           style="background-image: url('slider/SLIDE2.jpg')"
         >
           <div class="lg:flex xl:justify-between">
             <div class="px-16">
-              <h2 class="text-3xl font-bold text-white uppercase md:text-4xl">
-                Black Friday 1
-              </h2>
               <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
                 Hasta 50% de descuento
               </h3>
@@ -51,7 +45,7 @@
                 Ir a la tienda
               </button>
             </div>
-            <div class="mx-10 mt-20 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
+            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
               <p class="text-2xl font-semibold text-white xl:text-3xl">SUSPENSIÓN CAMPEROS Y CAMIONETAS</p>
             </div>
           </div>
@@ -59,14 +53,11 @@
       </div>
       <div class="swiper-slide">
         <div
-          class="py-48 bg-center bg-cover"
+          class="bg-center bg-cover py-80"
           style="background-image: url('slider/SLIDE3.jpg')"
         >
-          <div class="lg:flex ">
-            <div class="px-16">
-              <h2 class="text-3xl font-bold text-white uppercase md:text-4xl">
-                Black Friday 1
-              </h2>
+          <div class="">
+            <div class="px-16 -mt-24">
               <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
                 Hasta 50% de descuento
               </h3>
@@ -76,7 +67,7 @@
                 Ir a la tienda
               </button>
             </div>
-            <div class="mx-10 mt-20 lg:mt-56 lg:mx-2 lg:mr-4 xl:mr-24">
+            <div class="pt-10 pl-20 mx-14">
               <p class="text-2xl font-semibold text-white xl:text-3xl">SUSPENSIÓN CAMPEROS Y CAMIONETAS</p>
             </div>
           </div>
@@ -84,13 +75,10 @@
       </div>
       <div class="swiper-slide">
         <div
-          class="py-48 bg-center bg-cover"
+          class="bg-center bg-cover py-80"
           style="background-image: url('slider/slider4.jpeg')"
         >
           <div class="px-16">
-            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
-              Black Friday
-            </h2>
             <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
               Hasta 50% de descuento
             </h3>
@@ -104,13 +92,10 @@
       </div>
       <div class="swiper-slide">
         <div
-          class="py-48 bg-center bg-cover"
+          class="bg-center bg-cover py-80"
           style="background-image: url('slider/slider5.jpg')"
         >
           <div class="px-16">
-            <h2 class="text-4xl font-bold text-white uppercase md:text-5xl">
-              Black Friday
-            </h2>
             <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
               Hasta 50% de descuento
             </h3>
