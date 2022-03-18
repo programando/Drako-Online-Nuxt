@@ -10,14 +10,14 @@
         class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4"
       >
         <div
-          class="p-4 mx-auto border border-white cursor-pointer w-72 hover:border hover:shadow-xl"
+          class="p-4 mx-auto border border-white cursor-pointer w-72 hover:border hover:shadow-xl mb-24"
           v-for="(producto) in productos" :key="producto.idproducto" 
         >
           <nuxt-link to="/">
             <div class="relative flex justify-center">
               <p
                 v-if="producto.precio_oferta"
-                class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white bg-red-800 rounded-sm top-2"
+                class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white bg-rojo rounded-sm top-2"
               >
                 Oferta
               </p>
@@ -27,12 +27,12 @@
             <p class="h-16 text-gray-700 text-start">{{ producto.nombre_impreso}}</p>
             <p
               class="mt-4 font-semibold"
-              :class="{ 'line-through': producto.precio_oferta }"
+              :class="{ 'line-through': producto.precio_oferta | NumeroEntero }"
             >
-              {{ producto.precio_base }} $
+              {{ producto.precio_base | NumeroEntero }} 
             </p>
             <p v-if="producto.precio_oferta" class="font-semibold">
-              {{ producto.precio_oferta }} $
+              {{ producto.precio_oferta | NumeroEntero}} 
             </p>
             <div class="flex items-center space-x-4">
             <div class="flex mt-2">
@@ -41,7 +41,7 @@
               <button class="px-2 py-1 border">+</button>
             </div>
             <div class="">
-              <button class="px-4 py-2 text-sm text-white rounded-lg bg-rojo">Agregar al carro</button>
+               <button class="px-4 py-2 text-sm text-white rounded-lg bg-rojo">Comprar</button>
             </div>
           </div>
           </nuxt-link>
