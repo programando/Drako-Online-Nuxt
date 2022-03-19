@@ -38,13 +38,13 @@
             <p
               class="mt-4 font-semibold"
               :class="{
-                'line-through': producto.precio_oferta | NumeroEntero,
+                'line-through': producto.precio_oferta ,
               }"
             >
-              {{ producto.precio_base | NumeroEntero }}
+              {{ producto.precio_base_format  }}
             </p>
             <p v-if="producto.precio_oferta" class="font-semibold">
-              {{ producto.precio_oferta | NumeroEntero }}
+              {{ producto.precio_oferta_format  }}
             </p>
           </div>
 
@@ -53,7 +53,7 @@
               <button class="px-2 py-1 border" >
                 -
               </button>
-              <p class="px-2 py-1 border">0</p>
+              <p class="px-2 py-1 border">{{ producto.cantidad }}</p>
               <button class="px-2 py-1 border" >
                 +
               </button>

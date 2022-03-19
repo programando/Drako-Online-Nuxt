@@ -37,9 +37,21 @@
 </template>
 
 <script>
-export default {
-  name: "FiltroProducto"
-}
+  import GruposProductos from "@/models/ProductosGrupos";
+
+    export default {
+      name: "FiltroProducto",
+    
+    
+      mounted() {
+            GruposProductos.listadoGeneral().then((response) => {
+             console.log ( response.data);
+        });
+      }
+    
+    
+
+    }
 </script>
 
 <style>
