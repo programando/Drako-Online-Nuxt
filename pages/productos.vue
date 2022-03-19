@@ -59,6 +59,7 @@ import Footer from "../components/comunes/Footer.vue";
 import FiltroProducto from "../components/productos/FiltroProducto.vue";
 import Productos from "@/models/Productos";
 
+
 export default {
   name: "Productos",
   components: {
@@ -81,7 +82,8 @@ export default {
                       this.productos = response.data.data
                 //console.log( this.productos );
              })
-      }
+      },
+
 };
 </script>
 
