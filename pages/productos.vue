@@ -38,7 +38,7 @@
             <p
               class="mt-4 font-semibold"
               :class="{
-                'line-through': producto.precio_oferta ,
+                'line-through text-gray-500': producto.precio_oferta ,
               }"
             >
               {{ producto.precio_base_format  }}
@@ -49,18 +49,18 @@
           </div>
 
           <div class="flex items-center space-x-4">
-            <div class="flex mt-2">
-              <button class="px-2 py-1 border" >
+            <div class="flex items-center mt-2">
+              <button class="px-2 py-1 border" @click="disminuirCantidad(producto.cantidad)" >
                 -
               </button>
               <p class="px-2 py-1 border">{{ producto.cantidad }}</p>
-              <button class="px-2 py-1 border" >
+              <button class="px-2 py-1 border" @click="aumentarCantidad(producto.cantidad)">
                 +
               </button>
             </div>
             <div class="">
               <button
-                class="px-4 py-2 text-white rounded-lg bg-azul"
+                class="px-4 py-1 mt-2 text-white rounded-lg bg-azul"
               >
                 Comprar
               </button>
@@ -103,14 +103,14 @@ export default {
     });
   },
 
-  computed: {
-    aumentarCantidad() {
-      console.log("click")
-      this.cantidad = this.cantidad + 1
+  methods: {
+    aumentarCantidad(cantidad) {
+      console.log(cantidad)
+      
     },
-    disminuirCantidad() {
-      console.log("click")
-      this.cantidad = this.cantidad + 1
+    disminuirCantidad(cantidad) {
+      console.log(cantidad)
+      
     }
   },
 };
