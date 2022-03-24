@@ -12,9 +12,7 @@
         >
         <div class="lg:flex lg:justify-between">
           <div class="px-16 ">
-            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
-              Hasta 50% de descuento
-            </h3>
+            
             <button
               class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
             >
@@ -22,8 +20,7 @@
             </button>
           </div>
           <div class="mx-10 mt-20 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-            <p class="text-2xl font-semibold text-white xl:text-3xl">PUNTAS DE EJE • ROTULAS•
-              TERMINALES DE DIRECCIÓN</p>
+            
           </div>
         </div>
           
@@ -36,9 +33,6 @@
         >
           <div class="lg:flex xl:justify-between">
             <div class="px-16">
-              <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
-                Hasta 50% de descuento
-              </h3>
               <button
                 class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
               >
@@ -58,9 +52,6 @@
         >
           <div class="">
             <div class="px-16 -mt-24">
-              <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
-                Hasta 50% de descuento
-              </h3>
               <button
                 class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
               >
@@ -79,9 +70,6 @@
           style="background-image: url('slider/slider4.jpeg')"
         >
           <div class="px-16">
-            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
-              Hasta 50% de descuento
-            </h3>
             <button
               class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
             >
@@ -96,9 +84,6 @@
           style="background-image: url('slider/slider5.jpg')"
         >
           <div class="px-16">
-            <h3 class="mx-4 mt-2 text-xl text-white md:text-2xl">
-              Hasta 50% de descuento
-            </h3>
             <button
               class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
             >

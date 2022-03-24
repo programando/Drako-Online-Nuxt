@@ -36,14 +36,14 @@
           </p>
           <div class="h-12">
             <p
-              class="mt-4 font-semibold"
+              class="mt-4 font-semibold text-right"
               :class="{
                 'line-through text-gray-500': producto.precio_oferta ,
               }"
             >
               {{ producto.precio_base_format  }}
             </p>
-            <p v-if="producto.precio_oferta" class="font-semibold">
+            <p v-if="producto.precio_oferta" class="font-semibold text-right">
               {{ producto.precio_oferta_format  }}
             </p>
           </div>
