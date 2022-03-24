@@ -11,7 +11,7 @@
       >
         <div
           class="p-4 mx-auto mb-24 border border-white cursor-pointer w-72 hover:border hover:shadow-xl"
-          v-for="producto in productos"
+          v-for="(producto, index) in productos"
           :key="producto.idproducto"
         >
           <div class="relative flex justify-center">
@@ -50,11 +50,11 @@
 
           <div class="flex items-center space-x-4">
             <div class="flex items-center mt-2">
-              <button class="px-2 py-1 border" @click="disminuirCantidad(producto.cantidad)" >
+              <button class="px-2 py-1 border" @click="disminuirCantidad(index)" >
                 -
               </button>
-              <p class="px-2 py-1 border">{{ producto.cantidad }}</p>
-              <button class="px-2 py-1 border" @click="aumentarCantidad(producto.cantidad)">
+              <p class="px-2 py-1 border" disabled="disabled">{{ producto.cantidad }}</p>
+              <button class="px-2 py-1 border" @click="aumentarCantidad(index)">
                 +
               </button>
             </div>
@@ -74,10 +74,10 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/comunes/Footer.vue";
-import FiltroProducto from "../components/productos/FiltroProducto.vue";
-import Productos from "@/models/Productos";
+import Header         from    "@/components/Header.vue";
+import Footer         from    "@/components/comunes/Footer.vue";
+import FiltroProducto from    "@/components/productos/FiltroProducto.vue";
+import Productos      from    "@/models/Productos";
 
 
 export default {
@@ -104,12 +104,14 @@ export default {
   },
 
   methods: {
-    aumentarCantidad(cantidad) {
-      console.log(cantidad)
+    aumentarCantidad(index) {
+       this.productos[index].cantidad++ ;
       
     },
-    disminuirCantidad(cantidad) {
-      console.log(cantidad)
+    disminuirCantidad(index) {
+       if (this.productos[index].cantidad >0){
+          this.productos[index].cantidad--  ;
+       }
       
     }
   },
