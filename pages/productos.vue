@@ -60,7 +60,7 @@
             </div>
             <div class="">
               <button
-                class="px-4 py-1 mt-2 text-white rounded-lg bg-azul"
+                class="px-4 py-1 mt-2 border rounded-lg hover:bg-azul hover:text-white "
               >
                 Comprar
               </button>

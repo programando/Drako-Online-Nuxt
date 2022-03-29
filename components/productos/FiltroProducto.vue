@@ -44,6 +44,7 @@
 
       data() {
         return {
+          busquedaFiltrada: [],
           bujes:  false,
           amortiguadores: false,
           bombas: false,
