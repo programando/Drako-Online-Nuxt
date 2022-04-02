@@ -38,10 +38,12 @@
       <nuxt-link to="/">
         <img class="h-14 lg:h-20" src="/logo.jpg" alt="">
       </nuxt-link>
-      <div class="flex py-4 mt-2">
+    <!--  <div class="flex py-4 mt-2">
         <img class="z-20 h-5 mt-2 -mr-7" src="/search.svg" alt="busqueda" />
-        <input class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1" type="text" placeholder="Buscar producto" />
+        <input v-model="textoBusqueda"  @keypress.13="iniciarBusquedaProductos"
+              class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1" type="text" placeholder="Buscar producto" />
       </div>
+      -->
       <div class="hidden space-x-4 md:flex md:items-center">
         <div class="flex items-center">
           <div class="flex items-center px-2 rounded ">
@@ -63,11 +65,12 @@
         </div>
         
         
-        <!-- <div class="px-4 py-2 rounded">
+        <div class="px-4 py-2 rounded">
           <nuxt-link to="#">
             <font-awesome-icon style="font-size: 25px;" :icon="['fas', 'shopping-cart']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
-        </div> -->
+        </div> 
+
       </div>
     </div>
   </div>
@@ -85,8 +88,19 @@ export default {
   data() {
     return {
       menu: false,
+      textoBusqueda:''
     };
   },
+
+  methods: {
+      iniciarBusquedaProductos () {
+          if ( this.textoBusqueda.length == 0) { return };
+          //this.$router.replace({ path: '/productos/?textoBusqueda='+this.textoBusqueda });
+
+          this.$router.push({ path: '/productos/?textoBusqueda='+this.textoBusqueda  });
+      }
+  }
+
 };
 </script>
 
