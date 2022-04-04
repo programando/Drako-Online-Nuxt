@@ -1,9 +1,9 @@
 <template>
   <div>
     <Header />
-    <div class="fixed z-50 flex justify-center bg-white left">
-      <div class="flex py-4 mt-2 border-2 ">
-        <img class="z-20 h-5 mt-2 -mr-7" src="/search.svg" alt="busqueda" />
+    <div class="sticky z-50 flex justify-center bg-white left top-20">
+      <div class="flex items-center px-2 py-1 mt-2 border-2">
+        <img class="z-20 h-5 -mr-7" src="/search.svg" alt="busqueda" />
         <input
           v-model="textBuscarProducto"
           @keypress.13="iniciarBusquedaProductos"
@@ -162,7 +162,5 @@ export default {
 };
 </script>
 <style scoped>
-.left {
-  left: 33%;
-}
+
 </style>
