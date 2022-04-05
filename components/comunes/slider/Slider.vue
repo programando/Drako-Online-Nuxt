@@ -5,26 +5,33 @@
     :loadtheme="false"
   >
     <div class="swiper-wrapper">
-     
       <div class="swiper-slide">
-        <div class="bg-center bg-cover py-80" style="background-image: url('slider/slide1.png')" >
-        <div class="lg:flex lg:justify-between">
-          <div class="px-16 ">
-            
-            <button class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul" >
-              Ir a la tienda
-            </button>
-          </div>
-            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p class="text-3xl font-semibold text-white xl:text-3xl">PUNTAS DE EJE - RÓTULAS - TERMINALES DE DIRECCIÓN</p>
+        <div
+          class="-mt-20 bg-center bg-cover slider1"
+          style="background-image: url('slider/SLIDE1.png')"
+        >
+          <div class="lg:flex lg:justify-between">
+            <div class="px-16">
+              <button
+                class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
+              >
+                Ir a la tienda
+              </button>
             </div>
-        </div>
-          
+            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
+              <p class="text-xl font-semibold text-white lg:text-3xl xl:text-3xl">
+                PUNTAS DE EJE - RÓTULAS - TERMINALES DE DIRECCIÓN
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="swiper-slide">
-        <div class="bg-center bg-cover py-80" style="background-image: url('slider/slide2.jpg')"   >
+        <div
+          class="bg-center bg-cover py-96 slider2"
+          style="background-image: url('slider/SLIDE2.jpg')"
+        >
           <div class="lg:flex xl:justify-between">
             <div class="px-16">
               <button
@@ -34,15 +41,17 @@
               </button>
             </div>
             <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p class="text-3xl font-semibold text-white xl:text-3xl">SUSPENSIONES PARA CAMPEROS Y CAMIONETAS</p>
+              <p class="text-3xl font-semibold text-white xl:text-3xl">
+                SUSPENSIONES PARA CAMPEROS Y CAMIONETAS
+              </p>
             </div>
           </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div
-          class="bg-center bg-cover py-80"
-          style="background-image: url('slider/slide3.jpg')"
+          class="bg-center bg-cover py-96 slider3"
+          style="background-image: url('slider/SLIDE3.jpg')"
         >
           <div class="">
             <div class="px-16 -mt-24">
@@ -53,15 +62,13 @@
               </button>
             </div>
             <div class="pt-10 pl-20 mx-14">
-              <p class="text-3xl font-semibold text-white xl:text-3xl">KIT DISTRIBUCIÓN Y BOMBAS DE AGUA</p>
+              <p class="text-3xl font-semibold text-white xl:text-3xl">
+                KIT DISTRIBUCIÓN Y BOMBAS DE AGUA
+              </p>
             </div>
           </div>
         </div>
       </div>
-
- 
- 
-
     </div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
@@ -83,9 +90,9 @@ export default {
         spaceBetween: -10,
         slidesPerGroup: 1,
         loop: true,
-         autoplay: {
-           delay: 5000
-         },
+        autoplay: {
+          delay: 5000,
+        },
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",
@@ -124,4 +131,28 @@ export default {
 .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
   @apply w-48 h-48;
 }
+
+.slider1 {
+  padding: 650px 0;
+  margin-top: -350px;
+  }
+.slider2 {
+  padding: 550px 0;
+  margin-top: -350px;
+  }
+
+.slider3 {
+  padding: 550px 0;
+  margin-top: -350px;
+  }
+
+
+@media (min-width:1200px){
+  .slider1 {
+  padding: 550px 0;
+  margin-top: -350px;
+  }
+}
+
+ 
 </style>

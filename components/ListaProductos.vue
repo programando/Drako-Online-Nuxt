@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:flex justify-center xl:items-center mt-2"
+    class="grid justify-center grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:items-center"
   >
       <div class="xl:hidden">
         <div class="flex justify-center xl:hidden">
@@ -43,7 +43,7 @@
         </div>
       </div>
     
-    <div v-swiper="swiperOption" class="lg:w-6/6 relative hidden xl:block -mt-2">
+    <div v-swiper="swiperOption" class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="flex justify-center">
@@ -53,7 +53,7 @@
             <p>Producto</p>
           </div>
         </div>
-        <div class="swiper-slide items-center">
+        <div class="items-center swiper-slide">
           <div class="flex justify-center">
             <img class="w-4/6 2xl:h-48" src="productos/2.jpg" alt="" />
           </div>
@@ -62,7 +62,7 @@
             <p>Producto</p>
           </div>
         </div>
-        <div class="swiper-slide items-center">
+        <div class="items-center swiper-slide">
           <div class="flex justify-center">
             <img class="w-4/6 2xl:h-48" src="productos/3.jpg" alt="" />
           </div>
@@ -71,7 +71,7 @@
             <p>Producto</p>
           </div>
         </div>
-        <div class="swiper-slide items-center">
+        <div class="items-center swiper-slide">
           <div class="flex justify-center">
             <img class="w-4/6 2xl:h-48" src="productos/4.jpg" alt="" />
           </div>
@@ -80,12 +80,12 @@
             <p>Producto</p>
           </div>
         </div>
-        <div class="swiper-slide items-center">
+        <div class="items-center swiper-slide">
           <div class="flex justify-center">
             <img class="w-4/6 2xl:h-48" src="productos/5.jpg" alt="" />
           </div>
 
-          <div class="flex justify-center z-10">
+          <div class="z-10 flex justify-center">
             <p>Producto</p>
           </div>
         </div>
@@ -166,6 +166,7 @@ export default {
       Productos.masVendidos() 
         .then( response=>{
             this.productosVendidos = response.data ;
+            
         });
   },
 

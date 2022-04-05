@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute cursor-pointer contenedor-principal z-40 ">
+  <div class="absolute z-50 cursor-pointer contenedor-principal ">
     <a
       class="flex items-center contenedor"
       href="https://api.whatsapp.com/send?phone=573152701964"

@@ -22,18 +22,17 @@
       <div
         class="grid justify-center col-span-1 mx-8 mt-10 lg:grid-cols-2 xl:grid-cols-3"
       >
-        <Categorias />
-        <Categorias />
-        <Categorias />
-        <Categorias />
-        <Categorias />
-        <Categorias />
+        <Categorias img="slider/slide3.jpg" title="Categoria 1" />
+        <Categorias img="slider/slide3.jpg" title="Categoria 1" />
+        <Categorias img="slider/slide3.jpg" title="Categoria 1" />
+        <Categorias img="slider/slide3.jpg" title="Categoria 1" />
+        <Categorias img="slider/slide3.jpg" title="Categoria 1" />
+        <Categorias img="slider/slide3.jpg" title="Categoria 1" />
+        
       </div>
     </div>
     <Footer />
-    <div class="sticky contenedor-principal">
-      <WsContact/>
-    </div>
+    
   </div>
 </template>
 
@@ -50,6 +49,7 @@ import GruposProductos     from "@/models/ProductosGrupos";
 export default {
   components: {
     Header,     Slider,     ListaProductos,     SelectRespuesto,     Categorias,     Footer,     WsContact   },
+    layout: "defaulLayout",
   data: ()=> ({
       gruposProductos :[],
   }),

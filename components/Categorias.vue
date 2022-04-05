@@ -1,12 +1,17 @@
 <template>
-  <div class="w-96 mt-6 flex justify-center bg-cover mx-10" style="background-image: url('slider/slide3.jpg')">
-    <h2 class="py-20 px-10 text-2xl text-white">Categoria 1</h2>
+  <div class="relative flex justify-center mx-10 mt-6 bg-cover w-96">
+    <img :src="img" alt="">
+    <h2 class="absolute text-white top-20">{{ title }}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Categorias"
+  name: "Categorias",
+  props: {
+    img: String,
+    title: String
+  }
 }
 </script>
 
