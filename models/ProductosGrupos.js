@@ -7,7 +7,9 @@ export default {
         return Api.get('/grupos/listado');
   },
   
-  
+        async destacados() {
+        return Api.get('/grupos/destacados');
+  },
  
  
 }

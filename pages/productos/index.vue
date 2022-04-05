@@ -26,17 +26,14 @@
       >
         <div
           class="p-4 mx-auto mb-24 border border-white cursor-pointer w-72 hover:border hover:shadow-xl"
-          v-for="(producto, index) in productos"
-          :key="producto.idproducto"
+          v-for="(producto, index) in productos"  :key="producto.idproducto"
         >
           <div class="relative flex justify-center">
-            <p
-              v-if="producto.precio_oferta"
-              class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2"
-            >
+            <p  v-if="producto.precio_oferta" class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2" >
               Oferta
             </p>
-            <nuxt-link to="/">
+            <nuxt-link :to="{ name: 'productos-detalles', params: { producto: producto }}">
+ 
               <img
                 class="h-44"
                 v-for="imagen in producto.imagenes.slice(0, 1)"
@@ -95,10 +92,10 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/comunes/Footer.vue";
-import FiltroProducto from "@/components/productos/FiltroProducto.vue";
-import Productos from "@/models/Productos";
+import FiltroProducto     from "@/components/productos/FiltroProducto.vue";
+import Footer             from "@/components/comunes/Footer.vue";
+import Header             from "@/components/Header.vue";
+import Productos          from "@/models/Productos";
 
 export default {
   name: "Productos",

@@ -107,8 +107,9 @@
 </template>
 
 <script>
-import Producto from "../components/Producto.vue";
+import Producto from "@/components/Producto.vue";
 import { directive } from "vue-awesome-swiper";
+import Productos from '@/models/Productos';
 
 export default {
   name: "ListaProductos",
@@ -120,6 +121,7 @@ export default {
   },
   data() {
     return {
+      productosVendidos:[],
       swiperOption: {
         slidesPerView: 3,
         spaceBetween: -10,
@@ -160,6 +162,13 @@ export default {
       },
     };
   },
+  mounted(){
+      Productos.masVendidos() 
+        .then( response=>{
+            this.productosVendidos = response.data ;
+        });
+  },
+
 };
 </script>
 

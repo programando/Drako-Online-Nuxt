@@ -3,7 +3,14 @@ import Api  from "@/config/Axios";
 
 export default {
 
-          async listaGeneral() {
+      async buscarPorCodigo( idproducto ) {
+        return Api.post('/productos/buscar/codigo',   { 'idproducto' : idproducto }    );
+      },  
+      async masVendidos() {
+            return Api.get('/productos/mas/vendidos');
+      },
+  
+      async listaGeneral() {
             return Api.get('/productos/listado');
       },
   

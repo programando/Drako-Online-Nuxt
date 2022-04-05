@@ -5,32 +5,26 @@
     :loadtheme="false"
   >
     <div class="swiper-wrapper">
+     
       <div class="swiper-slide">
-        <div
-          class="bg-center bg-cover py-80"
-          style="background-image: url('slider/SLIDE1.png')"
-        >
+        <div class="bg-center bg-cover py-80" style="background-image: url('slider/slide1.png')" >
         <div class="lg:flex lg:justify-between">
           <div class="px-16 ">
             
-            <button
-              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
-            >
+            <button class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul" >
               Ir a la tienda
             </button>
           </div>
-          <div class="mx-10 mt-20 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-            
-          </div>
+            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
+              <p class="text-3xl font-semibold text-white xl:text-3xl">PUNTAS DE EJE - RÓTULAS - TERMINALES DE DIRECCIÓN</p>
+            </div>
         </div>
           
         </div>
       </div>
+
       <div class="swiper-slide">
-        <div
-          class="bg-center bg-cover py-80"
-          style="background-image: url('slider/SLIDE2.jpg')"
-        >
+        <div class="bg-center bg-cover py-80" style="background-image: url('slider/slide2.jpg')"   >
           <div class="lg:flex xl:justify-between">
             <div class="px-16">
               <button
@@ -40,7 +34,7 @@
               </button>
             </div>
             <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p class="text-2xl font-semibold text-white xl:text-3xl">SUSPENSIÓN CAMPEROS Y CAMIONETAS</p>
+              <p class="text-3xl font-semibold text-white xl:text-3xl">SUSPENSIONES PARA CAMPEROS Y CAMIONETAS</p>
             </div>
           </div>
         </div>
@@ -48,7 +42,7 @@
       <div class="swiper-slide">
         <div
           class="bg-center bg-cover py-80"
-          style="background-image: url('slider/SLIDE3.jpg')"
+          style="background-image: url('slider/slide3.jpg')"
         >
           <div class="">
             <div class="px-16 -mt-24">
@@ -59,39 +53,15 @@
               </button>
             </div>
             <div class="pt-10 pl-20 mx-14">
-              <p class="text-2xl font-semibold text-white xl:text-3xl">SUSPENSIÓN CAMPEROS Y CAMIONETAS</p>
+              <p class="text-3xl font-semibold text-white xl:text-3xl">KIT DISTRIBUCIÓN Y BOMBAS DE AGUA</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div
-          class="bg-center bg-cover py-80"
-          style="background-image: url('slider/slider4.jpeg')"
-        >
-          <div class="px-16">
-            <button
-              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
-            >
-              Ir a la tienda
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div
-          class="bg-center bg-cover py-80"
-          style="background-image: url('slider/slider5.jpg')"
-        >
-          <div class="px-16">
-            <button
-              class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
-            >
-              Ir a la tienda
-            </button>
-          </div>
-        </div>
-      </div>
+
+ 
+ 
+
     </div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
@@ -113,9 +83,9 @@ export default {
         spaceBetween: -10,
         slidesPerGroup: 1,
         loop: true,
-        // autoplay: {
-        //   delay: 3000
-        // },
+         autoplay: {
+           delay: 5000
+         },
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",

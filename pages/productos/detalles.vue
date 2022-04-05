@@ -7,10 +7,10 @@
       </div>
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
-          Pastillas de freno Mazda 3 New Skyaticv Delanteras
+          {{ Producto.nombre_impreso}}
         </h2>
-        <p class="mt-2 text-gray-600">Código: 20-10001</p>
-        <p class="text-gray-600">OEM: 8987-1759BPRx1</p>
+        <p class="mt-2 text-gray-600">Código: {{ Producto.codproducto}}</p>
+        <p class="text-gray-600">OEM: {{ Producto.cod_oem}}</p>
         <div class="mt-4">
           <h3 class="text-xl font-semibold">Ficha Técnica</h3>
           <table class="w-full border">
@@ -59,8 +59,9 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/comunes/Footer.vue";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/comunes/Footer.vue";
+
 
 export default {
   name: "ProductoDetalles",
@@ -71,8 +72,12 @@ export default {
   data() {
     return {
       hola: "",
+      Producto:[],
     };
   },
+  created(){
+      this.Producto = this.$route.params.producto;    
+  }
 };
 </script>
 <style></style>
