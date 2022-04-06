@@ -32,8 +32,7 @@
             <p  v-if="producto.precio_oferta" class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2" >
               Oferta
             </p>
-            <nuxt-link :to="{ name: 'productos-detalles', params: { producto: producto }}">
- 
+              <nuxt-link :to="{ name: 'productos-detalles', params: { Producto: producto}}"   >  
               <img
                 class="h-44"
                 v-for="imagen in producto.imagenes.slice(0, 1)"
@@ -87,27 +86,34 @@
         </div>
       </div>
     </div>
+    <Pagination
+          :currentRecord         = "records.current"
+          :links                 = "links"
+          :totalRecords          = "records.total"
+            @getProductosFromUrl="getProductosFromUrl"
+       >
+    </Pagination>
     <Footer />
   </div>
 </template>
 
 <script>
+ 
 import FiltroProducto     from "@/components/productos/FiltroProducto.vue";
 import Footer             from "@/components/comunes/Footer.vue";
 import Header             from "@/components/Header.vue";
 import Productos          from "@/models/Productos";
+import Pagination         from "@/components/htmlControl/Pagination.vue";
 
 export default {
   name: "Productos",
-  components: {
-    Header,
-    FiltroProducto,
-    Footer,
-  },
+  components: { Header, Pagination,  FiltroProducto,   Footer,  },
 
   data() {
     return {
       productos: [],
+      links:[],
+      records: { 'current':0, 'total' :0 },
       cantidad: 0,
       formData: {
         grupos: [],
@@ -122,6 +128,17 @@ export default {
   },
 
   methods: {
+ 
+
+      getProductosFromUrl ( Url ) {
+        Productos.getProductosFromUrl( Url)
+        .then ( response => {
+          this.productos       = response.data.data;
+          this.links           = response.data.links;
+          this.records.current = response.data.to;
+          this.records.total   = response.data.total;         
+       });
+    },
     iniciarBusquedaProductos() {
       this.formData.textoBusqueda = this.textBuscarProducto;
       Productos.busqueda(this.formData).then((response) => {
@@ -152,7 +169,10 @@ export default {
 
     getProductosAll() {
       Productos.listaGeneral().then((response) => {
-        this.productos = response.data.data;
+        this.productos       = response.data.data;
+        this.links           = response.data.links;
+        this.records.current = response.data.to;
+        this.records.total   = response.data.total;
       });
     },
   },

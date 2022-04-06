@@ -2,7 +2,9 @@ import Api  from "@/config/Axios";
  
 
 export default {
-
+      async getProductosFromUrl(Url) {
+        return Api.get( Url );
+      }, 
       async buscarPorCodigo( idproducto ) {
         return Api.post('/productos/buscar/codigo',   { 'idproducto' : idproducto }    );
       },  

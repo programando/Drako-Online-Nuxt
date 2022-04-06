@@ -76,7 +76,7 @@ export default {
     };
   },
   created(){
-      this.Producto = this.$route.params.producto;    
+      this.Producto = this.$route.params.Producto;    
   }
 };
 </script>
