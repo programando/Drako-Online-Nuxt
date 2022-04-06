@@ -2,48 +2,27 @@
   <div
     class="grid justify-center grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:items-center"
   >
-      <div class="xl:hidden">
-        <div class="flex justify-center xl:hidden">
-          <img class="w-4/6 2xl:h-48" src="productos/1.jpg" alt="" />
-        </div>
-        <div class="flex justify-center">
-          <p>Producto</p>
-        </div>
+    <div
+      v-for="productoVendido in productosVendidos"
+      :key="productoVendido.idproducto"
+      class="xl:hidden"
+    >
+      <div class="flex justify-center xl:hidden">
+        <img
+          class="h-44"
+          alt=""
+          :src="productoVendido.imagenes"
+        />
       </div>
-      <div class="xl:hidden">
-        <div class="flex justify-center xl:hidden">
-          <img class="w-4/6 2xl:h-48" src="productos/2.jpg" alt="" />
-        </div>
-        <div class="flex justify-center">
-          <p>Producto</p>
-        </div>
+      <div class="flex justify-center">
+        <p class="text-base">{{ productoVendido.nombre_tecnico }}</p>
       </div>
-      <div class="xl:hidden">
-        <div class="flex justify-center xl:hidden">
-          <img class="w-4/6 2xl:h-48" src="productos/3.jpg" alt="" />
-        </div>
-        <div class="flex justify-center">
-          <p>Producto</p>
-        </div>
-      </div>
-      <div class="xl:hidden">
-        <div class="flex justify-center xl:hidden">
-          <img class="w-4/6 2xl:h-48" src="productos/4.jpg" alt="" />
-        </div>
-        <div class="flex justify-center">
-          <p>Producto</p>
-        </div>
-      </div>
-      <div class="xl:hidden">
-        <div class="flex justify-center xl:hidden">
-          <img class="w-4/6 2xl:h-48" src="productos/5.jpg" alt="" />
-        </div>
-        <div class="flex justify-center">
-          <p>Producto</p>
-        </div>
-      </div>
-    
-    <div v-swiper="swiperOption" class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block">
+    </div>
+
+    <div
+      v-swiper="swiperOption"
+      class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block"
+    >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="flex justify-center">
@@ -109,7 +88,7 @@
 <script>
 import Producto from "@/components/Producto.vue";
 import { directive } from "vue-awesome-swiper";
-import Productos from '@/models/Productos';
+import Productos from "@/models/Productos";
 
 export default {
   name: "ListaProductos",
@@ -121,7 +100,7 @@ export default {
   },
   data() {
     return {
-      productosVendidos:[],
+      productosVendidos: [],
       swiperOption: {
         slidesPerView: 3,
         spaceBetween: -10,
@@ -162,14 +141,11 @@ export default {
       },
     };
   },
-  mounted(){
-      Productos.masVendidos() 
-        .then( response=>{
-            this.productosVendidos = response.data ;
-            
-        });
+  mounted() {
+    Productos.masVendidos().then((response) => {
+      this.productosVendidos = response.data;
+    });
   },
-
 };
 </script>
 
