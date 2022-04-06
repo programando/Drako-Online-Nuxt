@@ -7,7 +7,7 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div
-          class="-mt-20 bg-center bg-cover slider1"
+          class="-mt-20 bg-cover slider1"
           style="background-image: url('slider/SLIDE1.png')"
         >
           <div class="lg:flex lg:justify-between">
@@ -29,7 +29,7 @@
 
       <div class="swiper-slide">
         <div
-          class="bg-center bg-cover py-96 slider2"
+          class="bg-center bg-cover slider2"
           style="background-image: url('slider/SLIDE2.jpg')"
         >
           <div class="lg:flex xl:justify-between">
@@ -50,7 +50,7 @@
       </div>
       <div class="swiper-slide">
         <div
-          class="bg-center bg-cover py-96 slider3"
+          class="bg-center bg-cover slider3"
           style="background-image: url('slider/SLIDE3.jpg')"
         >
           <div class="">
@@ -90,9 +90,9 @@ export default {
         spaceBetween: -10,
         slidesPerGroup: 1,
         loop: true,
-        autoplay: {
-          delay: 5000,
-        },
+        // autoplay: {
+        //   delay: 5000,
+        // },
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",
@@ -133,26 +133,21 @@ export default {
 }
 
 .slider1 {
-  padding: 650px 0;
-  margin-top: -350px;
+  padding: 540px 0;
+  margin-top: -250px;
   }
 .slider2 {
-  padding: 550px 0;
-  margin-top: -350px;
+  padding: 540px 0;
+  margin-top: -250px;
   }
 
 .slider3 {
-  padding: 550px 0;
-  margin-top: -350px;
+  padding: 540px 0;
+  margin-top: -250px;
   }
 
 
-@media (min-width:1200px){
-  .slider1 {
-  padding: 550px 0;
-  margin-top: -350px;
-  }
-}
+
 
  
 </style>
