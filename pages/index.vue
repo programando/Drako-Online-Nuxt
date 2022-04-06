@@ -16,19 +16,20 @@
       class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 lg:text-2xl"
     >
       <h2 class="text-lg font-bold md:text-2xl">
-        Tipos de productos destacados
+        Grupos de productos destacados
       </h2>
     </div>
     <div class="flex justify-center mb-4">
       <div
         class="grid justify-center col-span-1 mx-8 mt-10 lg:grid-cols-2 xl:grid-cols-3"
       >
+      {{ gruposProductos }}
         <div
           v-for="productoDestacado in gruposProductos"
           :key="productoDestacado.idgrupo"
           class="relative flex items-center justify-center mx-10 mt-6 bg-cover w-96"
         >
-          <img src="slider/SLIDE3.jpg" alt="" />
+          <img :src="productoDestacado.imagen" alt="" />
           <h2 class="absolute text-white top-20">{{ productoDestacado.nomgrupo }}</h2>
         </div>
       </div>
@@ -66,6 +67,7 @@ export default {
   mounted() {
     GruposProductos.destacados().then((response) => {
       this.gruposProductos = response.data;
+       
     });
   },
 };

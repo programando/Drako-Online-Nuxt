@@ -2,28 +2,22 @@
   <div
     class="grid justify-center grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:items-center"
   >
-    <div
-      v-for="productoVendido in productosVendidos"
-      :key="productoVendido.idproducto"
-      class="xl:hidden"
-    >
-      <div class="flex justify-center xl:hidden">
-        <img
-          class="h-44"
-          alt=""
-          :src="productoVendido.imagenes"
-        />
+   
+    <div  v-for="(productoVendido) in productosVendidos" :key="productoVendido.idproducto" >
+      <div class="flex justify-center ">
+        <img class="h-44"  alt="" :src="productoVendido.imagenes['_240x240']" />
       </div>
       <div class="flex justify-center">
-        <p class="text-base">{{ productoVendido.nombre_tecnico }}</p>
+        <p class="text-base">{{ productoVendido.nombre_impreso }}</p>
       </div>
     </div>
+ 
 
-    <div
-      v-swiper="swiperOption"
-      class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block"
-    >
-      <div class="swiper-wrapper">
+<!--
+    <div  v-swiper="swiperOption"  class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block"  >
+
+    
+          <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="flex justify-center">
             <img class="w-4/6 2xl:h-48" src="productos/1.jpg" alt="" />
@@ -82,6 +76,8 @@
         alt=""
       />
     </div>
+    
+    -->
   </div>
 </template>
 
