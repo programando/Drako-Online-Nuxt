@@ -23,7 +23,7 @@
       <div
         class="grid justify-center col-span-1 mx-8 mt-10 lg:grid-cols-2 xl:grid-cols-3"
       >
-      {{ gruposProductos }}
+      
         <div
           v-for="productoDestacado in gruposProductos"
           :key="productoDestacado.idgrupo"
