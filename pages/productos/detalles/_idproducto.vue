@@ -3,43 +3,47 @@
     <Header />
     <div class="justify-center py-20 space-x-20 lg:flex">
       <div class="flex justify-center">
-        <img src="/productos/1.jpg" alt="" />
+        <img :src="this.Producto.imagenes[0]._480x480" alt="" />   
       </div>
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
-          
+            {{ Producto.nombre_impreso }}
         </h2>
-        <p class="mt-2 text-gray-600">Código:  </p>
-        <p class="text-gray-600">OEM:  </p>
+        <p class="mt-2 text-gray-600">Código:  {{ Producto.codproducto }} </p>
+        <p class="text-gray-600">OEM:  {{ Producto.cod_oem }} </p>
         <div class="mt-4">
-          <h3 class="text-xl font-semibold">Ficha Técnica</h3>
+          <h3 class="text-xl font-semibold">Ficha técnica</h3>
           <table class="w-full border">
             <tbody>
               <tr class="border">
                 <td class="w-1/2 px-2 py-1 border-r-2">Ancho</td>
-                <td class="w-1/2 px-2 py-1">104.20</td>
+                <td class="w-1/2 px-2 py-1">{{ Producto.medida_ancho }}</td>
               </tr>
               <tr class="border">
                 <td class="w-1/2 px-2 py-1 border-r-2">Alto</td>
-                <td class="w-1/2 px-2 py-1">43.70</td>
+                <td class="w-1/2 px-2 py-1">{{ Producto.medida_alto }}</td>
               </tr>
               <tr class="border">
-                <td class="w-1/2 px-2 py-1 border-r-2">Espesor</td>
-                <td class="w-1/2 px-2 py-1">14.50</td>
+                <td class="w-1/2 px-2 py-1 border-r-2">Largo</td>
+                <td class="w-1/2 px-2 py-1">{{ Producto.medida_largo }}</td>
               </tr>
               <tr class="border">
-                <td class="w-1/2 px-2 py-1 border-r-2">Marca</td>
-                <td class="w-1/2 px-2 py-1">SANGSIN BRAKE</td>
+                <td class="w-1/2 px-2 py-1 border-r-2">Díametro</td>
+                <td class="w-1/2 px-2 py-1">{{ Producto.medida_diametro }}</td>
+              </tr>              
+              <tr class="border">
+                <td class="w-1/2 px-2 py-1 border-r-2">Medida interna</td>
+                <td class="w-1/2 px-2 py-1">{{ Producto.medida_interna }}</td>
               </tr>
               <tr class="border">
-                <td class="w-1/2 px-2 py-1 border-r-2">FMSI</td>
-                <td class="w-1/2 px-2 py-1">SP4178 - D2042 - 9271 - 182300</td>
+                <td class="w-1/2 px-2 py-1 border-r-2">Medida externa</td>
+                <td class="w-1/2 px-2 py-1">{{ Producto.medida_externa }}</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="mt-6">
-          <p class="text-3xl font-semibold">$169.900</p>
+          <p class="text-3xl font-semibold"> {{ Producto.precio_base_format }}</p>
           <p class="w-40 mt-2 text-center">Cantidad</p>
           <div class="flex items-center space-x-4">
             <div class="flex">
@@ -61,7 +65,7 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/comunes/Footer.vue";
-
+import Productos from "@/models/Productos";
 
 export default {
   name: "ProductoDetalles",
@@ -76,12 +80,13 @@ export default {
     };
   },
   mounted(){
-    console.log (this.$route)
+     Productos.buscarPorIdProducto ( this.$route.params.idproducto)
+     .then ( response => {
+        this.Producto =  response.data[0];  
+        console.log ( this.Producto.imagenes[0]._480x480);
+     })
   }, 
-  created(){
-      console.log (this.$route)
-      this.Producto = this.$route.params.Producto;    
-  }
+
 };
 </script>
 <style></style>

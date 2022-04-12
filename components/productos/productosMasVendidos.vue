@@ -3,14 +3,7 @@
     class="grid justify-center grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:items-center mt-2"
   >
    
-    <div class="xl:hidden"  v-for="(productoVendido) in productosVendidos" :key="productoVendido.idproducto" >
-      <div class="flex justify-center ">
-        <img class="h-44"  alt="" :src="productoVendido.imagenes['_240x240']" />
-      </div>
-      <div class="flex justify-center">
-        <p class="text-base">{{ productoVendido.nombre_impreso }}</p>
-      </div>
-    </div>
+ 
  
 
 
@@ -18,6 +11,8 @@
       <div class="swiper-wrapper">
         
         <div v-for="(productoVendido) in productosVendidos" :key="productoVendido.idproducto" class="swiper-slide">
+        
+         <nuxt-link :to="`/productos/detalles/${productoVendido.idproducto}`"   > 
           <div class="flex justify-center">
             <img class="h-44"  alt="" :src="productoVendido.imagenes[0]['_240x240']" />
            
@@ -25,10 +20,8 @@
           <div class="flex justify-center">
             <p class="text-xs">{{ productoVendido.nombre_tecnico }}</p>
           </div>
-
+         </nuxt-link>
         </div>
-        
-
       </div>
       <img
         class="ancho swiper-button-prev"
