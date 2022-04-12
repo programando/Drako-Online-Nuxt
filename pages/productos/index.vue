@@ -32,7 +32,9 @@
             <p  v-if="producto.precio_oferta" class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2" >
               Oferta
             </p>
-              <nuxt-link :to="{ name: 'productos-detalles', params: { Producto: producto}}"   >  
+              <!-- <nuxt-link :to="{ name: 'productos-detalles', params: { Producto: producto}}"   >   -->
+
+              <nuxt-link :to="`/productos/detalles/${producto.idproducto}`"   >  
               <img
                 class="h-44"
                 v-for="imagen in producto.imagenes.slice(0, 1)"
@@ -41,6 +43,7 @@
                 :src="imagen._240x240"
               />
             </nuxt-link>
+            
           </div>
           <p class="h-16 text-gray-700 text-start">
             {{ producto.nombre_impreso }}

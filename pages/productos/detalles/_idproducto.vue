@@ -7,10 +7,10 @@
       </div>
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
-          {{ Producto.nombre_impreso}}
+          
         </h2>
-        <p class="mt-2 text-gray-600">Código: {{ Producto.codproducto}}</p>
-        <p class="text-gray-600">OEM: {{ Producto.cod_oem}}</p>
+        <p class="mt-2 text-gray-600">Código:  </p>
+        <p class="text-gray-600">OEM:  </p>
         <div class="mt-4">
           <h3 class="text-xl font-semibold">Ficha Técnica</h3>
           <table class="w-full border">
@@ -75,7 +75,11 @@ export default {
       Producto:[],
     };
   },
+  mounted(){
+    console.log (this.$route)
+  }, 
   created(){
+      console.log (this.$route)
       this.Producto = this.$route.params.Producto;    
   }
 };
