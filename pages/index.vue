@@ -8,7 +8,7 @@
       class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-32 "
     >
       <h2 class="text-xl md:text-2xl lg:text-3xl">Productos más vendidos</h2>
-      <ListaProductos />
+      <ProductosMasVendidos />
       <div class="my-10 border-b-2"></div>
     </div>
 
@@ -43,7 +43,7 @@
 import Categorias from "@/components/Categorias.vue";
 import Footer from "@/components/comunes/Footer.vue";
 import Header from "@/components/Header.vue";
-import ListaProductos from "@/components/ListaProductos.vue";
+import ProductosMasVendidos from "~/components/productos/productosMasVendidos.vue";
 import SelectRespuesto from "@/components/comunes/SelectRespuesto.vue";
 import Slider from "@/components/comunes/slider/Slider.vue";
 import WsContact from "@/components/comunes/WsContact.vue";
@@ -53,7 +53,7 @@ export default {
   components: {
     Header,
     Slider,
-    ListaProductos,
+    ProductosMasVendidos,
     SelectRespuesto,
     Categorias,
     Footer,
