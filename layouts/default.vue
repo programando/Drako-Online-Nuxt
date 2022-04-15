@@ -24,8 +24,16 @@ import Footer from "@/components/comunes/Footer.vue";
   </script>
 
 <style>
- .contenedor-principal {
-  bottom: 20px;
-  right: 0px;
-}
+      .contenedor-principal {
+        bottom: 20px;
+        right: 0px;
+      }
+
+    
+      /* exact link will show the primary color for only the exact matching link */
+      a.nuxt-link-exact-active {
+        text-decoration-line: underline;
+        color: white;
+      }
+
 </style>
