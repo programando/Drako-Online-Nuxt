@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+ 
 
     <div
       class="grid grid-cols-1 py-20 mx-4 sm:container sm:mx-auto lg:grid-cols-2 lg:gap-4"
@@ -121,21 +121,17 @@
         </div>
       </div>
     </div>
-    <Footer />
+   
   </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/comunes/Footer.vue";
+ 
 import InputBasic from "../components/htmlControl/InputBasic.vue";
 export default {
   name: "nosotros",
-  components: {
-    Header,
-    Footer,
-    InputBasic,
-  },
+  layout:'default',
+  components: { InputBasic, },
 };
 </script>
 

@@ -23,6 +23,9 @@ export default {
       async busqueda(formData) {
         return Api.post('/productos/busqueda',  formData    );
       },      
+      async porIdGrupo( idgrupo ) {
+        return Api.post('/productos/por/grupo',   { 'idgrupo' : idgrupo }    );
+      },      
   
  
  

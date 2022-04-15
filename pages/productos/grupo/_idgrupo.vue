@@ -15,9 +15,8 @@
     </div>
 
     <div class="grid mt-10 md:grid-cols-3 lg:grid-cols-10">
-      <div class="flex justify-center px-8 py-10 lg:col-span-3 2xl:col-span-2">
-         <FiltroGruposProductos  @getGruposSeleccionados="getGruposSeleccionados" ></FiltroGruposProductos>  
-      </div>
+
+
 
       <div class="grid justify-center min-h-screen grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4" >
         <div
@@ -61,23 +60,14 @@
 
           <div class="flex items-center space-x-4">
             <div class="flex items-center mt-2">
-              <button
-                class="px-2 py-1 border"
-                @click="disminuirCantidad(index)"
-              >
-                -
-              </button>
+              <button class="px-2 py-1 border" @click="disminuirCantidad(index)" > - </button>
               <p class="px-2 py-1 border" disabled="disabled">
                 {{ producto.cantidad }}
               </p>
-              <button class="px-2 py-1 border" @click="aumentarCantidad(index)">
-                +
-              </button>
+              <button class="px-2 py-1 border" @click="aumentarCantidad(index)">  + </button>
             </div>
             <div class="">
-              <button
-                class="px-4 py-1 mt-2 border rounded-lg hover:bg-azul hover:text-white"
-              >
+              <button class="px-4 py-1 mt-2 border rounded-lg hover:bg-azul hover:text-white" >
                 Agregar al carrito
               </button>
             </div>
@@ -98,14 +88,14 @@
 
 <script>
  
-import FiltroGruposProductos    from "@/components/productos/FiltroGruposProductos.vue";
+
 import Productos                from "@/models/Productos";
 import Pagination               from "@/components/htmlControl/Pagination.vue";
 
 export default {
   name: "Productos",
    layout:'default',
-  components: {    Pagination,  FiltroGruposProductos      },
+  components: {    Pagination      },
 
   data() {
     return {
@@ -126,7 +116,6 @@ export default {
   },
 
   methods: {
- 
 
       getProductosFromUrl ( Url ) {
         Productos.getProductosFromUrl( Url)
@@ -154,19 +143,11 @@ export default {
       }
     },
 
-    getGruposSeleccionados(idsGrupos) {
-      this.formData.grupos = idsGrupos;
-      if (idsGrupos.length == 0) {
-        this.getProductosAll();
-        return;
-      }
-      Productos.porGrupos(this.formData).then((response) => {
-        this.productos = response.data.data;
-      });
-    },
+
 
     getProductosAll() {
-      Productos.listaGeneral().then((response) => {
+      Productos.porIdGrupo(this.$route.params.idgrupo )
+        .then(response => {
         this.productos       = response.data.data;
         this.links           = response.data.links;
         this.records.current = response.data.to;

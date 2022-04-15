@@ -1,12 +1,6 @@
 <template>
-  <div
-    class="grid justify-center grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:items-center mt-2"
-  >
-   
+  
  
- 
-
-
     <div  v-swiper="swiperOption"  class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block"  >
       <div class="swiper-wrapper">
         
@@ -14,7 +8,7 @@
         
          <nuxt-link :to="`/productos/detalles/${productoVendido.idproducto}`"   > 
           <div class="flex justify-center">
-            <img class="h-44"  alt="" :src="productoVendido.imagenes[0]['_240x240']" />
+            <img class="h-44"  alt="" :src="productoVendido.imagenes['_240x240']" />
            
           </div>
           <div class="flex justify-center">
@@ -36,6 +30,7 @@
         alt=""
       />
     </div>
+
     </div>
    
  
@@ -98,7 +93,6 @@ export default {
   mounted() {
     Productos.masVendidos().then((response) => {
       this.productosVendidos = response.data;
-      //console.log (this.productosVendidos );
     });
   },
 };

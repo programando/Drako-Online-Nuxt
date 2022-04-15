@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Header />
+  
     <div class="justify-center py-20 space-x-20 lg:flex">
       <div class="flex justify-center">
-        <img :src="this.Producto.imagenes[0]._480x480" alt="" />   
+         <img :src="imageProducto" alt="" />      
       </div>
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
@@ -12,39 +12,45 @@
         <p class="mt-2 text-gray-600">Código:  {{ Producto.codproducto }} </p>
         <p class="text-gray-600">OEM:  {{ Producto.cod_oem }} </p>
         <div class="mt-4">
-          <h3 class="text-xl font-semibold">Ficha técnica</h3>
+          <h3 class="text-sm font-semibold">Ficha técnica</h3>
           <table class="w-full border">
             <tbody>
-              <tr class="border">
+              <tr class="border text-xs">
                 <td class="w-1/2 px-2 py-1 border-r-2">Ancho</td>
                 <td class="w-1/2 px-2 py-1">{{ Producto.medida_ancho }}</td>
               </tr>
-              <tr class="border">
+              <tr class="border text-xs">
                 <td class="w-1/2 px-2 py-1 border-r-2">Alto</td>
                 <td class="w-1/2 px-2 py-1">{{ Producto.medida_alto }}</td>
               </tr>
-              <tr class="border">
+              <tr class="border text-xs">
                 <td class="w-1/2 px-2 py-1 border-r-2">Largo</td>
                 <td class="w-1/2 px-2 py-1">{{ Producto.medida_largo }}</td>
               </tr>
-              <tr class="border">
-                <td class="w-1/2 px-2 py-1 border-r-2">Díametro</td>
+              <tr class="border text-xs">
+                <td class="w-1/2 px-2 py-1 border-r-2">Diámetro</td>
                 <td class="w-1/2 px-2 py-1">{{ Producto.medida_diametro }}</td>
               </tr>              
-              <tr class="border">
+              <tr class="border text-xs">
                 <td class="w-1/2 px-2 py-1 border-r-2">Medida interna</td>
                 <td class="w-1/2 px-2 py-1">{{ Producto.medida_interna }}</td>
               </tr>
-              <tr class="border">
+              <tr class="border text-xs">
                 <td class="w-1/2 px-2 py-1 border-r-2">Medida externa</td>
                 <td class="w-1/2 px-2 py-1">{{ Producto.medida_externa }}</td>
               </tr>
+              <tr class="border text-xs">
+                <td class="w-1/2 px-2 py-1 border-r-2">Peso Kg.</td>
+                <td v-if="Producto.peso_kg >0" class="w-1/2 px-2 py-1">{{ Producto.peso_kg }}</td>
+              </tr>              
             </tbody>
           </table>
         </div>
         <div class="mt-6">
+          <p class="text-3xl font-semibold" v-if="Producto.precio_oferta>0"> {{ Producto.precio_oferta }}</p>
           <p class="text-3xl font-semibold"> {{ Producto.precio_base_format }}</p>
           <p class="w-40 mt-2 text-center">Cantidad</p>
+          
           <div class="flex items-center space-x-4">
             <div class="flex">
               <button class="px-6 py-2 border">-</button>
@@ -58,32 +64,30 @@
         </div>
       </div>
     </div>
-    <Footer />
+    
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/comunes/Footer.vue";
+ 
 import Productos from "@/models/Productos";
 
 export default {
   name: "ProductoDetalles",
-  components: {
-    Header,
-    Footer,
-  },
+  layout:'default',
   data() {
     return {
       hola: "",
       Producto:[],
+      imageProducto:''
     };
   },
   mounted(){
      Productos.buscarPorIdProducto ( this.$route.params.idproducto)
      .then ( response => {
         this.Producto =  response.data[0];  
-        console.log ( this.Producto.imagenes[0]._480x480);
+        this.imageProducto= this.Producto.imagenes[0]._240x240;
+        console.log ( this.imageProducto);
      })
   }, 
 

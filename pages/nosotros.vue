@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+  
     <div
       class="py-40 bg-no-repeat bg-cover md:py-56 lg:py-80 xl:py-80"
       style="background-image: url('nosotros2.jpg')"
@@ -95,19 +95,15 @@
         </div>
       </div>
     </div>
-    <Footer />
+  
   </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/comunes/Footer.vue";
+ 
 export default {
   name: "nosotros",
-  components: {
-    Header,
-    Footer,
-  },
+  layout:'default',
   data() {
     return {
       openTab: 1,

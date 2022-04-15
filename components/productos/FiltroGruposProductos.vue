@@ -1,18 +1,20 @@
 <template>
   <div class="lg:fixed">
-    <h2>Tipo de respuesto</h2>
+    <h2 class="text-lg">Tipo de respuesto</h2>
+   <!-- 
     <input
       class="px-4 py-2 mt-2 border rounded-md focus:outline-none"
       type="text"
       placeholder="Buscar"
       v-model="busquedaFiltrada"
     >
+-->
 
     <div class="mx-2 mt-2">
-      <div class="mt-2">
-        <div v-for="grupoProducto in busquedaGrupos" :key="grupoProducto.idgrupo">
-          <input  type="checkbox"   v-model="grupoProducto.selected" @change="getGruposSeleccionados()">
-          <label > {{ grupoProducto.nomgrupo }}</label>
+      <div class="mt-2 ">
+        <div v-for="grupoProducto in gruposProductos" :key="grupoProducto.idgrupo">
+          <input class="cursor-pointer" type="checkbox"   v-model="grupoProducto.selected" @change="getGruposSeleccionados()">
+          <label class="text-sm cursor-pointer" > {{ grupoProducto.nomgrupo_capital }}</label>
         </div>
       </div>
      </div>
@@ -55,8 +57,8 @@
               }
           },
 
-          computed: {
-              busquedaGrupos ( ) {
+      computed: {
+              busquedaGrupos ( ) {   
                   if ( this.busquedaFiltrada.length ==0 ) {
                       this.getGruposAll ();
                       return this.gruposProductos;
@@ -70,7 +72,7 @@
                   return this.busquedaFiltrada.toUpperCase();
               }
           }
-  
+   
     }
 
  

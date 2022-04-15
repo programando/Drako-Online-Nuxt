@@ -12,11 +12,7 @@
         >
           <div class="lg:flex lg:justify-between">
             <div class="px-16">
-              <button
-                class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
-              >
-                Ir a la tienda
-              </button>
+ 
             </div>
             <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
               <p class="text-xl font-semibold text-white lg:text-3xl xl:text-3xl">
@@ -34,11 +30,7 @@
         >
           <div class="lg:flex xl:justify-between">
             <div class="px-16">
-              <button
-                class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
-              >
-                Ir a la tienda
-              </button>
+ 
             </div>
             <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
               <p class="text-3xl font-semibold text-white xl:text-3xl">
@@ -55,11 +47,7 @@
         >
           <div class="">
             <div class="px-16 -mt-24">
-              <button
-                class="py-2 mx-4 mt-2 text-xl text-white uppercase rounded w-44 bg-azul"
-              >
-                Ir a la tienda
-              </button>
+ 
             </div>
             <div class="pt-10 pl-20 mx-14">
               <p class="text-3xl font-semibold text-white xl:text-3xl">
