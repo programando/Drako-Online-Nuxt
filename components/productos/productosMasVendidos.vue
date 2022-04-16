@@ -1,4 +1,5 @@
 <template>
+  <div class="grid justify-center grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:items-center mt-2">
   
  
     <div  v-swiper="swiperOption"  class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block"  >
