@@ -60,28 +60,21 @@
           </div>
 
           <div class="flex items-center space-x-4">
+           
             <div class="flex items-center mt-2">
-              <button
-                class="px-2 py-1 border"
-                @click="disminuirCantidad(index)"
-              >
-                -
-              </button>
-              <p class="px-2 py-1 border" disabled="disabled">
-                {{ producto.cantidad }}
-              </p>
-              <button class="px-2 py-1 border" @click="aumentarCantidad(index)">
-                +
-              </button>
+              <button   class="px-2 py-1 border" @click="disminuirCantidad(index)" > -  </button>
+              <p        class="px-2 py-1 border" disabled="disabled">  {{ producto.cantidad }}  </p>
+              <button class="px-2 py-1 border"  @click="aumentarCantidad(index)">     +   </button>
             </div>
+
             <div class="">
-              <button
-                class="px-4 py-1 mt-2 border rounded-lg hover:bg-azul hover:text-white"
-              >
+              <button @click="addProductoCarito ( producto )" class="px-4 py-1 mt-2 border rounded-lg hover:bg-azul hover:text-white" >
                 Agregar al carrito
               </button>
             </div>
+
           </div>
+
         </div>
       </div>
     </div>
@@ -126,7 +119,9 @@ export default {
   },
 
   methods: {
- 
+      addProductoCarito( productoComprado ) {
+          this.$store.dispatch('carrito/addProductoComprado', productoComprado);
+      },
 
       getProductosFromUrl ( Url ) {
         Productos.getProductosFromUrl( Url)
@@ -144,14 +139,17 @@ export default {
       });
     },
 
-    aumentarCantidad(index) {
+    aumentarCantidad( index ) {
       this.productos[index].cantidad++;
+      this.$store.dispatch('carrito/addProductoComprado', this.productos[index] );
     },
 
-    disminuirCantidad(index) {
+    disminuirCantidad( index ) {
       if (this.productos[index].cantidad > 0) {
         this.productos[index].cantidad--;
+        this.$store.dispatch('carrito/removeOnlyProductoComprado', this.productos[index].idproducto );
       }
+     ;
     },
 
     getGruposSeleccionados(idsGrupos) {
