@@ -121,16 +121,16 @@ export default {
 }
 
 .slider1 {
-  padding: 540px 0;
+  padding: 520px 0;
   margin-top: -250px;
   }
 .slider2 {
-  padding: 540px 0;
+  padding: 520px 0;
   margin-top: -250px;
   }
 
 .slider3 {
-  padding: 540px 0;
+  padding: 520px 0;
   margin-top: -250px;
   }
 

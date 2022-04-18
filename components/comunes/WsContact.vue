@@ -4,7 +4,7 @@
       class="flex items-center contenedor"
       href="https://api.whatsapp.com/send?phone=573152701964"
     >
-      <img class="z-40 h-14 imagen" src="whatsapp2.svg" alt="" />
+      <img class="z-40 h-14 imagen" src="/whatsapp2.svg" alt="" />
       <div
         class="z-10 py-1 text-sm text-white bg-green-600 rounded-full cursor-pointer px-14 boton "
       >

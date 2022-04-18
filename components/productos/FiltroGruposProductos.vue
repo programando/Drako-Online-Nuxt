@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:fixed">
+  <div class="">
     <h2 class="text-lg">Tipo de respuesto</h2>
    <!-- 
     <input
