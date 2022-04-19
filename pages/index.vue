@@ -27,7 +27,8 @@
           :key="productoDestacado.idgrupo"
           class="relative flex items-center justify-center mx-10 mt-6 bg-cover w-96" >
            <nuxt-link :to="`/productos/grupo/${productoDestacado.idgrupo}`" >  
-              <img :src="productoDestacado.imagen" alt="" />
+              <!-- <img :src="productoDestacado.imagen" alt="" /> -->
+              <img src="slider/grupodestacado1.png" alt="" />
               <h2 class="absolute text-white top-20">{{ productoDestacado.nomgrupo }}</h2>
           </nuxt-link>
 

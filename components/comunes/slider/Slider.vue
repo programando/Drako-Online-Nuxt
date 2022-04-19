@@ -8,7 +8,7 @@
       <div class="swiper-slide">
         <div
           class="-mt-20 bg-cover slider1"
-          style="background-image: url('slider/SLIDE1.png')"
+          style="background-image: url('slider/1.png')"
         >
           <div class="lg:flex lg:justify-between">
             <div class="px-16">
@@ -26,7 +26,7 @@
       <div class="swiper-slide">
         <div
           class="bg-center bg-cover slider2"
-          style="background-image: url('slider/SLIDE2.jpg')"
+          style="background-image: url('slider/2.png')"
         >
           <div class="lg:flex xl:justify-between">
             <div class="px-16">
@@ -43,7 +43,7 @@
       <div class="swiper-slide">
         <div
           class="bg-center bg-cover slider3"
-          style="background-image: url('slider/SLIDE3.jpg')"
+          style="background-image: url('slider/3.png')"
         >
           <div class="">
             <div class="px-16 -mt-24">
