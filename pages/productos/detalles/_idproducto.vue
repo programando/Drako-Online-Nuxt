@@ -1,8 +1,55 @@
 <template>
   <div class="">
-    <div class="justify-center pt-20 space-x-20 lg:flex">
+    <div class="justify-center pt-20 space-x-10 lg:flex">
       <div class="flex justify-center">
-        <img class="h-72" :src="imageProducto" alt="" />
+        <div class="container mx-auto">
+          <div
+            class="grid grid-cols-3 p-4 space-y-2 bg-gray-200 lg:space-y-0 lg:gap-3 lg:grid-rows-3"
+          >
+            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen1" >
+              <img
+                id="thumb1"
+                src="https://placeimg.com/640/480/tech"
+                alt="image"
+              />
+            </div>
+            <div class="flex justify-center col-span-2 row-span-2 rounded imagen-principal" >
+              <img
+                id="mainImg"
+                src="https://placeimg.com/640/480/arch"
+                alt="image"
+              />
+            </div>
+            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen2" >
+              <img
+                id="thumb2"
+                src="https://placeimg.com/640/480/nature"
+                alt="image"
+              />
+            </div>
+            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen3">
+              <img
+                id="thumb3"
+                src="https://placeimg.com/640/480/people"
+                alt="image"
+              />
+            </div>
+            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen4" >
+              <img
+                id="thumb4"
+                src="https://placeimg.com/640/480/animals"
+                alt="image"
+              />
+            </div>
+            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen5" >
+              <img
+                id="thumb5"
+                src="https://placeimg.com/640/480/nature"
+                alt="image"
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
@@ -11,37 +58,37 @@
         <p class="mt-2 text-gray-600">Código: {{ Producto.codproducto }}</p>
         <p class="text-gray-600">OEM: {{ Producto.cod_oem }}</p>
         <div class="flex items-end space-x-2">
-          <div class="mt-4 w-64">
+          <div class="w-64 mt-4">
             <h3 class="text-sm font-semibold">Ficha técnica</h3>
             <table class="w-full border">
               <tbody>
-                <tr class="border text-xs">
+                <tr class="text-xs border">
                   <td class="w-1/2 px-2 py-1 border-r-2">Ancho</td>
                   <td class="w-1/2 px-2 py-1">{{ Producto.medida_ancho }}</td>
                 </tr>
-                <tr class="border text-xs">
+                <tr class="text-xs border">
                   <td class="w-1/2 px-2 py-1 border-r-2">Alto</td>
                   <td class="w-1/2 px-2 py-1">{{ Producto.medida_alto }}</td>
                 </tr>
-                <tr class="border text-xs">
+                <tr class="text-xs border">
                   <td class="w-1/2 px-2 py-1 border-r-2">Largo</td>
                   <td class="w-1/2 px-2 py-1">{{ Producto.medida_largo }}</td>
                 </tr>
-                <tr class="border text-xs">
+                <tr class="text-xs border">
                   <td class="w-1/2 px-2 py-1 border-r-2">Diámetro</td>
                   <td class="w-1/2 px-2 py-1">
                     {{ Producto.medida_diametro }}
                   </td>
                 </tr>
-                <tr class="border text-xs">
+                <tr class="text-xs border">
                   <td class="w-1/2 px-2 py-1 border-r-2">Medida interna</td>
                   <td class="w-1/2 px-2 py-1">{{ Producto.medida_interna }}</td>
                 </tr>
-                <tr class="border text-xs">
+                <tr class="text-xs border">
                   <td class="w-1/2 px-2 py-1 border-r-2">Medida externa</td>
                   <td class="w-1/2 px-2 py-1">{{ Producto.medida_externa }}</td>
                 </tr>
-                <tr class="border text-xs">
+                <tr class="text-xs border">
                   <td class="w-1/2 px-2 py-1 border-r-2">Peso Kg.</td>
                   <td v-if="Producto.peso_kg > 0" class="w-1/2 px-2 py-1">
                     {{ Producto.peso_kg }}
@@ -52,28 +99,65 @@
           </div>
 
           <div class="mt-6">
-            <div class="flex">
+            <div class="flex space-x-4">
               <p
                 class="text-3xl font-semibold"
                 v-if="Producto.precio_oferta > 0"
               >
                 {{ Producto.precio_oferta }}
               </p>
-              <p class="text-3xl font-semibold">
+              <p
+                class="text-3xl font-semibold"
+                :class="{
+                  'line-through text-gray-500': Producto.precio_oferta,
+                }"
+              >
                 {{ Producto.precio_base_format }}
               </p>
             </div>
-
-            <p class="w-40 mt-2 text-center">Cantidad</p>
+            <div class="flex space-x-2">
+              <p class="w-40 mt-2 text-center">Cantidad</p>
+              <p class="mt-2">Tiempo de reserva: 2 horas</p>
+              <div class="flex flex-wrap">
+                <div class="w-full text-center">
+                  <button
+                    ref="btnRef"
+                    v-on:mouseenter="toggleTooltip()"
+                    v-on:mouseleave="toggleTooltip()"
+                    class="px-3 py-2 mb-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-gray-200 rounded shadow outline-none active:bg-pink-600 hover:shadow-lg focus:outline-none"
+                    type="button"
+                  >
+                    <img class="h-4" src="/help.svg" alt="" />
+                  </button>
+                  <div
+                    ref="tooltipRef"
+                    v-bind:class="{ hidden: !tooltipShow, block: tooltipShow }"
+                    class="z-50 block max-w-xs ml-3 text-sm font-normal leading-normal text-left no-underline break-words border-0 rounded-lg bg-rojo"
+                  >
+                    <div>
+                      <div
+                        class="p-3 mb-0 font-semibold text-white uppercase border-b border-solid rounded-t-lg opacity-75 bg-rojo border-slate-100"
+                      >
+                        pink tooltip title
+                      </div>
+                      <div class="p-3 text-white">
+                        And here's some amazing content. It's very engaging.
+                        Right?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="flex items-center space-x-4">
-              <div class="flex">
+              <div class="flex mt-2">
                 <button class="px-3 py-1 border">-</button>
                 <p class="px-3 py-1 border">1</p>
                 <button class="px-3 py-1 border">+</button>
               </div>
-              <div class="">
-                <button class="py-2 text-white rounded-sm px-6 bg-rojo">
+              <div class="mt-2">
+                <button class="px-6 py-2 text-white rounded-sm bg-rojo">
                   Agregar al carro
                 </button>
               </div>
@@ -82,12 +166,12 @@
         </div>
 
         <!-- tabs -->
-        <div class="flex flex-wrap ancho-tabs mt-4">
+        <div class="flex flex-wrap mt-4 ancho-tabs">
           <div class="w-full">
-            <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-              <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <ul class="flex flex-row flex-wrap pt-3 pb-4 mb-0 list-none">
+              <li class="flex-auto mr-2 -mb-px text-center last:mr-0">
                 <a
-                  class="text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal"
+                  class="block px-3 py-2 text-xs font-bold leading-normal uppercase rounded shadow-lg"
                   v-on:click="toggleTabs(1)"
                   v-bind:class="{
                     'text-rojo bg-white': openTab !== 1,
@@ -97,9 +181,9 @@
                   Vehiculos
                 </a>
               </li>
-              <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <li class="flex-auto mr-2 -mb-px text-center last:mr-0">
                 <a
-                  class="text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal"
+                  class="block px-3 py-2 text-xs font-bold leading-normal uppercase rounded shadow-lg"
                   v-on:click="toggleTabs(2)"
                   v-bind:class="{
                     'text-rojo bg-white': openTab !== 2,
@@ -111,9 +195,9 @@
               </li>
             </ul>
             <div
-              class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+              class="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white rounded shadow-lg"
             >
-              <div class="px-4 py-5 flex-auto h-48">
+              <div class="flex-auto h-48 px-4 py-5">
                 <div class="tab-content tab-space">
                   <div
                     v-bind:class="{
@@ -153,23 +237,23 @@
           </div>
         </div>
 
+        <!-- popperjs -->
+
         <!-- sliders -->
       </div>
-      
     </div>
-    <div
-        class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-60"
-      >
-        <h2 class="text-xl md:text-2xl">Respuestos Relacionados</h2>
-        <ProductosMasVendidos />
-        <div class="my-10 border-b-2"></div>
-      </div>
+    <div class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-60">
+      <h2 class="text-xl md:text-2xl">Respuestos Relacionados</h2>
+      <ProductosMasVendidos />
+      <div class="my-10 border-b-2"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import Productos from "@/models/Productos";
 import ProductosMasVendidos from "@/components/productos/productosMasVendidos.vue";
+import { createPopper } from "@popperjs/core";
 
 export default {
   name: "ProductoDetalles",
@@ -184,6 +268,7 @@ export default {
       imageProducto: "",
 
       openTab: 1,
+      tooltipShow: false,
     };
   },
   mounted() {
@@ -200,11 +285,59 @@ export default {
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber;
     },
+
+
+    /* funcionalidad del tooltip */
+    toggleTooltip: function () {
+      if (this.tooltipShow) {
+        this.tooltipShow = false;
+      } else {
+        this.tooltipShow = true;
+        createPopper(this.$refs.btnRef, this.$refs.tooltipRef, {
+          placement: "right",
+        });
+      }
+    },
+
+
+    /* cambiando las imagenes */
+    imagen1() {
+      var thumb1Src =  document.getElementById("thumb1").src;
+      document.getElementById("mainImg").src = thumb1Src
+    },
+
+    imagen2() {
+      var thumb2Src =  document.getElementById("thumb2").src;
+      document.getElementById("mainImg").src = thumb2Src
+    },
+
+    imagen3() {
+      var thumb3Src =  document.getElementById("thumb3").src;
+      document.getElementById("mainImg").src = thumb3Src
+    },
+
+    imagen4() {
+      var thumb4Src =  document.getElementById("thumb4").src;
+      document.getElementById("mainImg").src = thumb4Src
+    },
+
+    imagen5() {
+      var thumb5Src =  document.getElementById("thumb5").src;
+      document.getElementById("mainImg").src = thumb5Src
+    },
+
+
+
   },
 };
 </script>
 <style>
 .ancho-tabs {
   width: 36rem;
+}
+
+.imagen-principal {
+  width: 100%;
+  height: 250px;
 }
 </style>
