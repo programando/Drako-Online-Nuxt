@@ -41,6 +41,7 @@ export default {
      { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
      { src: '@/plugins/filters.js' },
      { src: '@/plugins/vuex-persist.js', ssr: false },
+     '~/plugins/clickaway',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
