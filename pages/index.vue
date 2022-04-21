@@ -1,9 +1,6 @@
 <template>
   <div class="relative">
-    
-
     <Slider />
-
     <div
       class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-32 "
     >
@@ -11,7 +8,6 @@
       <ProductosMasVendidos />
       <div class="my-10 border-b-2"></div>
     </div>
-
     <div
       class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 lg:text-2xl"
     >
@@ -21,7 +17,6 @@
     </div>
     <div class="flex justify-center mb-4">
       <div class="grid justify-center col-span-1 mx-8 mt-10 lg:grid-cols-2 xl:grid-cols-3"  >
-      
         <div 
           v-for="productoDestacado in gruposProductos"
           :key="productoDestacado.idgrupo"
@@ -31,12 +26,9 @@
               <img src="slider/grupodestacado1.png" alt="" />
               <h2 class="absolute text-white top-20">{{ productoDestacado.nomgrupo }}</h2>
           </nuxt-link>
-
         </div>
-
       </div>
     </div>
- 
   </div>
 </template>
 

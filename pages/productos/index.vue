@@ -21,7 +21,7 @@
         
       <div class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4" >
         <div
-          class="p-4 mx-auto mb-24 border border-white cursor-pointer w-72 hover:border hover:shadow-xl"
+          class="p-4 mx-auto mb-24 border border-white cursor-pointer w-72 hover:border hover:shadow-xl h-96"
           v-for="(producto, index) in productos"  :key="producto.idproducto"
         >
           <div class="relative flex justify-center">
