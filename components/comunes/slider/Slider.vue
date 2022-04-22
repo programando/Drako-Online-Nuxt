@@ -117,7 +117,7 @@ export default {
 }
 
 .altura {
-  height: 650px;
+  height: 530px;
  
   
 }

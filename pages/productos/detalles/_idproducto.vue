@@ -1,7 +1,7 @@
 <template>
   <div class="relative" v-on-clickaway="closeModal">
-    <div class="sticky z-50 bg-white w-96 top-20 alineacion">
-      <div class="flex items-center px-2 py-1 mt-2 border-2">
+    <div class="z-50 flex justify-center bg-white ">
+      <div class="flex items-center px-2 py-1 mt-2 border-2 w-96">
         <img class="z-20 h-5 -mr-7" src="/search.svg" alt="busqueda" />
         <input
           v-model="textBuscarProducto"
@@ -15,124 +15,26 @@
     <div class="justify-center pt-20 space-x-10 lg:flex">
       <div class="flex justify-center">
         <div class="container ">
-          <div
-            class="grid grid-cols-3 p-4 space-y-2 bg-gray-200 lg:space-y-0 lg:gap-3 lg:grid-rows-3"
-          >
-            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen1">
-              <img
-                id="thumb1"
-                src="https://placeimg.com/640/480/tech"
-                alt="image"
-              />
-            </div>
-            <div
-              class="flex justify-center col-span-2 row-span-2 rounded imagen-principal"
-            >
-              <img
-                id="mainImg"
-                src="https://placeimg.com/640/480/arch"
-                alt="image"
-              />
-            </div>
-            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen2">
-              <img
-                id="thumb2"
-                src="https://placeimg.com/640/480/nature"
-                alt="image"
-              />
-            </div>
-            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen3">
-              <img
-                id="thumb3"
-                src="https://placeimg.com/640/480/people"
-                alt="image"
-              />
-            </div>
-            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen4">
-              <img
-                id="thumb4"
-                src="https://placeimg.com/640/480/animals"
-                alt="image"
-              />
-            </div>
-            <div class="w-32 rounded cursor-pointer xl:w-40" @click="imagen5">
-              <img
-                id="thumb5"
-                src="https://placeimg.com/640/480/nature"
-                alt="image"
-              />
-            </div>
-          </div>
+          <img class="w-72 h-72"
+            v-for="imagen in Producto.imagenes"
+            :key="imagen.idregistro"
+            alt=""
+            :src="imagen._480x480"
+          />
         </div>
       </div>
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
           {{ Producto.nombre_impreso }}
         </h2>
-        <p class="mt-2 text-gray-600">Código: {{ Producto.codproducto }}</p>
-        <p class="text-gray-600">OEM: {{ Producto.cod_oem }}</p>
-        <div class="flex items-end space-x-2">
-          <div class="w-64 mt-4">
-            <h3 class="text-sm font-semibold">Ficha técnica</h3>
-            <table class="w-full border">
-              <tbody>
-                <tr class="text-xs border">
-                  <td class="w-1/2 px-2 py-1 border-r-2">Ancho</td>
-                  <td class="w-1/2 px-2 py-1">{{ Producto.medida_ancho }}</td>
-                </tr>
-                <tr class="text-xs border">
-                  <td class="w-1/2 px-2 py-1 border-r-2">Alto</td>
-                  <td class="w-1/2 px-2 py-1">{{ Producto.medida_alto }}</td>
-                </tr>
-                <tr class="text-xs border">
-                  <td class="w-1/2 px-2 py-1 border-r-2">Largo</td>
-                  <td class="w-1/2 px-2 py-1">{{ Producto.medida_largo }}</td>
-                </tr>
-                <tr class="text-xs border">
-                  <td class="w-1/2 px-2 py-1 border-r-2">Diámetro</td>
-                  <td class="w-1/2 px-2 py-1">
-                    {{ Producto.medida_diametro }}
-                  </td>
-                </tr>
-                <tr class="text-xs border">
-                  <td class="w-1/2 px-2 py-1 border-r-2">Medida interna</td>
-                  <td class="w-1/2 px-2 py-1">{{ Producto.medida_interna }}</td>
-                </tr>
-                <tr class="text-xs border">
-                  <td class="w-1/2 px-2 py-1 border-r-2">Medida externa</td>
-                  <td class="w-1/2 px-2 py-1">{{ Producto.medida_externa }}</td>
-                </tr>
-                <tr class="text-xs border">
-                  <td class="w-1/2 px-2 py-1 border-r-2">Peso Kg.</td>
-                  <td v-if="Producto.peso_kg > 0" class="w-1/2 px-2 py-1">
-                    {{ Producto.peso_kg }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="mt-6">
-            <div class="flex space-x-4">
-              <p
-                class="text-3xl font-semibold"
-                :class="{
-                  'line-through text-gray-500': Producto.precio_oferta,
-                }"
-              >
-                {{ Producto.precio_base_format }}
-              </p>
-              <p
-                class="text-3xl font-semibold"
-                v-if="Producto.precio_oferta > 0"
-              >
-                {{ Producto.precio_oferta }}
-              </p>
-            </div>
-            <div class="flex items-center mt-4 space-x-2">
-              <p class="mt-2">Cantidad</p>
-              <p class="mt-2 text-sm">Tiempo de reserva: 2 horas</p>
-              <div class="flex flex-wrap">
+        <div class="flex space-x-40">
+          <div>
+          <p class="mt-2 text-gray-600">Código: {{ Producto.codproducto }}</p>
+          <p class="text-gray-600">OEM: {{ Producto.cod_oem }}</p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <p class="text-sm">Tiempo de reserva: 2 horas</p>
+            <div class="flex flex-wrap">
                 <div class="w-full text-center">
                   <button
                     ref="btnRef"
@@ -161,7 +63,71 @@
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
+        </div>
+        </div>
+        
+        
+        <div class="flex items-end space-x-2">
+          <div class="mt-4 ">
+            <h3 class="text-sm font-semibold">Ficha técnica</h3>
+            <table class="w-full border">
+              <tbody>
+                <tr class="text-xs border">
+                  <td class="px-2 py-1 border-r-2 w-28 ">Ancho</td>
+                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_ancho }}</td>
+                </tr>
+                <tr class="text-xs border">
+                  <td class="px-2 py-1 border-r-2 w-28 ">Alto</td>
+                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_alto }}</td>
+                </tr>
+                <tr class="text-xs border">
+                  <td class="px-2 py-1 border-r-2 w-28 ">Largo</td>
+                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_largo }}</td>
+                </tr>
+                <tr class="text-xs border">
+                  <td class="px-2 py-1 border-r-2 w-28 ">Diámetro</td>
+                  <td class="px-2 py-1 w-28 ">
+                    {{ Producto.medida_diametro }}
+                  </td>
+                </tr>
+                <tr class="text-xs border">
+                  <td class="px-2 py-1 border-r-2 w-28 ">Medida interna</td>
+                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_interna }}</td>
+                </tr>
+                <tr class="text-xs border">
+                  <td class="px-2 py-1 border-r-2 w-28 ">Medida externa</td>
+                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_externa }}</td>
+                </tr>
+                <tr class="text-xs border">
+                  <td class="px-2 py-1 border-r-2 w-28 ">Peso Kg.</td>
+                  <td v-if="Producto.peso_kg > 0" class="px-2 py-1 ">
+                    {{ Producto.peso_kg }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex justify-center space-x-4">
+              <p
+                class="text-3xl font-semibold"
+                :class="{
+                  'line-through text-gray-500': Producto.precio_oferta,
+                }"
+              >
+                {{ Producto.precio_base_format }}
+              </p>
+              <p
+                class="text-3xl font-semibold"
+                v-if="Producto.precio_oferta > 0"
+              >
+                {{ Producto.precio_oferta }}
+              </p>
+            </div>
+            <div class="flex items-center mt-4 space-x-2">
+              <p class="mt-2 ml-4">Cantidad</p>
             </div>
 
             <div class="flex items-center space-x-4">
@@ -271,10 +237,11 @@
         >
           <div class="container mx-auto">
             <div>
-              <img
-                class="w-72"
-                src="https://placeimg.com/640/480/tech"
+              <img class="w-64 h-64"
+                v-for="imagen in Producto.imagenes"
+                :key="imagen.idregistro"
                 alt=""
+                :src="imagen._240x240"
               />
             </div>
           </div>
@@ -369,17 +336,19 @@
             </div>
           </div>
         </div>
-        <div class="px-10 py-2 bg-white">
-          <button
-            @click="modal = true"
-            class="w-full px-6 py-2 text-white rounded-sm bg-rojo"
+        <div class="w-full px-10 py-2 bg-white">
+          <nuxt-link to="/tienda/"
+            
           >
-            Ir al carro
-          </button>
+            <button class="w-full px-6 py-2 text-white rounded-sm bg-rojo">
+              Ir a la Tienda
+            </button>
+           
+          </nuxt-link>
         </div>
         <div class="px-10 py-2 bg-white">
           <button
-            @click="modal = true"
+            @click="modal = false"
             class="w-full px-6 py-2 rounded-sm text-rojo"
           >
             Seguir Comprando

@@ -67,7 +67,7 @@
         
         <div class="relative px-4 py-2 rounded">
           
-          <nuxt-link to="#">
+          <nuxt-link to="/tienda/">
             <p class="absolute right-0 px-2 text-sm bg-white rounded-full">1</p>
             <font-awesome-icon style="font-size: 25px;" :icon="['fas', 'shopping-cart']" class="w-10 h-10 mr-2 text-white" />
           </nuxt-link>
