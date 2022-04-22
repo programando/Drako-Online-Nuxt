@@ -43,7 +43,7 @@
             <td colspan="1">
               <div class="flex items-center">
                 <button>
-                  <img class="h-8" src="/papelera.png" alt="" />
+                  <img class="h-5" src="/papelera.png" alt="" />
                 </button>
               </div>
             </td>
@@ -76,7 +76,7 @@
             <td colspan="1">
               <div class="flex items-center">
                 <button>
-                  <img class="h-8" src="/papelera.png" alt="" />
+                  <img class="h-5" src="/papelera.png" alt="" />
                 </button>
               </div>
             </td>

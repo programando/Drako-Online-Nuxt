@@ -75,29 +75,29 @@
               <tbody>
                 <tr class="text-xs border">
                   <td class="px-2 py-1 border-r-2 w-28 ">Ancho</td>
-                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_ancho }}</td>
+                  <td class="w-16 px-2 py-1 ">{{ Producto.medida_ancho }}</td>
                 </tr>
                 <tr class="text-xs border">
                   <td class="px-2 py-1 border-r-2 w-28 ">Alto</td>
-                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_alto }}</td>
+                  <td class="w-16 px-2 py-1 ">{{ Producto.medida_alto }}</td>
                 </tr>
                 <tr class="text-xs border">
                   <td class="px-2 py-1 border-r-2 w-28 ">Largo</td>
-                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_largo }}</td>
+                  <td class="w-16 px-2 py-1 ">{{ Producto.medida_largo }}</td>
                 </tr>
                 <tr class="text-xs border">
                   <td class="px-2 py-1 border-r-2 w-28 ">Diámetro</td>
-                  <td class="px-2 py-1 w-28 ">
+                  <td class="w-16 px-2 py-1 ">
                     {{ Producto.medida_diametro }}
                   </td>
                 </tr>
                 <tr class="text-xs border">
                   <td class="px-2 py-1 border-r-2 w-28 ">Medida interna</td>
-                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_interna }}</td>
+                  <td class="w-16 px-2 py-1 ">{{ Producto.medida_interna }}</td>
                 </tr>
                 <tr class="text-xs border">
                   <td class="px-2 py-1 border-r-2 w-28 ">Medida externa</td>
-                  <td class="px-2 py-1 w-28 ">{{ Producto.medida_externa }}</td>
+                  <td class="w-16 px-2 py-1 ">{{ Producto.medida_externa }}</td>
                 </tr>
                 <tr class="text-xs border">
                   <td class="px-2 py-1 border-r-2 w-28 ">Peso Kg.</td>
