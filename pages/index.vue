@@ -16,15 +16,15 @@
       </h2>
     </div>
     <div class="flex justify-center mb-4">
-      <div class="grid justify-center col-span-1 mx-8 mt-10 lg:grid-cols-2 xl:grid-cols-3"  >
+      <div class="grid justify-center col-span-1 mx-4 mt-10 lg:grid-cols-2 xl:grid-cols-3"  >
         <div 
           v-for="productoDestacado in gruposProductos"
           :key="productoDestacado.idgrupo"
           class="relative flex items-center justify-center mx-10 mt-6 bg-cover w-96" >
            <nuxt-link :to="`/productos/grupo/${productoDestacado.idgrupo}`" >  
-              <!-- <img :src="productoDestacado.imagen" alt="" /> -->
-              <img src="slider/grupodestacado1.png" alt="" />
-              <h2 class="absolute text-white top-20">{{ productoDestacado.nomgrupo }}</h2>
+              <img  style="width:80%;" :src="productoDestacado.imagen" alt="" />  
+              
+              <!-- <h2 class="absolute text-white top-20">{{ productoDestacado.nomgrupo }}</h2> -->
           </nuxt-link>
         </div>
       </div>
