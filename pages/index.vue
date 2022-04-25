@@ -21,11 +21,11 @@
           v-for="productoDestacado in gruposProductos"
           :key="productoDestacado.idgrupo"
           class="relative flex items-center justify-center mx-10 mt-6 bg-cover w-96" >
-           <nuxt-link :to="`/productos/grupo/${productoDestacado.idgrupo}`" >  
+           <nuxt-link class="flex justify-center" :to="`/productos/grupo/${productoDestacado.idgrupo}`" >  
               <img  style="width:80%;" :src="productoDestacado.imagen" alt="" />  
               
               <!-- <h2 class="absolute text-white top-20">{{ productoDestacado.nomgrupo }}</h2> -->
-          </nuxt-link>
+            </nuxt-link>
         </div>
       </div>
     </div>

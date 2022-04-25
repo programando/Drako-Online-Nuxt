@@ -6,13 +6,13 @@
   >
     <div class="swiper-wrapper">
       <div class="relative swiper-slide">
-        <img class="w-full altura" src="/slider/1.png" alt="">
+        <img class="w-full altura" src="/slider/2.png" alt="">
         <div class="absolute -mt-20 bg-center bg-cover slider1">
           <div class="lg:flex lg:justify-between">
             <div class="px-16"></div>
             <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
               <p
-                class="text-xl font-semibold text-white lg:text-3xl xl:text-3xl"
+                class="font-semibold text-white md:text-xl lg:text-3xl xl:text-3xl"
               >
                 PUNTAS DE EJE - RÓTULAS - TERMINALES DE DIRECCIÓN
               </p>
@@ -50,9 +50,6 @@
           </div>
         </div>
       </div>
-
-      
-      
     </div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
@@ -117,9 +114,21 @@ export default {
 }
 
 .altura {
-  height: 530px;
+  height: 250px;
  
   
+}
+
+@media (min-width: 768px ) {
+  .altura {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1280px ) {
+  .altura {
+    height: 520px;
+  }
 }
 
 </style>
