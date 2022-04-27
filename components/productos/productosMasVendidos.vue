@@ -1,15 +1,11 @@
 <template>
-  <div class="grid justify-center grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:items-center mt-2">
-  
- 
-    <div  v-swiper="swiperOption"  class="relative z-10 hidden -mt-2 lg:w-6/6 xl:block"  >
+  <div class="flex items-center">
+    <div  v-swiper="swiperOption"  class="z-10 xl:block"  >
       <div class="swiper-wrapper">
-        
         <div v-for="(productoVendido) in productosVendidos" :key="productoVendido.idproducto" class="swiper-slide">
          <nuxt-link :to="`/productos/detalles/${productoVendido.idproducto}`"   > 
           <div class="flex justify-center">
             <img class="h-44"  alt="" v-for="imagen in productoVendido.imagenes.slice(0, 1)" :src="imagen._240x240" :key="imagen.idregistro" />
-           
           </div>
           <div class="flex justify-center">
             <p class="text-xs">{{ productoVendido.nombre_impreso }}</p>
@@ -70,12 +66,16 @@ export default {
           prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-          1024: {
+          1320: {
             slidesPerView: 5,
             spaceBetween: 10,
           },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
           768: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 10,
           },
           640: {
