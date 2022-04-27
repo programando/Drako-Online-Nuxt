@@ -54,11 +54,10 @@
                       <div
                         class="p-3 mb-0 font-semibold text-white uppercase border-b border-solid rounded-t-lg opacity-75 bg-rojo border-slate-100"
                       >
-                        pink tooltip title
+                        Tiempo de reserva
                       </div>
                       <div class="p-3 text-white">
-                        And here's some amazing content. It's very engaging.
-                        Right?
+                        Es el tiempo máximo que el producto estará reservado hasta que se haga el pago.  Si el pago no se ve preflejado en este lapso de tiempo, el pedido será borrado por el sistema y deberá realizar un nuevo pedido.
                       </div>
                     </div>
                   </div>
