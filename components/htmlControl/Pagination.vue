@@ -29,6 +29,7 @@ export default {
         },
         getProductosFromUrl ( Url ) {
           this.$emit('getProductosFromUrl',Url);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 }
