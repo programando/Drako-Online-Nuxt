@@ -116,9 +116,11 @@
             <p class="font-semibold text-rojo">$1.139.900</p>
           </div>
           <div>
-            <button class="w-full py-2 text-white rounded bg-rojo">
-              Grabar Pedido
-            </button>
+            <nuxt-link to="/register">
+              <button class="w-full py-2 text-white rounded bg-rojo">
+                Grabar Pedido
+              </button>
+            </nuxt-link>
           </div>
         </div>
       </div>
