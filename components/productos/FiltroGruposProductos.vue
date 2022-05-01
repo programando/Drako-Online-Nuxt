@@ -53,6 +53,7 @@
                 GruposProductos.listadoGeneral()
                   .then((response) => {
                     this.gruposProductos = response.data ;
+                    console.log(response.data);
                });
               }
           },

@@ -7,7 +7,6 @@ export default {
   name: "InputBasic",
   props: {
     holder: String,
-
   }
 }
 </script>

@@ -3,7 +3,7 @@
     <div  v-swiper="swiperOption"  class="z-10 xl:block"  >
       <div class="swiper-wrapper">
         <div v-for="(productoVendido) in productosVendidos" :key="productoVendido.idproducto" class="swiper-slide">
-         <nuxt-link :to="`/productos/detalles/${productoVendido.idproducto}`"   > 
+         <nuxt-link :to="`/productos/detalles/${productoVendido.idmd5}`"   > 
           <div class="flex justify-center">
             <img class="h-44"  alt="" v-for="imagen in productoVendido.imagenes.slice(0, 1)" :src="imagen._240x240" :key="imagen.idregistro" />
           </div>

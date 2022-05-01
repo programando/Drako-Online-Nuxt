@@ -2,12 +2,20 @@ import Api  from "@/config/Axios";
  
 
 export default {
+
+
+      async buscarPorIdMd5( idmd5 ) {
+        return Api.post('/productos/buscar/idmd5',   { 'idmd5' : idmd5 }    );
+      }, 
+
       async getProductosFromUrl(Url) {
         return Api.get( Url );
       }, 
+
       async buscarPorIdProducto( idproducto ) {
         return Api.post('/productos/buscar/idproducto',   { 'idproducto' : idproducto }    );
       },  
+
       async masVendidos() {
             return Api.get('/productos/mas/vendidos');
       },

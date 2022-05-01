@@ -28,10 +28,8 @@
             <p  v-if="producto.precio_oferta" class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2" >
               Oferta
             </p>
-            <nuxt-link :to="{ name: 'productos-detalles-idproducto', params: { idproducto: producto.idproducto}}"   >   
-
-           <!-- <nuxt-link :to="`/productos/detalles/${producto.idproducto}`"   >   -->
-              
+            <nuxt-link :to="{ name: 'productos-detalles-idmd5', params: { idmd5: producto.idmd5}}"   >   
+ 
                 <img class="h-44"
                   v-for="imagen in producto.imagenes.slice(0, 1)"
                   :key="imagen.idregistro"
