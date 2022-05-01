@@ -12,9 +12,9 @@
 
     <div class="mx-2 mt-2">
       <div class="mt-2 ">
-        <div v-for="grupoProducto in gruposProductos" :key="grupoProducto.idgrupo">
+        <div v-for="grupoProducto in gruposProductos" :key="grupoProducto.id_clase_grupo">
           <input class="cursor-pointer" type="checkbox"   v-model="grupoProducto.selected" @change="getGruposSeleccionados()">
-          <label class="text-sm cursor-pointer" > {{ grupoProducto.nomgrupo_capital }}</label>
+          <label class="text-sm cursor-pointer" > {{ grupoProducto.nom_clase_grupo }}</label>
         </div>
       </div>
      </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import GruposProductos from "@/models/ProductosGrupos";
+  import GruposClasesProductos from "@/models/ProductosGruposClases";
 
     export default {
           name: "FiltroProducto",
@@ -43,17 +43,16 @@
                 let idsGrupos = [];
                 this.gruposProductos.map( grupo =>{
                     if ( grupo.selected === true ) {
-                      idsGrupos.push ( grupo.idgrupo) ;
+                      idsGrupos.push ( grupo.id_clase_grupo) ;
                     }
                 });
                 this.$emit('getGruposSeleccionados',idsGrupos );
               },
 
               getGruposAll () {
-                GruposProductos.listadoGeneral()
+                GruposClasesProductos.listadoGeneral()
                   .then((response) => {
                     this.gruposProductos = response.data ;
-                    console.log(response.data);
                });
               }
           },

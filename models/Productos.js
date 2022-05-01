@@ -24,6 +24,10 @@ export default {
             return Api.get('/productos/listado');
       },
   
+      async porClaseGrupos(formData) {
+        return Api.post('/productos/por/clase',  formData    );
+      },   
+
       async porGrupos(formData) {
         return Api.post('/productos/grupos',  formData    );
       },

@@ -107,6 +107,7 @@ export default {
       formData: {
         grupos: [],
         textoBusqueda: "",
+        clasesProdcucto:[],
       },
       textBuscarProducto: "",
     };
@@ -150,15 +151,17 @@ export default {
      ;
     },
 
-    getGruposSeleccionados(idsGrupos) {
-      this.formData.grupos = idsGrupos;
-      if (idsGrupos.length == 0) {
+    getGruposSeleccionados( idsClasesProductos ) {
+      this.formData.clasesProdcucto = idsClasesProductos;
+      if (idsClasesProductos.length == 0) {
         this.getProductosAll();
         return;
       }
-      Productos.porGrupos(this.formData).then((response) => {
+        
+       Productos.porClaseGrupos(this.formData).then((response) => {
         this.productos = response.data.data;
       });
+       
     },
 
     getProductosAll() {
