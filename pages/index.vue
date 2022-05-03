@@ -19,12 +19,10 @@
       <div class="grid justify-center col-span-1 mx-4 mt-10 lg:grid-cols-2 xl:grid-cols-3"  >
         <div 
           v-for="productoDestacado in gruposProductos"
-          :key="productoDestacado.idgrupo"
+          :key="productoDestacado.id_clase_grupo"
           class="relative flex items-center justify-center mx-10 mt-6 bg-cover w-96" >
-           <nuxt-link class="flex justify-center" :to="`/productos/grupo/${productoDestacado.idgrupo}`" >  
+           <nuxt-link class="flex justify-center" :to="`/productos/grupo/${productoDestacado.id_clase_grupo}`" >  
               <img  style="width:80%;" :src="productoDestacado.imagen" alt="" />  
-              
-              <!-- <h2 class="absolute text-white top-20">{{ productoDestacado.nomgrupo }}</h2> -->
             </nuxt-link>
         </div>
       </div>
@@ -35,22 +33,22 @@
 <script>
  
  
-import GruposProductos          from "@/models/ProductosGrupos";
+import GruposProductosClases    from "@/models/ProductosGruposClases";
 import ProductosMasVendidos     from "@/components/productos/productosMasVendidos.vue";
-import SelectRespuesto          from "@/components/comunes/SelectRespuesto.vue";
 import Slider                   from "@/components/comunes/slider/Slider.vue";
 
 export default {
   layout:'default',
-  components: { Slider, ProductosMasVendidos,  SelectRespuesto,      },
+  components: { Slider, ProductosMasVendidos,      },
   layout: "defaulLayout",
   data: () => ({
     gruposProductos: [],
   }),
 
   mounted() {
-    GruposProductos.destacados().then((response) => {
+    GruposProductosClases.destacados().then((response) => {
       this.gruposProductos = response.data;
+      console.log ( response.data) ;
     });
   },
 };
