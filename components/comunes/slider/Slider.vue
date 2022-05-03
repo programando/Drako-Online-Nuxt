@@ -5,88 +5,36 @@
     :loadtheme="false"
   >
     <div class="swiper-wrapper">
-
-      <div class="relative swiper-slide">
-        <img class="w-full altura" src="/slider/slider-1.png" alt="">
-        <div class="absolute -mt-20 bg-center bg-cover slider1">
-          <div class="lg:flex lg:justify-between">
-            <div class="px-16"></div>
-            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p
-                class="font-semibold text-white md:text-xl lg:text-3xl xl:text-3xl"
-              >
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative swiper-slide">
-        <img class="w-full altura" src="/slider/slider-2.png" alt="">
-        <div class="absolute -mt-20 bg-center bg-cover slider1">
-          <div class="lg:flex lg:justify-between">
-            <div class="px-16"></div>
-            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p
-                class="text-xl font-semibold text-white lg:text-3xl xl:text-3xl"
-              >
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative swiper-slide">
-        <img class="w-full altura" src="/slider/slider-3.png" alt="">
-        <div class="absolute -mt-20 bg-center bg-cover slider1">
-          <div class="lg:flex lg:justify-between">
-            <div class="px-16"></div>
-            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p
-                class="text-xl font-semibold text-white lg:text-3xl xl:text-3xl"
-              >
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative swiper-slide">
-        <img class="w-full altura" src="/slider/slider-4.png" alt="">
-        <div class="absolute -mt-20 bg-center bg-cover slider1">
-          <div class="lg:flex lg:justify-between">
-            <div class="px-16"></div>
-            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p
-                class="text-xl font-semibold text-white lg:text-3xl xl:text-3xl"
-              >
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative swiper-slide">
-        <img class="w-full altura" src="/slider/slider-5.png" alt="">
-        <div class="absolute -mt-20 bg-center bg-cover slider1">
-          <div class="lg:flex lg:justify-between">
-            <div class="px-16"></div>
-            <div class="mx-10 lg:mx-2 lg:-mt-14 xl:-mt-20 lg:mr-4 xl:mr-24">
-              <p
-                class="text-xl font-semibold text-white lg:text-3xl xl:text-3xl"
-              >
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+        <SliderCard
+          img="/slider/slider-1.png"
+          alineacion="slider1"
+          text="La mejor marcas en lubricantes"
+          
+        />
+        <SliderCard
+          img="/slider/slider-2.png"
+          alineacion="slider2"
+          text="Bombas de Clutch y kits"
+          
+        />
+        <SliderCard
+          img="/slider/slider-3.png"
+          alineacion="slider3"
+          text="Bombas de agua y correa de distribución"
+          
+        />
+        <SliderCard
+          img="/slider/slider-4.png"
+          text="Puntas, rótulas y terminales"
+          alineacion="slider4"
+        />
+        <SliderCard
+          img="/slider/slider-5.png"
+          alineacion="slider5"
+          text="Suspenciones multimarca"
+          
+        />
+      
     </div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
@@ -95,9 +43,11 @@
 
 <script>
 import { directive } from "vue-awesome-swiper";
+import SliderCard from "@/components/comunes/slider/SliderCard.vue"
 
 export default {
   name: "Slider",
+  components: {SliderCard},
   directives: {
     swiper: directive,
   },
@@ -150,22 +100,5 @@ export default {
   @apply w-48 h-48;
 }
 
-.altura {
-  height: 250px;
- 
-  
-}
-
-@media (min-width: 768px ) {
-  .altura {
-    height: 350px;
-  }
-}
-
-@media (min-width: 1280px ) {
-  .altura {
-    height: 520px;
-  }
-}
 
 </style>

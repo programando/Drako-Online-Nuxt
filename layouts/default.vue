@@ -27,6 +27,7 @@ import Footer from "@/components/comunes/Footer.vue";
       .contenedor-principal {
         bottom: 20px;
         right: 0px;
+        z-index: 100;
       }
 
     

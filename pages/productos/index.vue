@@ -15,13 +15,13 @@
     </div>
 
     <div class="grid md:grid-cols-3 lg:grid-cols-10 ">
-      <div class="flex justify-center px-8 overflow-auto lg:col-span-3 2xl:col-span-2 alto-scroll">
+      <div class="flex justify-center lg:col-span-3 2xl:col-span-2 ">
          <FiltroGruposProductos  @getGruposSeleccionados="getGruposSeleccionados" ></FiltroGruposProductos>  
       </div>
         
       <div class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4" >
         <div
-          class="p-4 mx-auto mb-10 border border-white cursor-pointer w-72 hover:border hover:shadow-xl "
+          class="p-4 mx-auto mb-10 border cursor-pointer hover:border-black w-72 hover:shadow-2xl hover-container"
           v-for="(producto, index) in productos"  :key="producto.idproducto"
         >
           <div class="relative flex justify-center">
@@ -29,7 +29,6 @@
               Oferta
             </p>
             <nuxt-link :to="{ name: 'productos-detalles-idmd5', params: { idmd5: producto.idmd5}}"   >   
- 
                 <img class="h-44"
                   v-for="imagen in producto.imagenes.slice(0, 1)"
                   :key="imagen.idregistro"
@@ -66,7 +65,7 @@
             </div>
 
             <div class="">
-              <button @click="addProductoCarito ( producto )" class="px-4 py-1 mt-2 border rounded-lg hover:bg-azul hover:text-white" >
+              <button @click="addProductoCarito ( producto )" class="px-4 py-1 mt-2 border rounded-lg hover-boton" >
                 Agregar al carrito
               </button>
             </div>
@@ -177,8 +176,12 @@ export default {
 </script>
 
 <style scoped>
-.alto-scroll {
-  height: 450px
+.hover-container:hover  .hover-boton {
+  background-color: #0C1B31;
+  color: white;
 }
+
+
+
 </style>
  
