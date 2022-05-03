@@ -12,10 +12,10 @@
         />
       </div>
     </div>
-    <div class="justify-center pt-20 space-x-10 lg:flex">
+    <div class="justify-center pt-20 space-x-20 lg:flex">
       <div class="flex justify-center">
         <div class="container ">
-          <img class="w-72 h-72 mt-10"
+          <img class="mt-10 w-72 h-72"
             :src="imageProducto"
           />
         </div>
@@ -64,7 +64,7 @@
         </div>
         
         
-        <div class="flex items-end space-x-2">
+        <div class="flex items-end space-x-8">
           <div class="mt-4 ">
               <ProductoFichaTecnica :Producto="Producto"> </ProductoFichaTecnica>
            
@@ -117,7 +117,7 @@
     </div>
     <!-- tabs -->
         <div class="flex justify-center mt-6">
-          <div class="">
+          <div class="ancho-vehiculos">
             <ul class="flex flex-row flex-wrap pt-3 pb-4 mb-0 list-none">
               <li class="flex-auto mr-2 -mb-px text-center last:mr-0">
                 <a
@@ -146,7 +146,7 @@
               </li>
 -->
             </ul>
-            <div class="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white rounded shadow-lg" >
+            <div class="relative flex w-full min-w-0 mb-6 break-words bg-white rounded shadow-lg " >
 
               <div class="flex-auto h-48 px-4 py-5">
                 <div class="tab-content tab-space">
@@ -167,24 +167,20 @@
             </div>
           </div>
         </div>
-    
-    <div >
-  
-     
-  </div>
 
     <div class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-60">
       <h2 class="text-xl md:text-2xl">Respuestos Relacionados</h2>
-      <ProductosMasVendidos> </ProductosMasVendidos>/>
+      <ProductosMasVendidos> </ProductosMasVendidos>
       <div class="my-10 border-b-2"></div>
     </div>
 
  <ProductoAgregarCarrito 
-        :Producto="Producto" 
-        :Imagen="imageProducto" 
-        :modal="modal" 
-        :cantidadComprada="cantidadComprada"
-        @ModalClose="ModalClose"> </ProductoAgregarCarrito>
+    :Producto="Producto" 
+    :Imagen="imageProducto" 
+    :modal="modal" 
+    :cantidadComprada="cantidadComprada"
+    @ModalClose="ModalClose">
+  </ProductoAgregarCarrito>
 
   </div>
 </template>
@@ -256,7 +252,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .ancho-tabs {
   width: 36rem;
 }
@@ -268,5 +264,9 @@ export default {
 
 .alineacion {
   left: 39%;
+}
+
+.ancho-vehiculos {
+  width: 800px;
 }
 </style>

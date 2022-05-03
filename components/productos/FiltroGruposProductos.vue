@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <h2 class="text-lg">Tipo de respuesto</h2>
+  <div class="w-64 ">
+    <h2 class="sticky text-lg">Tipo de respuesto</h2>
    <!-- 
     <input
       class="px-4 py-2 mt-2 border rounded-md focus:outline-none"
@@ -10,7 +10,7 @@
     >
 -->
 
-    <div class="mx-2 mt-2">
+    <div class="mx-2 mt-2 overflow-auto alto-scroll ">
       <div class="mt-2 ">
         <div v-for="grupoProducto in gruposProductos" :key="grupoProducto.id_clase_grupo">
           <input class="cursor-pointer" type="checkbox"   v-model="grupoProducto.selected" @change="getGruposSeleccionados()">
@@ -81,4 +81,7 @@
 
 <style>
 
+.alto-scroll {
+  height: 450px
+}
 </style>
