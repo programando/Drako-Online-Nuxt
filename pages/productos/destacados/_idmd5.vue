@@ -1,20 +1,7 @@
 <template>
   <div>
  
-    <div class="sticky z-50 flex justify-center bg-white left top-20">
-      <div class="flex items-center px-2 py-1 mt-2 border-2">
-        <img class="z-20 h-5 -mr-7" src="/search.svg" alt="busqueda" />
-        <input
-          v-model="textBuscarProducto"
-          @keypress.13="iniciarBusquedaProductos"
-          class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1"
-          type="text"
-          placeholder="Buscar producto"
-        />
-      </div>
-    </div>
-
-    <div class="grid mt-10 md:grid-cols-3 lg:grid-cols-10">
+     <div class="grid mt-10 md:grid-cols-3 lg:grid-cols-10">
 
 
 
@@ -27,9 +14,7 @@
             <p  v-if="producto.precio_oferta" class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2" >
               Oferta
             </p>
-            <nuxt-link :to="{ name: 'productos-detalles-idproducto', params: { idproducto: producto.idproducto}}"   >   
-
-           <!-- <nuxt-link :to="`/productos/detalles/${producto.idproducto}`"   >   -->
+            <nuxt-link :to="{ name: 'productos-detalles-idmd5', params: { idmd5: producto.idmd5}}"   >  
               
                 <img class="h-44"
                   v-for="imagen in producto.imagenes.slice(0, 1)"

@@ -17,7 +17,6 @@
           :key="productoDestacado.id_clase_grupo"
           class="relative flex items-center justify-center mx-10 mt-6 bg-cover w-96" >
            <nuxt-link class="flex justify-center" :to="`/productos/destacados/${productoDestacado.idmd5}`" >  
-              {{ productoDestacado.idmd5 }}
               <img  style="width:80%;" :src="productoDestacado.imagen" alt="" />  
             </nuxt-link>
         </div>

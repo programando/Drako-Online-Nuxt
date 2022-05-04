@@ -1,17 +1,6 @@
 <template>
   <div class="relative" v-on-clickaway="closeModal">
-    <div class="z-50 flex justify-center bg-white ">
-      <div class="flex items-center px-2 py-1 mt-2 border-2 w-96">
-        <img class="z-20 h-5 -mr-7" src="/search.svg" alt="busqueda" />
-        <input
-          v-model="textBuscarProducto"
-          @keypress.13="iniciarBusquedaProductos"
-          class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1"
-          type="text"
-          placeholder="Buscar producto"
-        />
-      </div>
-    </div>
+ 
     <div class="justify-center pt-20 space-x-20 lg:flex">
       <div class="flex justify-center">
         <div class="container ">
@@ -116,12 +105,12 @@
       
     </div>
     <!-- tabs -->
-        <div class="flex justify-center mt-6">
+        <div class="flex justify-center mt-6" v-if="Producto.vehiculos">
           <div class="ancho-vehiculos">
             <ul class="flex flex-row flex-wrap pt-3 pb-4 mb-0 list-none">
               <li class="flex-auto mr-2 -mb-px text-center last:mr-0">
                 <a
-                  class="block px-3 py-2 text-xs font-bold leading-normal uppercase rounded shadow-lg"
+                  class="block px-3 py-2 text-xl  leading-normal rounded shadow-lg"
                   v-on:click="toggleTabs(1)"
                   v-bind:class="{
                     'text-rojo bg-white': openTab !== 1,
@@ -168,7 +157,7 @@
           </div>
         </div>
 
-    <div class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-60">
+    <div class="px-10 mt-12 text-lg font-bold text-center lg:text-left xl:px-60">
       <h2 class="text-xl md:text-2xl">Respuestos Relacionados</h2>
       <ProductosMasVendidos> </ProductosMasVendidos>
       <div class="my-10 border-b-2"></div>
@@ -186,18 +175,16 @@
 </template>
 
 <script>
-import Productos from "@/models/Productos";
-import ProductosMasVendidos from "@/components/productos/productosMasVendidos.vue";
-import ProductoAgregarCarrito from "@/components/productos/productoAgregarCarrito.vue";
-import ProductoFichaTecnica   from "@/components/productos/productoFichaTecnica";
-import { createPopper } from "@popperjs/core";
+import Productos                 from "@/models/Productos";
+import ProductosMasVendidos      from "@/components/productos/productosMasVendidos.vue";
+import ProductoAgregarCarrito    from "@/components/productos/productoAgregarCarrito.vue";
+import ProductoFichaTecnica      from "@/components/productos/productoFichaTecnica";
+import { createPopper }          from "@popperjs/core";
 
 export default {
   name: "ProductoDetalles",
   layout: "default",
-  components: {
-    ProductosMasVendidos, ProductoAgregarCarrito,ProductoFichaTecnica
-  },
+  components: { ProductosMasVendidos, ProductoAgregarCarrito,ProductoFichaTecnica },
   data() {
     return {
       hola: "",

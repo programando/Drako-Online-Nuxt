@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-4" v-if="totalRecords > 20">
+    <div class="mb-8" v-if="totalRecords > 20">
         <ul class="flex justify-center mt-3">
             <!-- <nuxt-link :to="link.url ? link.url : '#'" v-for="link in links" :key="link.label"   -->
             <button v-for="(link,index) in links" :key="index"  

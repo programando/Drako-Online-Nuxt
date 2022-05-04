@@ -2,28 +2,18 @@
   <div>
  
     <div class="sticky z-50 bg-white w-96 top-20 left-2/4">
-      <div class="flex items-center px-2 py-1 mt-2 border-2">
-        <img class="z-20 h-5 -mr-7" src="/search.svg" alt="busqueda" />
-        <input
-          v-model="textBuscarProducto"
-          @keypress.13="iniciarBusquedaProductos"
-          class="w-40 px-10 lg:w-80 xl:w-96 focus:outline-none border-r-1"
-          type="text"
-          placeholder="Buscar producto"
-        />
-      </div>
+       <BusquedaProductos @iniciarBusquedaProductos="iniciarBusquedaProductos"></BusquedaProductos>
     </div>
 
     <div class="grid md:grid-cols-3 lg:grid-cols-10 ">
+     
       <div class="flex justify-center lg:col-span-3 2xl:col-span-2 ">
          <FiltroGruposProductos  @getGruposSeleccionados="getGruposSeleccionados" ></FiltroGruposProductos>  
       </div>
         
       <div class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4" >
-        <div
-          class="p-4 mx-auto mb-10 border cursor-pointer hover:border-black w-72 hover:shadow-2xl hover-container"
-          v-for="(producto, index) in productos"  :key="producto.idproducto"
-        >
+        <div class="p-4 mx-auto mb-10 border cursor-pointer hover:border-black w-72 hover:shadow-2xl hover-container"
+             v-for="(producto, index) in productos"  :key="producto.idproducto" >
           <div class="relative flex justify-center">
             <p  v-if="producto.precio_oferta" class="absolute left-0 w-20 px-2 py-1 -ml-4 text-center text-white rounded-sm bg-rojo top-2" >
               Oferta
@@ -87,13 +77,14 @@
 <script>
  
 import FiltroGruposProductos    from "@/components/productos/FiltroGruposProductos.vue";
+import BusquedaProductos         from "@/components/productos/productosBusqueda.vue"
 import Productos                from "@/models/Productos";
 import Pagination               from "@/components/htmlControl/Pagination.vue";
 
 export default {
   name: "Productos",
    layout:'default',
-  components: {    Pagination,  FiltroGruposProductos      },
+  components: {    Pagination,  FiltroGruposProductos, BusquedaProductos      },
 
   data() {
     return {
@@ -126,10 +117,11 @@ export default {
           this.setPagination (response.data );        
        });
     },
-    iniciarBusquedaProductos() {
-      this.formData.textoBusqueda = this.textBuscarProducto;
+    iniciarBusquedaProductos( textoBusqueda ) {
+      this.formData.textoBusqueda = textoBusqueda;
       Productos.busqueda(this.formData).then((response) => {
         this.productos = response.data.data;
+        this.setPagination  ( response.data);
       });
     },
 
