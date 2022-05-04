@@ -4,7 +4,7 @@
     <div :class="[setAlineacion]" class="absolute bg-center bg-cover slider1">
       <div class="mx-4">
         <p
-          class="w-40 font-semibold text-white sm:w-56 lg:w-72 xl:w-96"
+          class="w-40 font-semibold text-white sm:w-56 lg:w-72 titulo"
         >
           {{ text }}
         </p>
@@ -27,19 +27,19 @@ export default {
     setAlineacion() {
       switch (this.alineacion) {
         case "slider1":
-          return "right-0 bottom-16 text-right text-xs sm:text-2xl md:text-4xl xl:text-6xl lg:text-center";
+          return "right-0 bottom-16 text-right text-xs sm:text-2xl sm:bottom-10 md:text-4xl xl:bottom-20 lg:text-center";
           break;
         case "slider2":
-          return "bottom-10 left-4  text-left text-xs sm:text-center sm:text-base lg:text-center sm:text-2xl md:text-2xl xl:text-4xl xl:bottom-20";
+          return "bottom-10 left-4  text-left text-xs sm:text-center sm:text-base lg:text-center sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl xl:bottom-20 xl:left-24";
           break;
         case "slider3":
-          return "bottom-8 left-4  text-left text-xs sm:text-center sm:text-base lg:text-center md:text-lg lg:text-2xl xl:text-3xl xl:left-10 ";
+          return "bottom-8 left-4  text-left text-xs sm:text-center sm:text-base lg:text-center md:text-lg lg:text-2xl xl:text-4xl xl:left-20 ";
           break;
         case "slider4":
-          return "top-16 text-xs sm:text-base md:text-xl lg:text-2xl xl:text-4xl left-4 sm:left-10 md:top-24 lg:top-32 xl:top-44";
+          return "top-16 text-xs sm:text-base md:text-xl lg:text-2xl xl:text-4xl left-4 sm:left-10 md:top-24 lg:top-32 xl:left-14";
           break;
         case "slider5":
-          return "top-20 text-xs sm:text-base md:text-xl md:left-20 lg:text-3xl xl:text-5xl left-4 sm:left-10 lg:top-32 xl:top-44";
+          return "top-20 text-xs sm:text-base md:text-xl md:left-20 lg:text-3xl xl:text-5xl left-4 sm:left-10 lg:top-32 xl:top-44 xl:left-20";
           break;
 
         default:
@@ -66,4 +66,12 @@ export default {
     height: 520px;
   }
 }
+
+@media (min-width: 1500px) {
+  .titulo {
+  width: 400px;
+  }
+}
+
+
 </style>

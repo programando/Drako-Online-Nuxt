@@ -1,7 +1,6 @@
 <template>
   <div class="relative" v-on-clickaway="closeModal">
- 
-    <div class="justify-center pt-20 space-x-20 lg:flex">
+    <div class="justify-center pt-6 space-x-20 lg:flex">
       <div class="flex justify-center">
         <div class="container ">
           <img class="mt-10 w-72 h-72"
@@ -101,8 +100,7 @@
         
 
         <!-- sliders -->
-      </div>
-      
+      </div>  
     </div>
     <!-- tabs -->
         <div class="flex justify-center mt-6" v-if="Producto.vehiculos">
@@ -110,7 +108,7 @@
             <ul class="flex flex-row flex-wrap pt-3 pb-4 mb-0 list-none">
               <li class="flex-auto mr-2 -mb-px text-center last:mr-0">
                 <a
-                  class="block px-3 py-2 text-xl  leading-normal rounded shadow-lg"
+                  class="block px-3 py-2 text-xl leading-normal rounded shadow-lg"
                   v-on:click="toggleTabs(1)"
                   v-bind:class="{
                     'text-rojo bg-white': openTab !== 1,

@@ -1,10 +1,12 @@
 <template>
       <!-- modal -->
     <div v-if="modal" class="absolute top-0 z-20 flex justify-center w-full h-full px-20 py-10 transition-opacity bg-gray-500 bg-opacity-75" >
+      
       <div class="relative px-10 py-8">
+        <p class="relative px-10 pt-4 text-xl font-semibold text-center bg-white">Producto Agregado al Carrito</p>
         <div class="relative justify-center px-10 py-10 space-x-20 bg-white lg:flex" >
           <div class="container mx-auto">
-             <h3> Producto agragado al carrito</h3>
+            
             <div>
               <img class="w-64 h-64"
                     :src="Imagen"
