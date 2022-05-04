@@ -1,27 +1,23 @@
 <template>
   <div class="relative">
     <Slider />
-    <div
-      class="px-10 mt-4 text-lg font-bold text-center lg:text-left xl:px-32 "
-    >
-      <h2 class="text-xl md:text-2xl lg:text-3xl">Productos más vendidos</h2>
+
+    <div class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 " >
+      <h2 class="text-xl md:text-2xl lg:text-3xl mt-20 mb-8">Productos más vendidos</h2>
       <ProductosMasVendidos />
       <div class="my-10 border-b-2"></div>
     </div>
-    <div
-      class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 lg:text-2xl"
-    >
-      <h2 class="text-lg font-bold md:text-2xl">
-        Grupos  destacados
-      </h2>
+
+    <div v-if="gruposProductos.length > 0" class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 lg:text-2xl">
+      <h2 class="text-xl md:text-2xl lg:text-3xl">  Grupos  destacados </h2>
     </div>
     <div class="flex justify-center mb-4">
       <div class="grid justify-center col-span-1 mx-4 mt-10 lg:grid-cols-2 xl:grid-cols-3"  >
-        <div 
-          v-for="productoDestacado in gruposProductos"
+        <div v-for="productoDestacado in gruposProductos"
           :key="productoDestacado.id_clase_grupo"
           class="relative flex items-center justify-center mx-10 mt-6 bg-cover w-96" >
-           <nuxt-link class="flex justify-center" :to="`/productos/grupo/${productoDestacado.id_clase_grupo}`" >  
+           <nuxt-link class="flex justify-center" :to="`/productos/destacados/${productoDestacado.idmd5}`" >  
+              {{ productoDestacado.idmd5 }}
               <img  style="width:80%;" :src="productoDestacado.imagen" alt="" />  
             </nuxt-link>
         </div>
@@ -48,7 +44,6 @@ export default {
   mounted() {
     GruposProductosClases.destacados().then((response) => {
       this.gruposProductos = response.data;
-      console.log ( response.data) ;
     });
   },
 };

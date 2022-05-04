@@ -4,6 +4,10 @@ import Api  from "@/config/Axios";
 export default {
 
 
+      async buscarPorClaseIdMd5Grupos( idmd5 ) {
+        return Api.post('/productos/por/idmd5/clase',   { 'idmd5' : idmd5 }    );
+      }, 
+
       async buscarPorIdMd5( idmd5 ) {
         return Api.post('/productos/buscar/idmd5',   { 'idmd5' : idmd5 }    );
       }, 
@@ -25,7 +29,7 @@ export default {
       },
   
       async porClaseGrupos(formData) {
-        return Api.post('/productos/por/clase',  formData    );
+         return Api.post('/productos/por/clase',  formData    );
       },   
 
       async porGrupos(formData) {

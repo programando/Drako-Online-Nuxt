@@ -8,19 +8,19 @@
         <SliderCard
           img="/slider/slider-1.png"
           alineacion="slider1"
-          text="La mejor marcas en lubricantes"
+          text="La mejores marcas en lubricantes"
           
         />
         <SliderCard
           img="/slider/slider-2.png"
           alineacion="slider2"
-          text="Bombas de Clutch y kits"
+          text="Bombas de clutch y kits"
           
         />
         <SliderCard
           img="/slider/slider-3.png"
           alineacion="slider3"
-          text="Bombas de agua y correa de distribución"
+          text="Bombas de agua y correas de distribución"
           
         />
         <SliderCard
@@ -31,7 +31,7 @@
         <SliderCard
           img="/slider/slider-5.png"
           alineacion="slider5"
-          text="Suspenciones multimarca"
+          text="Suspensiones multimarca"
           
         />
       
@@ -58,9 +58,9 @@ export default {
         spaceBetween: -10,
         slidesPerGroup: 1,
         loop: true,
-        // autoplay: {
-        //   delay: 5000,
-        // },
+         autoplay: {
+           delay: 6000,
+         },
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",

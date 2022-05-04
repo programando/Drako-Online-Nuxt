@@ -27,10 +27,10 @@ export default {
     setAlineacion() {
       switch (this.alineacion) {
         case "slider1":
-          return "right-0 bottom-16 text-right text-xs sm:text-xl md:text-2xl xl:text-4xl lg:text-center";
+          return "right-0 bottom-16 text-right text-xs sm:text-2xl md:text-4xl xl:text-6xl lg:text-center";
           break;
         case "slider2":
-          return "bottom-10 left-4  text-left text-xs sm:text-center sm:text-base lg:text-center sm:text-xl md:text-2xl xl:text-4xl xl:bottom-20";
+          return "bottom-10 left-4  text-left text-xs sm:text-center sm:text-base lg:text-center sm:text-2xl md:text-2xl xl:text-4xl xl:bottom-20";
           break;
         case "slider3":
           return "bottom-8 left-4  text-left text-xs sm:text-center sm:text-base lg:text-center md:text-lg lg:text-2xl xl:text-3xl xl:left-10 ";

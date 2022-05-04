@@ -75,12 +75,10 @@
         </div>
       </div>
     </div>
-    <Pagination
-          :currentRecord         = "records.current"
-          :links                 = "links"
-          :totalRecords          = "records.total"
-            @getProductosFromUrl="getProductosFromUrl"
-       >
+    <Pagination :currentRecord         = "records.current"
+                :links                 = "links"
+                :totalRecords          = "records.total"
+                @getProductosFromUrl="getProductosFromUrl" >
     </Pagination>
      
   </div>
@@ -125,9 +123,7 @@ export default {
         Productos.getProductosFromUrl( Url)
         .then ( response => {
           this.productos       = response.data.data;
-          this.links           = response.data.links;
-          this.records.current = response.data.to;
-          this.records.total   = response.data.total;         
+          this.setPagination (response.data );        
        });
     },
     iniciarBusquedaProductos() {
@@ -159,6 +155,7 @@ export default {
         
        Productos.porClaseGrupos(this.formData).then((response) => {
         this.productos = response.data.data;
+         this.setPagination (response.data );
       });
        
     },
@@ -166,10 +163,14 @@ export default {
     getProductosAll() {
       Productos.listaGeneral().then((response) => {
         this.productos       = response.data.data;
-        this.links           = response.data.links;
-        this.records.current = response.data.to;
-        this.records.total   = response.data.total;
+        this.setPagination (response.data );
       });
+    },
+
+    setPagination ( dataPagination ) {
+        this.links           = dataPagination.links;
+        this.records.current = dataPagination.to;
+        this.records.total   = dataPagination.total;
     },
   },
 };

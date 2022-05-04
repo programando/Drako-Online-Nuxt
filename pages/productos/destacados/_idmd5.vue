@@ -106,6 +106,7 @@ export default {
       formData: {
         grupos: [],
         textoBusqueda: "",
+        idmd5:[]
       },
       textBuscarProducto: "",
     };
@@ -146,7 +147,7 @@ export default {
 
 
     getProductosAll() {
-      Productos.porIdGrupo(this.$route.params.idgrupo )
+      Productos.buscarPorClaseIdMd5Grupos( this.$route.params.idmd5 )
         .then(response => {
         this.productos       = response.data.data;
         this.links           = response.data.links;
