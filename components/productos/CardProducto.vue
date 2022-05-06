@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="p-4 mx-auto mb-10 border cursor-pointer hover:border-black w-72 hover:shadow-2xl hover-container">
     <div class="relative flex justify-center">
       <p
         v-if="producto.precio_oferta"
@@ -99,4 +99,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.hover-container:hover  .hover-boton {
+  background-color: #0C1B31;
+  color: white;
+}
+
+
+</style>

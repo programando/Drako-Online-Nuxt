@@ -11,8 +11,8 @@
          <FiltroGruposProductos  @getGruposSeleccionados="getGruposSeleccionados" ></FiltroGruposProductos>  
       </div>
         
-      <div class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4" >
-        <div class="p-4 mx-auto mb-10 border cursor-pointer hover:border-black w-72 hover:shadow-2xl hover-container"
+      <div class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-4 lg:mt-4 xl:mr-4" >
+        <div class=""
           v-for="(producto, index) in productos"  :key="producto.idproducto" >
           <CardProducto :producto="producto" :index="index" :productos="productos" />
         </div>
@@ -25,17 +25,9 @@
                   :totalRecords          = "records.total"
                   @getProductosFromUrl="getProductosFromUrl" >
             </Pagination>
-          </div>
-          
+          </div> 
       </div>
-      
     </div>
-      
-      
-    
-    
-    
-     
   </div>
 </template>
 
@@ -123,10 +115,6 @@ export default {
 </script>
 
 <style scoped>
-.hover-container:hover  .hover-boton {
-  background-color: #0C1B31;
-  color: white;
-}
 
 
 
