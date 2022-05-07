@@ -8,31 +8,28 @@
         <SliderCard
           img="/slider/slider-1.png"
           alineacion="slider1"
-          text="La mejores marcas en lubricantes"
+          
           
         />
         <SliderCard
           img="/slider/slider-2.png"
           alineacion="slider2"
-          text="Bombas de clutch y kits"
+          
           
         />
         <SliderCard
           img="/slider/slider-3.png"
           alineacion="slider3"
-          text="Bombas de agua y correas de distribución"
+          
           
         />
         <SliderCard
           img="/slider/slider-4.png"
-          text="Puntas, rótulas y terminales"
           alineacion="slider4"
         />
         <SliderCard
           img="/slider/slider-5.png"
           alineacion="slider5"
-          text="Suspensiones multimarca"
-          
         />
       
     </div>
