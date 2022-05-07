@@ -3,7 +3,7 @@
      <div class="grid mt-10 md:grid-cols-3 lg:grid-cols-10">
       <div class="grid justify-center min-h-screen grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-10 2xl:col-span-10 lg:grid-cols-3 2xl:grid-cols-5 lg:mt-4 xl:mr-4" >
         <div
-          class="p-4 mx-auto mb-24 border border-white cursor-pointer h-96 w-72 hover:border hover:shadow-xl"
+          class=""
           v-for="(producto, index) in productos"  :key="producto.idproducto"
         >
           <CardProducto :producto="producto" :index="index" :productos="productos"/>
@@ -94,4 +94,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.hover-container:hover  .hover-boton {
+  background-color: #0C1B31;
+  color: white;
+}
+</style>
  

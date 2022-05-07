@@ -3,7 +3,7 @@
     <Slider />
 
     <div class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 " >
-      <h2 class="text-xl md:text-2xl lg:text-3xl mt-20 mb-8">Productos más vendidos</h2>
+      <h2 class="mt-20 mb-8 text-xl md:text-2xl lg:text-3xl">Productos más vendidos</h2>
       <ProductosMasVendidos />
       <div class="my-10 border-b-2"></div>
     </div>
@@ -22,11 +22,17 @@
         </div>
       </div>
     </div>
+    <div>
+      <button class="px-2 py-2 mx-10 my-10 text-white border rounded bg-rojo" @click="sweet">SwetAlert</button>
+    </div>
+    <div>
+      <button class="px-2 py-2 mx-10 my-10 text-white border rounded bg-rojo" @click="toast">Toast</button>
+    </div>
   </div>
 </template>
 
 <script>
- 
+ import Swal from 'sweetalert2'
  
 import GruposProductosClases    from "@/models/ProductosGruposClases";
 import ProductosMasVendidos     from "@/components/productos/productosMasVendidos.vue";
@@ -44,6 +50,21 @@ export default {
     GruposProductosClases.destacados().then((response) => {
       this.gruposProductos = response.data;
     });
+  },
+
+  methods: {
+    sweet() {
+      Swal.fire('Any fool can use a computer')
+      
+    },
+
+    toast() {
+          
+             this.$toast.show('Logging in...')
+             this.$axios.$post('auth/login')
+             this.$toast.success('Successfully authenticated')
+         
+     }  
   },
 };
 </script>

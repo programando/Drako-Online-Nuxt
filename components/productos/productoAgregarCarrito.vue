@@ -3,7 +3,7 @@
     <div v-if="modal" class="absolute top-0 z-20 flex justify-center w-full h-full px-20 py-10 transition-opacity bg-gray-500 bg-opacity-75" >
       
       <div class="relative px-10 py-8">
-        <p class="relative px-10 pt-4 text-xl font-semibold text-center bg-white">Producto Agregado al Carrito</p>
+        <p class="relative px-10 pt-4 text-2xl font-semibold text-center bg-white xl:text-3xl">Producto Agregado al Carrito</p>
         <div class="relative justify-center px-10 py-10 space-x-20 bg-white lg:flex" >
           <div class="container mx-auto">
             
@@ -20,11 +20,8 @@
             <p class="mt-2 text-gray-600">Código: {{ Producto.codproducto }}</p>
             <p class="text-gray-600">OEM: {{ Producto.cod_oem }}</p>
             <div class="flex items-end space-x-8">
-              <div class="w-64 mt-4">
-                <ProductoFichaTecnica :Producto="Producto"> </ProductoFichaTecnica>
-              </div>
               <div class="mt-6">
-                <div class="flex justify-end space-x-4">
+                <div class="flex justify-center space-x-4">
                   <p
                     class="text-3xl font-semibold"
                     v-if="Producto.precio_oferta > 0"
@@ -32,7 +29,7 @@
                     {{ Producto.precio_oferta }}
                   </p>
                   <p
-                    class="text-3xl font-semibold text-right"
+                    class="text-3xl font-semibold text-center"
                     :class="{
                       'line-through text-gray-500': Producto.precio_oferta,
                     }"
@@ -44,8 +41,9 @@
                 <div class="items-center space-x-2">
                   <p class="mt-2 text-center"> Cantidad : {{ cantidadComprada }} </p>
                 </div>
-                <p class="mt-2 text-sm">Tiempo de reserva: {{ Producto.horas_reserva }} horas</p>
+                
               </div>
+              <p class="mb-10 text-sm">Tiempo de reserva: {{ Producto.horas_reserva }} horas</p>
             </div>
           </div>
         </div>
