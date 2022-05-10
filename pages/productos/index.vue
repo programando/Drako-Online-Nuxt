@@ -89,10 +89,7 @@ export default {
       });
     },
 
-    
-
-    
-
+  
     getGruposSeleccionados( idsClasesProductos ) {
       this.formData.clasesProdcucto = idsClasesProductos;
       if (idsClasesProductos.length == 0) {

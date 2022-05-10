@@ -3,6 +3,9 @@ import Api  from "@/config/Axios";
 
 export default {
 
+      async productosRelacionados( formData ) {
+        return Api.post('/productos/relacionados',   formData   );
+      },
 
       async buscarPorClaseIdMd5Grupos( idmd5 ) {
         return Api.post('/productos/por/idmd5/clase',   { 'idmd5' : idmd5 }    );

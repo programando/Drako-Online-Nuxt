@@ -155,9 +155,9 @@
           </div>
         </div>
 
-    <div class="px-10 mt-12 text-lg font-bold text-center lg:text-left xl:px-60">
+    <div v-if="prdctosRelacionados.length>0" class="px-10 mt-12 text-lg font-bold text-center lg:text-left xl:px-60">
       <h2 class="text-xl md:text-2xl">Respuestos Relacionados</h2>
-      <ProductosMasVendidos> </ProductosMasVendidos>
+      <ProductosRelacionados :productosRelacionados="prdctosRelacionados"> </ProductosRelacionados >
       <div class="my-10 border-b-2"></div>
     </div>
 
@@ -174,7 +174,7 @@
 
 <script>
 import Productos                 from "@/models/Productos";
-import ProductosMasVendidos      from "@/components/productos/productosMasVendidos.vue";
+import ProductosRelacionados       from "@/components/productos/productosRelacionados.vue";
 import ProductoAgregarCarrito    from "@/components/productos/productoAgregarCarrito.vue";
 import ProductoFichaTecnica      from "@/components/productos/productoFichaTecnica";
 import { createPopper }          from "@popperjs/core";
@@ -182,18 +182,19 @@ import { createPopper }          from "@popperjs/core";
 export default {
   name: "ProductoDetalles",
   layout: "default",
-  components: { ProductosMasVendidos, ProductoAgregarCarrito,ProductoFichaTecnica },
+  components: { ProductosRelacionados, ProductoAgregarCarrito,ProductoFichaTecnica },
   data() {
     return {
       hola: "",
       Producto: [],
       imageProducto: "",
       textBuscarProducto: "",
-
       openTab: 1,
       tooltipShow: false,
       modal: false,
-      cantidadComprada:10,
+      cantidadComprada:0,
+      formData:{ idproducto:0},
+      prdctosRelacionados :[]
     };
   },
   mounted() {
@@ -201,12 +202,20 @@ export default {
       (response) => {
         this.Producto = response.data[0];
         this.imageProducto = this.Producto.imagenes[0]._480x480;
-        
+        this.getProductosRelacionados ( this.Producto.idproducto);
       }
     );
   },
 
   methods: {
+     getProductosRelacionados ( idproducto ) {
+        this.formData.idproducto = idproducto;
+        Productos.productosRelacionados (  this.formData)
+        .then( (response) =>{
+          this.prdctosRelacionados = response.data;
+        })
+     },
+
       ModalClose() {
           this.modal  = false;
       },
