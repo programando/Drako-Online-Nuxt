@@ -57,11 +57,13 @@ export default {
       links:[],
       records: { 'current':0, 'total' :0 },
       cantidad: 0,
+      
       formData: {
         grupos: [],
         textoBusqueda: "",
         clasesProdcucto:[],
       },
+
       textBuscarProducto: "",
     };
   },

@@ -4,6 +4,7 @@
 /docs
 /logs
 *.log
+/static/files/*.docx
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

@@ -54,10 +54,10 @@ export default {
         slidesPerView: 1,
         spaceBetween: -10,
         slidesPerGroup: 1,
-        // loop: true,
-        //  autoplay: {
-        //    delay: 6000,
-        //  },
+         loop: true,
+          autoplay: {
+            delay: 6000,
+          },
         loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",
