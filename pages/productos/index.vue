@@ -28,6 +28,12 @@
           </div> 
       </div>
     </div>
+    
+
+    <!-- boton -->
+    <div>
+      <ButtonUp/>
+    </div>
   </div>
 </template>
 
@@ -38,11 +44,12 @@ import BusquedaProductos         from "@/components/productos/productosBusqueda.
 import Productos                from "@/models/Productos";
 import Pagination               from "@/components/htmlControl/Pagination.vue";
 import CardProducto from "@/components/productos/CardProducto.vue"
+import ButtonUp from "@/components/comunes/ButtonUp.vue"
 
 export default {
   name: "Productos",
    layout:'default',
-  components: {    Pagination,  FiltroGruposProductos, BusquedaProductos, CardProducto },
+  components: {    Pagination,  FiltroGruposProductos, BusquedaProductos, CardProducto, ButtonUp },
 
   data() {
     return {
