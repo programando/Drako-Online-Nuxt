@@ -11,7 +11,7 @@
     <div class="items-center mt-6 space-x-6 lg:flex">
       <div class="items-center pt-10">
         <nuxt-link class="mt-6" to="#">
-          <p class="text-lg text-center text-white">
+          <p class="text-lg text-center text-white" @click="getPolitica()">
             Política prara el tratamiento de datos personales
           </p>
         </nuxt-link>
@@ -40,9 +40,19 @@
 </template>
 
 <script>
-export default {
-  name: "Footer",
-};
+  export default {
+    name: "Footer",
+    data: ()=> ({
+
+    }),
+    methods:{
+        getPolitica() {
+            let fileName = "/files/politica-tratamientos-datos-drako-autopartes.pdf";
+            window.open(fileName, "_blank");
+        }
+    }
+  };
+
 </script>
 
 <style></style>

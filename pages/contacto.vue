@@ -27,7 +27,7 @@
               :icon="['fas', 'envelope']"
               class="z-20 w-10 h-10 text-azul"
             />
-            <p>Contacto@drakopartes.com</p>
+            <p>contacto@drakopartes.com</p>
           </div>
            <div class="flex items-center justify-center space-x-2">
             <font-awesome-icon
@@ -37,14 +37,9 @@
             />
             <p>317 585 9754</p>
           </div>
-           <div class="flex items-center justify-center space-x-2 md:col-span-2 xl:col-span-1">
-            <font-awesome-icon
-              style="font-size: 20px"
-              :icon="['fas', 'phone']"
-              class="z-20 w-10 h-10 text-azul"
-            />
-            <p>317 585 9754</p>
-          </div>
+
+ 
+
         </div>
       </div>
       <div class="mt-3 mb-3 border-b-2 lg:hidden"></div>
@@ -53,9 +48,8 @@
           <h2 class="text-xl text-center lg:text-3xl">
             Formulario de Contacto
           </h2>
-          <h3 class="mt-1 text-lg lg:text-xl lg:ml-14 xl:ml-4 2xl:ml-8">
-            Déjenos un mensaje y uno de nuestros acesores se pondra en contacto
-            con usted
+          <h3 class="mt-4 mb-4 text-lg lg:text-xl lg:ml-14 xl:ml-4 2xl:ml-8">
+            Déjenos un mensaje y uno de nuestros asesores pronto lo contactará.
           </h3>
           <div class="py-10 border">
             <div class="grid xl:grid-cols-2">
@@ -112,9 +106,9 @@
               class="flex justify-center mt-4 xl:justify-end xl:mr-5 2xl:mr-12"
             >
               <button
-                class="w-32 px-4 py-2 -ml-4 text-xl text-white border rounded bg-azul"
+                class="w-64 px-4 py-2 -ml-4 text-xl text-white border rounded bg-azul"
               >
-                Enviar
+                Enviar mensaje
               </button>
             </div>
           </div>
