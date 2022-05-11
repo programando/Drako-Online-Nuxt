@@ -1,7 +1,5 @@
 <template>
   <div>
- 
-
     <div
       class="grid grid-cols-1 py-20 mx-4 sm:container sm:mx-auto lg:grid-cols-2 lg:gap-4"
     >
@@ -29,7 +27,7 @@
             />
             <p>contacto@drakopartes.com</p>
           </div>
-           <div class="flex items-center justify-center space-x-2">
+          <div class="flex items-center justify-center space-x-2">
             <font-awesome-icon
               style="font-size: 20px"
               :icon="['fas', 'phone']"
@@ -37,9 +35,6 @@
             />
             <p>317 585 9754</p>
           </div>
-
- 
-
         </div>
       </div>
       <div class="mt-3 mb-3 border-b-2 lg:hidden"></div>
@@ -48,8 +43,11 @@
           <h2 class="text-xl text-center lg:text-3xl">
             Formulario de Contacto
           </h2>
-          <h3 class="mt-4 mb-4 text-lg lg:text-xl lg:ml-14 xl:ml-4 2xl:ml-8">
-            Déjenos un mensaje y uno de nuestros asesores pronto lo contactará.
+          <h3
+            class="mt-4 mb-4 text-lg lg:text-xl xl:text-2xl lg:ml-14 xl:ml-4 2xl:ml-8"
+          >
+            Déjenos un mensaje y uno de nuestros asesores se pondra en contacto
+            con usted.
           </h3>
           <div class="py-10 border">
             <div class="grid xl:grid-cols-2">
@@ -59,7 +57,7 @@
                   :icon="['fas', 'id-card-alt']"
                   class="z-20 w-10 h-10 -mr-10 text-azul"
                 />
-                <InputBasic holder="Nombre" />
+                <InputBasic holder="Nombre" v-model="formData.nombre" />
               </div>
               <div class="flex justify-center mt-4">
                 <font-awesome-icon
@@ -67,7 +65,7 @@
                   :icon="['fas', 'building']"
                   class="z-20 w-10 h-10 -mr-10 text-azul"
                 />
-                <InputBasic holder="Empresa" />
+                <InputBasic holder="Empresa" v-model="formData.empresa" />
               </div>
               <div class="flex justify-center mt-4">
                 <font-awesome-icon
@@ -75,7 +73,7 @@
                   :icon="['fas', 'phone-square']"
                   class="z-20 w-10 h-10 -mr-10 text-azul"
                 />
-                <InputBasic holder="Telefono" />
+                <InputBasic holder="Telefono" v-model="formData.telefono" />
               </div>
               <div class="flex justify-center mt-4">
                 <font-awesome-icon
@@ -83,7 +81,7 @@
                   :icon="['fas', 'phone-square']"
                   class="z-20 w-10 h-10 -mr-10 text-azul"
                 />
-                <InputBasic holder="Celular" />
+                <InputBasic holder="Celular" v-model="formData.celular" />
               </div>
               <div
                 class="flex justify-center mt-4 xl:col-span-2 xl:mx-3 2xl:mx-11"
@@ -99,13 +97,15 @@
                   id=""
                   cols="23"
                   rows="3"
+                  v-model="formData.comentario"
                 ></textarea>
               </div>
             </div>
             <div
-              class="flex justify-center mt-4 xl:justify-end xl:mr-5 2xl:mr-12"
+              class="flex justify-center mt-14 xl:justify-end xl:mr-5 2xl:mr-12"
             >
               <button
+                @click="enviarFormulario"
                 class="w-64 px-4 py-2 -ml-4 text-xl text-white border rounded bg-azul"
               >
                 Enviar mensaje
@@ -115,17 +115,43 @@
         </div>
       </div>
     </div>
-   
   </div>
 </template>
 
 <script>
- 
-import InputBasic from "../components/htmlControl/InputBasic.vue";
+import InputBasic from "@/components/htmlControl/InputBasic.vue";
 export default {
   name: "nosotros",
-  layout:'default',
-  components: { InputBasic, },
+  layout: "default",
+  components: { InputBasic },
+  data() {
+    return {
+      formData: {
+        nombre: "",
+        empresa: "",
+        telefono: "",
+        celular: "",
+        comentario: "",
+      },
+    };
+  },
+
+  methods: {
+    enviarFormulario() {
+      if (this.formData.nombre == '') {
+        this.$swal.fire("Por favor introduce el nombre");
+        
+      } else if (this.formData.celular == '') {
+          this.$swal.fire("Por favor introduce el Celular");
+
+        } else if (this.formData.comentario == '') {
+            this.$swal.fire("Por favor introduce el Comentario");
+            
+          } else {
+            this.$swal.fire("Informacion enviada con exito!");
+          }
+    },
+  },
 };
 </script>
 

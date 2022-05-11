@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-0 z-50">
+  <div class="sticky top-0 z-50 ">
     <!-- Header Responsive -->
     <div class="flex justify-between px-4 py-2 bg-rojo md:hidden">
       <nuxt-link to="/">
@@ -12,7 +12,7 @@
         <img class="h-8" src="/icon-burger.svg" alt="icon" />
       </button>
     </div>
-    <div v-if="menu" class="absolute z-20 w-full bg-rojo md:hidden">
+    <div v-if="menu" class="sticky z-20 w-full bg-rojo md:hidden">
       <nuxt-link to="#" class="flex px-4 py-2" >
         <font-awesome-icon style="font-size: 17px;" :icon="['fas', 'store']" class="w-12 h-10 ml-1 -mr-2 text-white" />
         <LinksResponsive title="Producto" to="/productos"/>

@@ -4,11 +4,12 @@
    
    
     <Nuxt />
+    
+
+    <Footer />
     <div class="sticky contenedor-principal">
       <WsContact/>
     </div>
-
-    <Footer />
   </div>
 </template>
 

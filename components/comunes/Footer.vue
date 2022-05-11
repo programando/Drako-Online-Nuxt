@@ -8,7 +8,7 @@
       <p class="mt-2 text-xl text-center text-white">Santander de Quilichao</p>
     </div>
 
-    <div class="items-center mt-6 space-x-6 lg:flex">
+    <div class="items-center space-x-6 mt-14 lg:flex">
       <div class="items-center pt-10">
         <nuxt-link class="mt-6" to="#">
           <p class="text-lg text-center text-white" @click="getPolitica()">
@@ -16,23 +16,30 @@
           </p>
         </nuxt-link>
       </div>
-      <div class="pt-4">
+      <div class="pt-4 mb-3">
         <p class="text-xl text-center text-white lg:text-2xl">Síguenos</p>
         <div class="flex items-center justify-center">
-          <nuxt-link to="#" class="flex px-4 py-2">
+          <a href="https://www.facebook.com/drakoautopartes1" target="_blank" class="flex px-4 py-2">
             <font-awesome-icon
               style="font-size: 30px"
               :icon="['fab', 'facebook-square']"
               class="w-12 h-10 ml-1 -mr-2 text-white"
             />
-          </nuxt-link>
-          <nuxt-link to="#" class="flex px-4 py-2">
+          </a>
+          <a href="https://www.youtube.com/channel/UClk-ZsazbHs_gdnuFKz15Ow" target="_blank" class="flex px-4 py-2">
             <font-awesome-icon
               style="font-size: 30px"
               :icon="['fab', 'youtube']"
               class="w-12 h-10 ml-1 -mr-2 text-white"
             />
-          </nuxt-link>
+          </a>
+          <a href="https://www.instagram.com/drakoautopartes/?hl=es"  target="_blank" class="flex px-4 py-2">
+            <font-awesome-icon
+              style="font-size: 30px"
+              :icon="['fab', 'instagram']"
+              class="w-12 h-10 ml-1 -mr-2 text-white"
+            />
+          </a>
         </div>
       </div>
     </div>

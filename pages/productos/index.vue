@@ -1,24 +1,26 @@
 <template>
-  <div>
+  <div class="overflow-x-hidden">
  
-    <div class="sticky z-50 bg-white w-96 top-20 left-2/4">
+    <div class="fixed z-50 bg-white w-60 lg:w-96 left-1/4 lg:left-2/4">
        <BusquedaProductos @iniciarBusquedaProductos="iniciarBusquedaProductos"></BusquedaProductos>
     </div>
 
-    <div class="grid md:grid-cols-3 lg:grid-cols-10 ">
+    <div class="grid md:grid-cols-2 lg:grid-cols-10 ">
      
-      <div class="flex justify-center lg:col-span-3 2xl:col-span-2 ">
+      <div class="z-50 flex justify-center lg:col-span-3 2xl:col-span-2 md:col-span-1">
          <FiltroGruposProductos  @getGruposSeleccionados="getGruposSeleccionados" ></FiltroGruposProductos>  
       </div>
         
-      <div class="grid justify-center grid-cols-1 py-10 sm:grid-cols-2 md:col-span-3 lg:col-span-7 2xl:col-span-8 lg:grid-cols-3 2xl:grid-cols-4 lg:mt-4 xl:mr-4" >
+      <div class="grid justify-center grid-cols-1 py-10 md:grid-cols-1 md:col-span-1 sm:grid-cols-2 lg:col-span-7 2xl:col-span-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 lg:mt-4 xl:mr-4" >
         <div class=""
           v-for="(producto, index) in productos"  :key="producto.idproducto" >
           <CardProducto :producto="producto" :index="index" :productos="productos" />
         </div>
         
       </div>
-      <div class="grid col-span-12">
+      
+    </div>
+    <div class="grid col-span-12">
           <div class="col-span-12 col-start-6">
             <Pagination :currentRecord         = "records.current"
                   :links                 = "links"
@@ -26,7 +28,6 @@
                   @getProductosFromUrl="getProductosFromUrl" >
             </Pagination>
           </div> 
-      </div>
     </div>
     
 
