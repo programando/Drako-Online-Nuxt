@@ -67,10 +67,11 @@
         
         <div class="relative px-4 py-2 rounded">
           
-          <nuxt-link to="/tienda/">
-            <p class="absolute right-0 px-2 text-sm bg-white rounded-full">1</p>
+          <nuxt-link to="/productos/carrito">
+            <p class="absolute right-0 px-2 text-lower-xs py-1 bg-white rounded-full text-black">{{ getpedidoCantidadTotal }}</p>
             <font-awesome-icon style="font-size: 25px;" :icon="['fas', 'shopping-cart']" class="w-10 h-10 mr-2 text-white" />
           </nuxt-link>
+
         </div> 
 
       </div>
@@ -79,31 +80,37 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import LinksResponsive from "../components/comunes/LinksResponsive.vue";
 import LinksHome from "../components/comunes/LinksHome.vue";
-export default {
-  name: "Header",
-  components: {
-    LinksResponsive,
-    LinksHome
-  },
-  data() {
-    return {
-      menu: false,
-      textoBusqueda:''
-    };
-  },
+    export default {
+      name: "Header",
+      components: {
+        LinksResponsive,
+        LinksHome
+      },
+      data() {
+        return {
+          menu: false,
+          textoBusqueda:''
+        };
+      },
+        computed: {
+          ...mapGetters("carrito", [
+            "getpedidoCantidadTotal",
+            // Here you can import other getters from the products.js
+          ])
+        },
+      methods: {
+          iniciarBusquedaProductos () {
+              if ( this.textoBusqueda.length == 0) { return };
+              //this.$router.replace({ path: '/productos/?textoBusqueda='+this.textoBusqueda });
 
-  methods: {
-      iniciarBusquedaProductos () {
-          if ( this.textoBusqueda.length == 0) { return };
-          //this.$router.replace({ path: '/productos/?textoBusqueda='+this.textoBusqueda });
-
-          this.$router.push({ path: '/productos/?textoBusqueda='+this.textoBusqueda  });
+              this.$router.push({ path: '/productos/?textoBusqueda='+this.textoBusqueda  });
+          }
       }
-  }
 
-};
+    };
 </script>
 
 <style></style>

@@ -1,13 +1,8 @@
 <template>
   <div class="relative">
     <Slider />
-
-    <div class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 " >
-      <h2 class="mt-20 mb-8 text-xl md:text-2xl lg:text-3xl">Productos más vendidos</h2>
-      <ProductosMasVendidos />
-      <div class="my-10 border-b-2"></div>
-    </div>
-
+    <ProductosMasVendidos />
+    
     <div v-if="gruposProductos.length > 0" class="px-10 mt-8 text-lg font-bold text-center lg:text-left xl:px-32 lg:text-2xl">
       <h2 class="text-xl md:text-2xl lg:text-3xl">  Grupos  destacados </h2>
     </div>

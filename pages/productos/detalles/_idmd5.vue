@@ -81,16 +81,15 @@
 
             <div class="flex items-center space-x-4">
               <div class="flex mt-2">
-                <button class="px-3 py-1 border">-</button>
-                <p class="px-3 py-1 border"> {{ cantidadComprada }} </p>
-                <button class="px-3 py-1 border">+</button>
+
+                <button class="px-3 py-1 border" @click="disminuirCantidad() ">-</button>
+                <p class="px-3 py-1 border" disabled> {{ Producto.cantidad }} </p>
+                <button class="px-3 py-1 border" @click="aumentarCantidad() ">+</button>
+
               </div>
               <div class="mt-2">
-                <button
-                  @click="modal = true"
-                  class="px-6 py-2 text-white rounded-sm bg-rojo"
-                >
-                  Agregar al carro
+                <button   class="px-6 py-2 text-white rounded-sm bg-rojo"  @click="addProductoCarito(Producto)" >
+                  Agregar al carrito
                 </button>
               </div>
             </div>
@@ -156,7 +155,9 @@
         </div>
 
     <div v-if="prdctosRelacionados.length>0" class="px-10 mt-12 text-lg font-bold text-center lg:text-left xl:px-60">
-      <h2 class="text-xl md:text-2xl">Respuestos Relacionados</h2>
+      <h2 class="text-xl md:text-2xl">Respuestos Relacionados
+        {{ prdctosRelacionados.length}}
+      </h2>
       <ProductosRelacionados :productosRelacionados="prdctosRelacionados"> </ProductosRelacionados >
       <div class="my-10 border-b-2"></div>
     </div>
@@ -208,6 +209,17 @@ export default {
   },
 
   methods: {
+
+    addProductoCarito(productoComprado) {
+      if ( productoComprado.cantidad==0){
+        this.$toasted.show("no ha registrado cantidad para agregar producto al carrito.",  { theme: "toasted-primary",  position: "top-center",  duration : 3000,   });  
+        return ;
+      }
+      this.$store.dispatch("carrito/addProductoComprado", productoComprado);
+      this.modal=true;
+    },
+
+
      getProductosRelacionados ( idproducto ) {
         this.formData.idproducto = idproducto;
         Productos.productosRelacionados (  this.formData)
@@ -238,8 +250,21 @@ export default {
 
     /* cerrar modal */
     closeModal() {
-      this.modal = false
-      
+      this.modal = false 
+    },
+
+    disminuirCantidad( ) {
+     this.Producto.cantidad--;
+     
+     /*if (this.productos[index].cantidad > 0) {
+        this.productos[index].cantidad--;
+        //this.$store.dispatch("carrito/removeOnlyProductoComprado", this.productos[index].idproducto );
+      }
+      */
+    },
+    aumentarCantidad( ) {
+      this.Producto.cantidad++;
+      //this.$store.dispatch( "carrito/addProductoComprado", this.productos[index] );
     },
 
  

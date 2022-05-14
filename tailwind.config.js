@@ -17,7 +17,12 @@ module.exports = {
           rojo: '#FF141F',
           azul: '#0C1B31',
           
-        }
+        },
+        fontSize: {
+          'upperxs': '.65rem',
+          'lower-xs': '.55rem',
+          'text-sm': '0.75rem'
+        },
     },
   },
   plugins: [],

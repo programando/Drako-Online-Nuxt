@@ -48,10 +48,9 @@
           </div>
         </div>
         <div class="w-full px-10 py-2 bg-white">
-          <nuxt-link to="/tienda/"
-          >
+          <nuxt-link to="/productos/carrito"  >
             <button class="w-full px-6 py-2 text-white rounded-sm bg-rojo">
-              Ir a la Tienda
+              Ir al resumen del carrito
             </button>
           </nuxt-link>
         </div>

@@ -2,17 +2,18 @@
   <div class="flex items-center">
     <div  v-swiper="swiperOption"  class="z-10 xl:block"  >
       <div class="swiper-wrapper">
+
         <div v-for="(producto) in productosRelacionados" :key="producto.idproducto" class="swiper-slide">
          <nuxt-link :to="`/productos/detalles/${producto.idmd5}`"   > 
           <div class="flex justify-center">
-             
-           <!-- <img class="h-44"  alt="" v-for="imagen in producto.imagenes.slice(0, 1)" :src="imagen._240x240" :key="imagen.idregistro" />-->
+            <img class="h-44"  alt="" v-for="imagen in producto.imagenes.slice(0, 1)" :src="imagen._240x240" :key="imagen.idregistro" />
           </div>
           <div class="flex justify-center">
             <p class="text-xs">{{ producto.nombre_impreso }}</p>
           </div>
          </nuxt-link>
         </div>
+
       </div>
       <img
         class="ancho swiper-button-prev"
@@ -46,6 +47,9 @@ export default {
  
   directives: {
     swiper: directive,
+  },
+  mounted() {
+    console.log( this.productosRelacionados );
   },
   data() {
     return {

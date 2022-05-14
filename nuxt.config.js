@@ -52,6 +52,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxt/postcss8',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/dotenv',
   ],
 
   fontawesome: {
@@ -70,20 +71,7 @@ export default {
 
     
   ],
-
-  toast: {
-    position: 'top-center',
-    register: [ // Register custom toasts
-      {
-        name: 'my-error',
-        message: 'Oops...Something went wrong',
-        options: {
-          type: 'error'
-        }
-      }
-    ]
-},
-
+ 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
@@ -95,5 +83,26 @@ export default {
         autoprefixer: {},
       },
     },
+  },
+
+  auth: {
+    strategies: {
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: process.env.URL_API,
+        endpoints: {
+          user  : { url: '/user',  method: 'get' },
+          login : { url: '/login', method: 'post' },
+          logout: { url:'/logout', method: 'post'}
+        }
+      },
+     },
+     redirect: {
+       login: '/',
+       logout: '/',
+       home: '/',
+       callback:'/'
+     }
   }
+
 }

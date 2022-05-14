@@ -40,27 +40,22 @@
     </div>
 
     <div class="flex items-center space-x-4">
+
       <div class="flex items-center mt-2">
-        <button class="px-2 py-1 border" @click="disminuirCantidad(index)">
-          -
-        </button>
+        <button class="px-2 py-1 border" @click="disminuirCantidad(index)"> - </button>
         <p class="px-2 py-1 border" disabled="disabled">
           {{ producto.cantidad }}
         </p>
-        <button class="px-2 py-1 border" @click="aumentarCantidad(index)">
-          +
-        </button>
+        <button class="px-2 py-1 border" @click="aumentarCantidad(index)"> + </button>
       </div>
 
       <div class="">
-        <button
-          @click="addProductoCarito(producto)"
-          class="px-4 py-1 mt-2 border rounded-lg hover-boton"
-        >
+        <button @click="addProductoCarito(producto)" class="px-4 py-1 mt-2 border rounded-lg hover-boton" >
           Agregar al carrito
         </button>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -75,35 +70,32 @@ export default {
 
   methods: {
     addProductoCarito(productoComprado) {
+      if ( productoComprado.cantidad==0){
+        this.$toasted.show("no ha registrado cantidad para agregar producto al carrito.",  { theme: "toasted-primary",  position: "top-center",  duration : 3000,   });  
+        return ;
+      }
       this.$store.dispatch("carrito/addProductoComprado", productoComprado);
+      this.$toasted.show("Producto agregado al carrito !!",  { theme: "toasted-primary",  position: "top-center",  duration : 2000,   });
     },
 
     disminuirCantidad(index) {
       if (this.productos[index].cantidad > 0) {
         this.productos[index].cantidad--;
-        this.$store.dispatch(
-          "carrito/removeOnlyProductoComprado",
-          this.productos[index].idproducto
-        );
+        //this.$store.dispatch("carrito/removeOnlyProductoComprado", this.productos[index].idproducto );
       }
     },
-
     aumentarCantidad(index) {
       this.productos[index].cantidad++;
-      this.$store.dispatch(
-        "carrito/addProductoComprado",
-        this.productos[index]
-      );
+      //this.$store.dispatch( "carrito/addProductoComprado", this.productos[index] );
     },
   },
+
 };
+
 </script>
-
-<style scoped>
-.hover-container:hover  .hover-boton {
-  background-color: #0C1B31;
-  color: white;
-}
-
-
+    <style scoped>
+    .hover-container:hover  .hover-boton {
+      background-color: #0C1B31;
+      color: white;
+    }
 </style>
