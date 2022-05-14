@@ -1,10 +1,10 @@
 <template>
   <div class="">
-    <h2 class="mt-20 text-3xl text-center">Crear cuenta</h2>
-    <div class="justify-center mt-10 mb-20 space-x-20 lg:flex">
+    <h2 class="mt-10 text-3xl text-center">Crear cuenta</h2>
+    <div class="justify-center mt-5 mb-20 space-x-20 lg:flex">
       <div class="mx-10">
         <div>
-          <label class="text-lg font-semibold">Email</label>
+          <label class="text-sm font-semibold">Email</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Ingresar Email"
@@ -12,7 +12,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Confirma tu Email</label>
+          <label class="text-sm font-semibold">Confirma tu Email</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Confirma tu Email"
@@ -20,7 +20,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Nombre</label>
+          <label class="text-sm font-semibold">Nombre</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Nombre"
@@ -28,7 +28,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Apellido</label>
+          <label class="text-sm font-semibold">Apellido</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Apellido"
@@ -36,7 +36,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Contraseña</label>
+          <label class="text-sm font-semibold">Contraseña</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Contraseña"
@@ -44,7 +44,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Confirmar Contraseña</label>
+          <label class="text-sm font-semibold">Confirmar Contraseña</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Confirmar Contraseña"
@@ -71,14 +71,15 @@
           </select>
         </div>
         <div class="mt-5">
-          <label class="text-lg font-semibold">Departamento</label>
+          <label class="text-sm font-semibold">Departamento</label>
           <select class="block px-2 py-1 border rounded w-72" name="select">
             <option value="value1">Juridica</option>
             <option value="value2" selected>Natural</option>
           </select>
         </div>
+
         <div class="mt-4">
-          <label class="text-lg font-semibold">Ciudad</label>
+          <label class="text-sm font-semibold">Ciudad</label>
           <select class="block px-2 py-1 border rounded w-72" name="select">
             <option value="">-</option>
             <option value="Arauca">Arauca</option>
@@ -115,8 +116,9 @@
             <option value="Yopal">Yopal</option>
           </select>
         </div>
+
         <div class="mt-4">
-          <label class="text-lg font-semibold"
+          <label class="text-sm font-semibold"
             >Identificacion (cédula/nit)</label
           >
           <input
@@ -126,7 +128,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Destinatario</label>
+          <label class="text-sm font-semibold">Destinatario</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Destinatario"
@@ -134,7 +136,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Observaciones</label>
+          <label class="text-sm font-semibold">Observaciones</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Contraseña"
@@ -142,7 +144,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-lg font-semibold">Télefono</label>
+          <label class="text-sm font-semibold">Télefono</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Télefono"

@@ -96,11 +96,11 @@
             <p class="font-semibold text-rojo">$ {{ getPedidoValorTotal | NumeroEntero }}</p>
           </div>
           <div>
-            <nuxt-link to="/register">
-              <button class="w-full py-2 text-white rounded bg-rojo">
+            
+              <button class="w-full py-2 text-white rounded bg-rojo" @click="grabarNuevoPedido()">
                 Grabar Pedido
               </button>
-            </nuxt-link>
+          
           </div>
         </div>
       </div>
@@ -112,18 +112,39 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters }           from "vuex";
+import Pedidos                  from "@/models/Pedidos.js";
 import ProductosMasVendidos     from "@/components/productos/productosMasVendidos.vue";
+
 export default {
   name: "carrito-compras",
- components: {  ProductosMasVendidos,      },
+    components: {  ProductosMasVendidos,      },
+    data :()=> ({
+        formData :{ 'idtercero' : 0, 'horas_reserva':0, 'subtotal':0,'iva':0,'flete':0, 'total':0, 'detallePedido': [] }
+    }),
+    
       computed: {
-        ...mapGetters("carrito", [
-                  "getPedido","getPedidoSubtotal","getPedidoTotalIva","getPedidoValorTotal", "getPedidoHorasReserva"
+        ...mapGetters("carrito",
+                [ 
+                     "getPedido","getPedidoSubtotal","getPedidoTotalIva","getPedidoValorTotal", "getPedidoHorasReserva"
                 ])
       },
     
     methods:{
+        grabarNuevoPedido ( ) {
+            this.formData.idtercero     = 123;
+            this.formData.horas_reserva = this.getPedidoHorasReserva;
+            this.formData.subtotal      = this.getPedidoSubtotal;
+            this.formData.iva           = this.getPedidoTotalIva;
+            this.formData.flete         = 123;
+            this.formData.total         = this.getPedidoValorTotal;
+            this.formData.detallePedido = this.getPedido;
+            Pedidos.grabarNuevoRegistro ( this.formData)
+            .then( response => {
+                console.log(response.data);
+            });
+        },
+
         removeProductoFromPedido( index ) {
             this.$store.dispatch("carrito/removeAllProductoComprado", index);
         },

@@ -63,7 +63,7 @@
           </nuxt-link>
           <LinksHome title="Contacto" to="/contacto"/>
         </div>
-        
+ 
         
         <div class="relative px-4 py-2 rounded">
           

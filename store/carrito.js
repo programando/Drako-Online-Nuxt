@@ -25,26 +25,8 @@ export const getDefaultState = () => ({
  
 
 })
-export const state = getDefaultState();
-/*
-cantidad: 2
-cod_oem: (…)
-codproducto: (…)
-horas_reserva: (…)
-idgrupo: (…)
-idproducto: (…)
-idproducto_dt: (…)
-idregistro: (…)
-imagenes: Array(1)
-inactivo: (…)
-iva: 19
-nombre_impreso: (…)
-peso_kg: (…)
-precio_base: 57450
-precio_base_format: "57.450"
-precio_oferta: 0
-precio_oferta_format: "0"
-*/
+export const state =  getDefaultState();
+ 
 export const mutations = {
 
     addProductoComprado (state,  productoComprado) {
@@ -120,7 +102,6 @@ export const mutations = {
             precioUnitario      : Producto.precio_base >Producto.precio_oferta ?  Producto.precio_base: Producto.precio_oferta,
             cantidad            : Producto.cantidad,
             nom_imagen          : Producto.imagenes[0]._70x70,
-            iva                 : Producto.iva,
             iva                 : Producto.iva,
             precioUnitarioFormat: Producto.precio_base_format,
             precioOfertaFormat  : Producto.precio_oferta_format,
