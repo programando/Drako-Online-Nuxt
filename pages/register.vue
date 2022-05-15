@@ -66,57 +66,22 @@
         <div class="mt-6">
           <label>Tipo de persona</label>
           <select class="px-2 py-1 border" name="select">
-            <option value="value1">Juridica</option>
+            <option value="value1">Jurídica</option>
             <option value="value2" selected>Natural</option>
           </select>
         </div>
         <div class="mt-5">
-          <label class="text-sm font-semibold">Departamento</label>
-          <select class="block px-2 py-1 border rounded w-72" name="select">
-            <option value="value1">Juridica</option>
-            <option value="value2" selected>Natural</option>
-          </select>
-        </div>
-
-        <div class="mt-4">
           <label class="text-sm font-semibold">Ciudad</label>
-          <select class="block px-2 py-1 border rounded w-72" name="select">
-            <option value="">-</option>
-            <option value="Arauca">Arauca</option>
-            <option value="Armenia">Armenia</option>
-            <option value="Barranquilla">Barranquilla</option>
-            <option value="Bogotá">Bogotá</option>
-            <option value="Bucaramanga">Bucaramanga</option>
-            <option value="Cali">Cali</option>
-            <option value="Cartagena">Cartagena</option>
-            <option value="Cúcuta">Cúcuta</option>
-            <option value="Florencia">Florencia</option>
-            <option value="Ibagué">Ibagué</option>
-            <option value="Leticia">Leticia</option>
-            <option value="Manizales">Manizales</option>
-            <option value="Medellín">Medellín</option>
-            <option value="Mitú">Mitú</option>
-            <option value="Mocoa">Mocoa</option>
-            <option value="Montería">Montería</option>
-            <option value="Neiva">Neiva</option>
-            <option value="Pasto">Pasto</option>
-            <option value="Pereira">Pereira</option>
-            <option value="Popayán">Popayán</option>
-            <option value="Puerto Carreño">Puerto Carreño</option>
-            <option value="Puerto Inírida">Puerto Inírida</option>
-            <option value="Quibdó">Quibdó</option>
-            <option value="Riohacha">Riohacha</option>
-            <option value="San Andrés">San Andrés</option>
-            <option value="San José del Guaviare">San José del Guaviare</option>
-            <option value="Santa Marta">Santa Marta</option>
-            <option value="Sincelejo">Sincelejo</option>
-            <option value="Tunja">Tunja</option>
-            <option value="Valledupar">Valledupar</option>
-            <option value="Villavicencio">Villavicencio</option>
-            <option value="Yopal">Yopal</option>
+
+          <select class="block px-2 py-1 border rounded w-72" v-model="idmcipio">
+            <option value="0" selected>Seleccione un municipio</option>
+            <option  v-for="municipio in municipios" :key="municipio.idmcipio" value="municipio.idmcipio" >
+              {{ municipio.nommcipio }}</option>
           </select>
+
         </div>
 
+ 
         <div class="mt-4">
           <label class="text-sm font-semibold"
             >Identificacion (cédula/nit)</label
@@ -128,7 +93,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-sm font-semibold">Destinatario</label>
+          <label class="text-sm font-semibold">Dirección destinatario</label>
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Destinatario"
@@ -162,7 +127,22 @@
 </template>
 
 <script>
-export default {};
+    import Municipios from "@/models/Municipios.js";
+    export default {
+      name:'RegistroUsuarios',
+      data: () => ({
+          municipios: [],
+          idmcipio  : 0,
+      }),
+
+      mounted (){
+          Municipios.listadoActivos()
+          .then( response => {
+              this.municipios = response.data;
+          })
+      }
+
+    };
 </script>
 
 <style>

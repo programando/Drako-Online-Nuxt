@@ -57,6 +57,7 @@
           </nuxt-link>
           <LinksHome title="Nosotros" to="/nosotros"/>
         </div>
+
         <div class="flex items-center">
           <nuxt-link to="#" >
             <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'address-book']" class="w-10 h-10 -mr-2 text-white" />
@@ -66,7 +67,6 @@
  
         
         <div class="relative px-4 py-2 rounded">
-          
           <nuxt-link to="/productos/carrito">
             <p class="absolute right-0 px-2 text-lower-xs py-1 bg-white rounded-full text-black">{{ getpedidoCantidadTotal }}</p>
             <font-awesome-icon style="font-size: 25px;" :icon="['fas', 'shopping-cart']" class="w-10 h-10 mr-2 text-white" />
