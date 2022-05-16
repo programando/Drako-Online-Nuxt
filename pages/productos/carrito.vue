@@ -1,8 +1,15 @@
 <template>
-  <div class="h-screen">
+  <div class="">
       
-      <div v-if="getPedido.length==0"> 
-          NO HAS AGREGADO REPUESTOS A TU CARRITO DE COMPRA
+      <div class="flex justify-center" v-if="getPedido.length==0">
+          <div>
+            <img class="carrito-vacio" src="/carrito-vacio.png" alt="">
+            <p class="text-xl text-center lg:text-3xl">Tu cesta esta vacia</p>
+            <p class="mt-4 text-center lg:text-xl">
+              <nuxt-link class="text-rojo" to="/productos">Descubre increibles ofertas</nuxt-link> o <nuxt-link class="text-rojo" to="/productos/pagarCarrito">inicia sesión</nuxt-link> para ver los articulos de tu Cesta.
+            </p>
+          </div>
+          
       </div>
 
     <div v-if="getPedido.length > 0">
@@ -96,11 +103,9 @@
             <p class="font-semibold text-rojo">$ {{ getPedidoValorTotal | NumeroEntero }}</p>
           </div>
           <div>
-            
-              <button class="w-full py-2 text-white rounded bg-rojo" @click="grabarNuevoPedido()">
+              <nuxt-link to="/productos/pagarCarrito" class="w-full px-4 py-2 text-white rounded bg-rojo" @click="grabarNuevoPedido()">
                 Grabar Pedido
-              </button>
-          
+              </nuxt-link>
           </div>
         </div>
       </div>
@@ -179,5 +184,9 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+.carrito-vacio {
+  max-height: 600px;
+  max-width: 850px;
+}
 </style>

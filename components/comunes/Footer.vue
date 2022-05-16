@@ -10,10 +10,8 @@
 
     <div class="items-center space-x-6 mt-14 lg:flex">
       <div class="items-center pt-10">
-        <nuxt-link class="mt-6" to="#">
-          <p class="text-lg text-center text-white" @click="getPolitica()">
-            Política prara el tratamiento de datos personales
-          </p>
+        <nuxt-link class="mt-6 text-white" to="#">
+          <PoliticasPrivacidad text='Política prara el tratamiento de datos personales' colortext='primary' />
         </nuxt-link>
       </div>
       <div class="pt-4 mb-3">
@@ -47,17 +45,16 @@
 </template>
 
 <script>
+import PoliticasPrivacidad from '@/components/comunes/PoliticasPrivacidad.vue'
   export default {
     name: "Footer",
+    components: {
+      PoliticasPrivacidad
+    },
     data: ()=> ({
 
     }),
-    methods:{
-        getPolitica() {
-            let fileName = "/files/politica-tratamientos-datos-drako-autopartes.pdf";
-            window.open(fileName, "_blank");
-        }
-    }
+    
   };
 
 </script>
