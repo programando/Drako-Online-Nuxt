@@ -64,6 +64,12 @@
           </nuxt-link>
           <LinksHome title="Contacto" to="/contacto"/>
         </div>
+        <div class="flex items-center">
+          <nuxt-link to="#" >
+            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'address-book']" class="w-10 h-10 -mr-2 text-white" />
+          </nuxt-link>
+          <LinksHome title="Login" to="/productos/pagarCarrito"/>
+        </div>
  
         
         <div class="relative px-4 py-2 rounded">

@@ -68,10 +68,10 @@ export default {
     '@nuxtjs/axios',
     'vue-sweetalert2/nuxt',
     '@nuxtjs/toast',
-
+    '@nuxtjs/auth-next'
     
   ],
- 
+  
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
@@ -92,8 +92,8 @@ export default {
         url: process.env.URL_API,
         endpoints: {
           user  : { url: '/user',  method: 'get' },
-          login : { url: '/login', method: 'post' },
-          logout: { url:'/logout', method: 'post'}
+          login : { url: '/usuarios/login', method: 'post' },
+          logout: { url:'/usuarios/logout', method: 'post'}
         }
       },
      },
