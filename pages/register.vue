@@ -15,7 +15,7 @@
         <div class="mt-4">
           <label class="text-sm font-semibold">Confirma tu Email</label>
           <input
-            v-model="formData.confirmEmail"
+            v-model="formData.email_confirmation"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Confirma tu Email"
             type="text"
@@ -24,7 +24,7 @@
         <div class="mt-4">
           <label class="text-sm font-semibold">Nombre</label>
           <input
-            v-model="formData.nombre"
+            v-model="formData.pnombre"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Nombre"
             type="text"
@@ -33,7 +33,7 @@
         <div class="mt-4">
           <label class="text-sm font-semibold">Apellido</label>
           <input
-            v-model="formData.apellido"
+            v-model="formData.papellido"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Apellido"
             type="text"
@@ -42,19 +42,19 @@
         <div class="mt-4">
           <label class="text-sm font-semibold">Contraseña</label>
           <input
-            v-model="formData.contrasena"
+            v-model="formData.password"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Contraseña"
-            type="text"
+            type="password"
           />
         </div>
         <div class="mt-4">
           <label class="text-sm font-semibold">Confirmar Contraseña</label>
           <input
-            v-model="formData.confirmContrasena"
+            v-model="formData.password_confirmation"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Confirmar Contraseña"
-            type="text"
+            type="password"
           />
         </div>
         <div class="mt-10 w-72 flex space-x-2">
@@ -73,7 +73,7 @@
           <select
             class="px-2 py-1 border"
             name="select"
-            v-model="formData.tipoPersona"
+            v-model="formData.tipo_persona"
           >
             <option value="value1">Jurídica</option>
             <option value="value2" selected>Natural</option>
@@ -84,7 +84,7 @@
 
           <select
             class="block px-2 py-1 border rounded w-72"
-            v-model="idmcipio"
+            v-model="formData.idmcipio"
           >
             <option value="0" selected>Seleccione un municipio</option>
             <option
@@ -99,7 +99,7 @@
 
         <div class="mt-4">
           <label class="text-sm font-semibold"
-            >Identificacion (cédula/nit)</label
+            >Identificación (cédula/nit)</label
           >
           <input
             v-model="formData.identificacion"
@@ -109,7 +109,7 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-sm font-semibold">Dirección destinatario</label>
+          <label class="text-sm font-semibold">Dirección </label>
           <input
             v-model="formData.direccion"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
@@ -118,18 +118,18 @@
           />
         </div>
         <div class="mt-4">
-          <label class="text-sm font-semibold">Observaciones</label>
+          <label class="text-sm font-semibold">Complemento dirección</label>
           <input
-            v-model="formData.observaciones"
+            v-model="formData.direccion_cmplmnto"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
-            placeholder="observacion"
+            placeholder="bloque apartamento casa ...."
             type="text"
           />
         </div>
         <div class="mt-4">
-          <label class="text-sm font-semibold">Télefono</label>
+          <label class="text-sm font-semibold">Número celular</label>
           <input
-            v-model="formData.telefono"
+            v-model="formData.celular"
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Télefono"
             type="text"
@@ -158,21 +158,21 @@ export default {
   },
   data: () => ({
     municipios: [],
-    idmcipio: 0,
+    
 
     formData: {
-      nombre: "",
-      email: "",
-      confirmEmail: "",
-      apellido: "",
-      contrasena: "",
-      confirmContrasena: "",
-      tipoPersona: "",
-      ciudad: "",
-      identificacion: "",
-      direccion: "",
-      observaciones: "",
-      telefono: "",
+      pnombre              : "James",
+      email                : "jhonjamesmg@hotmail.com",
+      email_confirmation   : "jhonjamesmg@hotmail.com",
+      papellido            : "Montaño",
+      password             : "1234567",
+      password_confirmation: "",
+      tipo_persona         : "",
+      idmcipio             : 1,
+      identificacion       : "",
+      direccion            : "",
+      direccion_cmplmnto   : '',
+      celular              : "",
     },
   }),
 
@@ -184,28 +184,7 @@ export default {
 
   methods: {
     registrarUsuario() {
-      if (this.formData.nombre == "") {
-        this.$swal.fire("Por favor introduce el nombre");
-      } else if (this.formData.email == "") {
-        this.$swal.fire("Por favor introduce el email");
-      } else if (this.formData.apellido == "") {
-        this.$swal.fire("Por favor introduce tu apellido");
-      } else if (this.formData.contrasena == "") {
-        this.$swal.fire("Por favor introduce tu contraseña");
-      } else if (this.formData.identificacion == "") {
-        this.$swal.fire("Por favor introduce tu identificación");
-      } else if (this.formData.direccion == "") {
-        this.$swal.fire("Por favor introduce tu direccion");
-      } else if (this.formData.telefono == "") {
-        this.$swal.fire("Por favor introduce tu telefono");
-      } 
-      
-      
-      
-      
-      else {
-        this.$swal.fire("Informacion enviada con exito!");
-      }
+ 
     },
   },
 };

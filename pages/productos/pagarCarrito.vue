@@ -16,7 +16,7 @@
           <input
             class="block px-4 py-1 border rounded w-72 2xl:w-96 focus:outline-none"
             placeholder="Ingresa tu password o contraseña"
-            type="text"
+            type="password"
             v-model="formData.password"
           />
         </div>

@@ -91,7 +91,7 @@ export default {
         provider: 'laravel/sanctum',
         url: process.env.URL_API,
         endpoints: {
-          user  : { url: '/user',  method: 'get' },
+          user  : { url: '/usuarios/autenticado',  method: 'get' },
           login : { url: '/usuarios/login', method: 'post' },
           logout: { url:'/usuarios/logout', method: 'post'}
         }
