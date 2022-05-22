@@ -127,7 +127,7 @@
       name: "userLoguin",
  
       data: () => ({
-          formData :{ 'email': 'jhonjamesmg@hotmail.com', 'password': '1234567'}
+          formData :{ 'email': '', 'password': ''}
       }),
 
     methods: {
