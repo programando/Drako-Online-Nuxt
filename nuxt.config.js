@@ -68,10 +68,12 @@ export default {
     '@nuxtjs/axios',
     'vue-sweetalert2/nuxt',
     '@nuxtjs/toast',
-    '@nuxtjs/auth-next'
-    
+    '@nuxtjs/auth-next' 
   ],
-  
+  sweetalert: {
+    confirmButtonColor: '#41b882',
+    cancelButtonColor: '#ff7674'
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 

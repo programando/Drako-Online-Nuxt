@@ -13,7 +13,7 @@
           params: { idmd5: producto.idmd5 },
         }"
       >
-        <img
+        <img loading="lazy"
           class="h-44"
           v-for="imagen in producto.imagenes.slice(0, 1)"
           :key="imagen.idregistro"

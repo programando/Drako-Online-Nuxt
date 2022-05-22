@@ -64,13 +64,23 @@
           </nuxt-link>
           <LinksHome title="Contacto" to="/contacto"/>
         </div>
+ <!--
         <div class="flex items-center">
           <nuxt-link to="#" >
             <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'address-book']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
-          <LinksHome title="Login" to="/productos/pagarCarrito"/>
+          <LinksHome title="Login" to="/login"/>
         </div>
+ -->
  
+        <div v-if="$auth.loggedIn == true" class="flex items-center" @click="logout()">
+          <nuxt-link to="#" >
+            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'address-book']" class="w-10 h-10 -mr-2 text-white" />
+          </nuxt-link>
+          <LinksHome title="Salir" to="/" />
+        </div>
+
+       
         
         <div class="relative px-4 py-2 rounded">
           <nuxt-link to="/productos/carrito">
@@ -108,6 +118,12 @@ import LinksHome from "../components/comunes/LinksHome.vue";
           ])
         },
       methods: {
+          logout () {
+              this.$auth.logout();
+              this.$router.push({ path: '/' });
+              this.$store.dispatch('carrito/resetState');
+          },
+
           iniciarBusquedaProductos () {
               if ( this.textoBusqueda.length == 0) { return };
               //this.$router.replace({ path: '/productos/?textoBusqueda='+this.textoBusqueda });

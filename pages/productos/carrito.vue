@@ -1,12 +1,13 @@
 <template>
   <div class="">
       
-      <div class="flex justify-center" v-if="getPedido.length==0">
+      <div class="flex justify-center mb-8" v-if="getPedido.length==0">
           <div>
-            <img class="carrito-vacio" src="/carrito-vacio.png" alt="">
-            <p class="text-xl text-center lg:text-3xl">Tu cesta esta vacia</p>
+            <img class="carrito-vacio w-3/4 mx-auto" src="/carrito-vacio.png" alt=""  >
+            <p class="text-xl text-center lg:text-3xl">Tu carrito está vacío...</p>
             <p class="mt-4 text-center lg:text-xl">
-              <nuxt-link class="text-rojo" to="/productos">Descubre increibles ofertas</nuxt-link> o <nuxt-link class="text-rojo" to="/productos/pagarCarrito">inicia sesión</nuxt-link> para ver los articulos de tu Cesta.
+              <nuxt-link class="text-rojo" to="/productos">Te invitamos a revisar nuestro catálogo de productos</nuxt-link> 
+              
             </p>
           </div>
           
@@ -103,9 +104,9 @@
             <p class="font-semibold text-rojo">$ {{ getPedidoValorTotal | NumeroEntero }}</p>
           </div>
           <div>
-              <nuxt-link to="/productos/pagarCarrito" class="w-full px-4 py-2 text-white rounded bg-rojo" @click="grabarNuevoPedido()">
+              <button   class="w-full px-4 py-2 text-white rounded bg-rojo" @click="verifyAuthenticate()">
                 Grabar Pedido
-              </nuxt-link>
+              </button>
           </div>
         </div>
       </div>
@@ -120,10 +121,12 @@
 import { mapGetters }           from "vuex";
 import Pedidos                  from "@/models/Pedidos.js";
 import ProductosMasVendidos     from "@/components/productos/productosMasVendidos.vue";
+import Messages           from "@/mixins/sweetalert2";
 
 export default {
   name: "carrito-compras",
     components: {  ProductosMasVendidos,      },
+    mixins: [Messages],
     data :()=> ({
         formData :{ 'idtercero' : 0, 'horas_reserva':0, 'subtotal':0,'iva':0,'flete':0, 'total':0, 'detallePedido': [] }
     }),
@@ -136,20 +139,38 @@ export default {
       },
     
     methods:{
+        verifyAuthenticate() {
+          console.log (this.$auth);
+          if ( this.$auth.loggedIn == false ){
+               this.$router.push({ path: '/login/' });
+               return ;
+          }
+          this.grabarNuevoPedido() ;
+          this.showMessagePedidoSaved (); 
+          this.$router.push({ path: '/' });
+        },
+        
         grabarNuevoPedido ( ) {
-            this.formData.idtercero     = 123;
+            this.formData.idtercero     = this.$auth.user.idtercero_web;
             this.formData.horas_reserva = this.getPedidoHorasReserva;
             this.formData.subtotal      = this.getPedidoSubtotal;
             this.formData.iva           = this.getPedidoTotalIva;
-            this.formData.flete         = 123;
+            this.formData.flete         = 0;
             this.formData.total         = this.getPedidoValorTotal;
             this.formData.detallePedido = this.getPedido;
             Pedidos.grabarNuevoRegistro ( this.formData)
-            .then( response => {
-                console.log(response.data);
+            .then( () => {
+                this.$store.dispatch('carrito/resetState');
             });
         },
 
+        showMessagePedidoSaved() {
+          let Texto = `El pedido fue almacenado con éxito. A partir de ahora cuenta con: 
+                        ${this.getPedidoHorasReserva }  horas para realizar el pago y enviar comprobante por alguno de los medios legido.
+                        Pasado este tiempo sin comprobar el pago, el sistema borrará el pedido y deberá inciar el proceso nuevamente.
+                        En unos minutos recibirá un correo electrónico con la información necesaria para enviar el comprobante de pago.`; 
+          this.Message("Pedido grabado" ,  Texto , 'success', 'Cerrar' );                        
+        },
         removeProductoFromPedido( index ) {
             this.$store.dispatch("carrito/removeAllProductoComprado", index);
         },
