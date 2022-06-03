@@ -93,7 +93,7 @@ export default {
   },
   mounted() {
     Productos.masVendidos().then((response) => {
-      //this.productosVendidos = response.data;
+      this.productosVendidos = response.data;
     });
   },
 };
