@@ -17,12 +17,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
           {{ Producto.nombre_impreso }}
@@ -256,6 +250,8 @@ export default {
         mainImg.src = smallImg.src
 
     },
+
+    // fin de la galaeria
 
 
 
