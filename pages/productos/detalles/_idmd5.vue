@@ -12,7 +12,6 @@
           <img class="mt-10 w-72 h-72"
             id="mainImg"
             src="https://placeimg.com/640/480/tech"
-            
           />
         </div>
       </div>
@@ -186,7 +185,7 @@
 import Productos                 from "@/models/Productos";
 import ProductosRelacionados       from "@/components/productos/productosRelacionados.vue";
 import ProductoAgregarCarrito    from "@/components/productos/productoAgregarCarrito.vue";
-import ProductoFichaTecnica      from "@/components/productos/productoFichaTecnica";
+import ProductoFichaTecnica      from "@/components/productos/productoFichaTecnica.vue";
 import { createPopper }          from "@popperjs/core";
 
 
@@ -205,15 +204,17 @@ export default {
       modal: false,
       cantidadComprada:0,
       formData:{ idproducto:0},
-      prdctosRelacionados :[]
+      prdctosRelacionados :[],
+      imagenesProducto :[],
     };
   },
   mounted() {
 
     Productos.buscarPorIdMd5(this.$route.params.idmd5).then(
       (response) => {
-        this.Producto = response.data[0];
-        this.imageProducto = this.Producto.imagenes[0]._480x480;
+        this.Producto         = response.data[0];
+        this.imageProducto    = this.Producto.imagenes[0]._480x480;
+        this.imagenesProducto = this.Producto.imagenes;
         this.getProductosRelacionados ( this.Producto.idproducto);
       }
     );
@@ -252,11 +253,6 @@ export default {
     },
 
     // fin de la galaeria
-
-
-
-
-
 
 
     addProductoCarito(productoComprado) {
