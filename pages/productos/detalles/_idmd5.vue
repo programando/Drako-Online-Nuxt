@@ -2,12 +2,27 @@
   <div class="relative" v-on-clickaway="closeModal">
     <div class="justify-center pt-6 space-x-20 lg:flex">
       <div class="flex justify-center">
-        <div class="container ">
+        <div class="mr-2">
+          <img @click="changeImg1" class="h-24 w-32 mt-2 cursor-pointer " id="small-1" src="https://placeimg.com/640/480/animals" alt="">
+          <img @click="changeImg2" class="h-24 w-32 mt-2 cursor-pointer " id="small-2" src="https://placeimg.com/640/480/arch" alt="">
+          <img @click="changeImg3" class="h-24 w-32 mt-2 cursor-pointer " id="small-3" src="https://placeimg.com/640/480/nature" alt="">
+          <img @click="changeImg4" class="h-24 w-32 mt-2 cursor-pointer " id="small-4" src="https://placeimg.com/640/480/people" alt="">
+        </div>
+        <div class=" ">
           <img class="mt-10 w-72 h-72"
-            :src="imageProducto"
+            id="mainImg"
+            src="https://placeimg.com/640/480/tech"
+            
           />
         </div>
       </div>
+
+
+
+
+
+
+
       <div>
         <h2 class="text-2xl font-semibold xl:text-3xl">
           {{ Producto.nombre_impreso }}
@@ -180,6 +195,7 @@ import ProductoAgregarCarrito    from "@/components/productos/productoAgregarCar
 import ProductoFichaTecnica      from "@/components/productos/productoFichaTecnica";
 import { createPopper }          from "@popperjs/core";
 
+
 export default {
   name: "ProductoDetalles",
   layout: "default",
@@ -199,6 +215,7 @@ export default {
     };
   },
   mounted() {
+
     Productos.buscarPorIdMd5(this.$route.params.idmd5).then(
       (response) => {
         this.Producto = response.data[0];
@@ -206,9 +223,45 @@ export default {
         this.getProductosRelacionados ( this.Producto.idproducto);
       }
     );
+
   },
 
   methods: {
+
+    // lo voy a refacorizar
+    changeImg1() {
+        let mainImg = document.getElementById("mainImg")
+        let smallImg = document.getElementById("small-1")
+        mainImg.src = smallImg.src
+
+    },
+
+    changeImg2() {
+        let mainImg = document.getElementById("mainImg")
+        let smallImg = document.getElementById("small-2")
+        mainImg.src = smallImg.src
+
+    },
+
+    changeImg3() {
+        let mainImg = document.getElementById("mainImg")
+        let smallImg = document.getElementById("small-3")
+        mainImg.src = smallImg.src
+
+    },
+
+    changeImg4() {
+        let mainImg = document.getElementById("mainImg")
+        let smallImg = document.getElementById("small-4")
+        mainImg.src = smallImg.src
+
+    },
+
+
+
+
+
+
 
     addProductoCarito(productoComprado) {
       if ( productoComprado.cantidad==0){
