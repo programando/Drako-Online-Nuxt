@@ -75,7 +75,9 @@
         
         </table>
 
-        <ProductosMasVendidos />
+        <div class="mt-20">
+           <ProductosMasVendidos />
+        </div>
            
       </div>
       
@@ -128,7 +130,7 @@ export default {
     components: {  ProductosMasVendidos,      },
     mixins: [Messages],
     data :()=> ({
-        formData :{ 'idtercero' : 0, 'horas_reserva':0, 'subtotal':0,'iva':0,'flete':0, 'total':0, 'detallePedido': [] }
+        formData :{ 'idtercero' : 0, 'horas_reserva':0, 'subtotal':0,'iva':0,'flete':0, 'total':0, 'detallePedido': [] },
     }),
     
       computed: {
@@ -139,15 +141,13 @@ export default {
       },
     
     methods:{
+     
         verifyAuthenticate() {
-          console.log (this.$auth);
           if ( this.$auth.loggedIn == false ){
                this.$router.push({ path: '/login/' });
                return ;
           }
-          this.grabarNuevoPedido() ;
-          this.showMessagePedidoSaved (); 
-          this.$router.push({ path: '/' });
+          this.grabarNuevoPedido       () ;
         },
         
         grabarNuevoPedido ( ) {
@@ -159,18 +159,30 @@ export default {
             this.formData.total         = this.getPedidoValorTotal;
             this.formData.detallePedido = this.getPedido;
             Pedidos.grabarNuevoRegistro ( this.formData)
-            .then( () => {
-                this.$store.dispatch('carrito/resetState');
+              .then( ()  => {  
+                  this.showMessagePedidoSaved  () ; 
+                  this.$store.dispatch('carrito/resetState');
+                  this.$router.push({ path: '/' });
+              })
+            .catch( () =>{
+                this.showMessageNoInventario () ;   // return response()->json(['message' => 'Inventario-NO-Disponible'], 422); Laravel
             });
         },
 
-        showMessagePedidoSaved() {
-          let Texto = `El pedido fue almacenado con éxito. A partir de ahora cuenta con: 
-                        ${this.getPedidoHorasReserva }  horas para realizar el pago y enviar comprobante por alguno de los medios legido.
-                        Pasado este tiempo sin comprobar el pago, el sistema borrará el pedido y deberá inciar el proceso nuevamente.
-                        En unos minutos recibirá un correo electrónico con la información necesaria para enviar el comprobante de pago.`; 
-          this.Message("Pedido grabado" ,  Texto , 'success', 'Cerrar' );                        
+        showMessageNoInventario () {
+
+          const Texto = `El pedido no pudo ser proceso porque algunos repuestos no cuentan con inventario suficiente.
+                             Por favor póngase en contacto directo con nuestro almacén para ser registrado de manera directa.`; 
+          this.Message("Pedido no grabado" ,  Texto , 'error', 'Cerrar' );  
         },
+        showMessagePedidoSaved() {
+              const Texto = `El pedido fue almacenado con éxito. A partir de ahora cuenta con: 
+                            ${this.getPedidoHorasReserva }  horas para realizar el pago y enviar comprobante por alguno de los medios elegido.
+                            Pasado este tiempo sin comprobar el pago, el sistema borrará el pedido y deberá inciar el proceso nuevamente.
+                            En unos minutos recibirá un correo electrónico con la información necesaria para enviar el comprobante de pago.`; 
+              this.Message("Pedido grabado" ,  Texto , 'success', 'Cerrar' );                      
+        },
+
         removeProductoFromPedido( index ) {
             this.$store.dispatch("carrito/removeAllProductoComprado", index);
         },
