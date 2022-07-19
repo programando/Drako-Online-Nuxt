@@ -47,11 +47,17 @@
       <div class="hidden space-x-4 md:flex md:items-center">
         <div class="flex items-center">
           <div class="flex items-center px-2 rounded ">
-          <nuxt-link to="#" >
-            <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'store']" class="w-10 h-10 -mr-2 text-white" />
-          </nuxt-link>
-          <LinksHome title="Productos" to="/productos"/>
-        </div>
+            <nuxt-link to="#" >
+              <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'store']" class="w-10 h-10 -mr-2 text-white" />
+            </nuxt-link>
+            <LinksHome title="Factura" to="/factura"/>
+          </div>
+          <div class="flex items-center px-2 rounded ">
+            <nuxt-link to="#" >
+              <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'store']" class="w-10 h-10 -mr-2 text-white" />
+            </nuxt-link>
+            <LinksHome title="Productos" to="/productos"/>
+          </div>
           <nuxt-link to="#" >
             <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'users']" class="w-10 h-10 -mr-2 text-white" />
           </nuxt-link>
